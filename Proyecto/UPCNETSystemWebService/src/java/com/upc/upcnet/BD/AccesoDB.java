@@ -24,7 +24,7 @@ public final class AccesoDB {
              } catch (Exception e) {}
         try {
 //            DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
-            String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=IntranetUPC";
+            String connectionUrl = "jdbc:sqlserver://DAVIDZILVA:1433;databaseName=IntranetUPC";
             cn = DriverManager.getConnection(connectionUrl,"AdminEvolucion","12345");
 
         } catch (SQLException e) {
