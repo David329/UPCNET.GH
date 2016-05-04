@@ -4,9 +4,10 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
+*.obj
+*.dll
 
 # Properties File
 *.properties
