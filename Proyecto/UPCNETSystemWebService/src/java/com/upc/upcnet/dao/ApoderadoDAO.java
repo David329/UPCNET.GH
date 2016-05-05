@@ -100,7 +100,7 @@ public class ApoderadoDAO {
             cn = AccesoDB.getConnection();
             cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("UPDATE Apoderado SET Nombre = ?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ? WHERE IDApoderado= ?");
+            query.append("UPDATE Apoderado SET Nombre = ?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ?,Condicion=? WHERE IDApoderado= ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ps.setString(1, _nombre);
             ps.setString(2, _apellido);
@@ -109,6 +109,7 @@ public class ApoderadoDAO {
             ps.setString(5, _correo);
             ps.setString(6, _direccion);
             ps.setString(7, _condicion);
+            ps.setString(8, _idApoderado);
             int realizado = ps.executeUpdate();
             if(realizado == 0)
                 throw  new SQLException("Apoderado no existe!");            
