@@ -6,43 +6,37 @@
 package com.upc.upcnet.dao;
 
 import com.upc.upcnet.BD.AccesoDB;
-import com.upc.upcnet.entidades.Recurso;
+import com.upc.upcnet.entidades.Ciclo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author davidwesker
  */
-public class RecursoDAO {
-
-    public List<Recurso> getRecurso() {
-        List<Recurso> recursos = new ArrayList<>();
+public class CicloDAO {
+    public List<Ciclo> getCiclo() {
+        List<Ciclo> ciclos = new ArrayList<>();
         Connection con = null;
         try {
             con = AccesoDB.getConnection();
             StringBuilder query = new StringBuilder();
-            query.append("select IDRecurso,NombreRecurso,FechaPedido,CantidadHoras,Reservado,IDAlumno,IDProfesor from Recurso");
+            query.append("SELECT IDCiclo,IDAlumno,Boleta1,Boleta2,Boleta3 from Ciclo");
             PreparedStatement ps = con.prepareStatement(query.toString());
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Recurso a = new Recurso();
-                a.setIDRecurso(rs.getString("IDRecurso"));
-                a.setNombreRecurso(rs.getString("NombreRecurso"));
-                a.setFechaPedido(rs.getDate("FechaPedido"));
-                a.setCantidadHoras(rs.getInt("CantidadHoras"));
-                a.setReservado(rs.getBoolean("Reservado"));
+                Ciclo a = new Ciclo();
+                a.setIDCiclo(rs.getString("IDCiclo"));
                 a.setIDAlumno(rs.getString("IDAlumno"));
-                a.setIDProfesor(rs.getString("IDProfesor"));
-
-                recursos.add(a);
+                a.setBoleta1(rs.getBoolean("Boleta1"));
+                a.setBoleta2(rs.getBoolean("Boleta2"));
+                a.setBoleta3(rs.getBoolean("Boleta3"));
+                
+                ciclos.add(a);
             }
         } catch (SQLException ex) {
             throw new RuntimeException(ex.getMessage());
@@ -56,33 +50,30 @@ public class RecursoDAO {
             } catch (Exception ex) {
             }
         }
-        return recursos;
+        return ciclos;
     }
-    public void setRecurso(String _idRecurso, String _nombreRecurso, String _FechaPedido, String _CantidadHoras, String _Reservado,String _idAlumno,String _idProfesor){
+    public void setCiclo(String _idCiclo, String _idAlumno, String _boleta1, String _boleta2, String _boleta3){
         Connection cn = null;        
         try{
             cn = AccesoDB.getConnection();
             cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("SELECT * FROM Recurso WHERE IDRecurso = ?");
+            query.append("SELECT * FROM Ciclo WHERE IDCiclo = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idRecurso);
+            ps.setString(1, _idCiclo);
             ResultSet rs = ps.executeQuery();
             if(rs.next())
-                throw new SQLException("El codigo del Recurso ya existe");
+                throw new SQLException("El codigo del Ciclo ya existe");
             
             query = new StringBuilder();
-            query.append("INSERT INTO Recurso(IDRecurso,NombreRecurso,FechaPedido,CantidadHoras,Reservado,IDAlumno,IDProfesor) VALUES(?, ?, ?, ?, ?, ?, ?)");
-            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");            
-            
+            query.append("INSERT INTO Ciclo(IDCiclo, IDAlumno, Boleta1, Boleta2, Boleta3) VALUES(?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idRecurso);
-            ps.setString(2, _nombreRecurso);
-            ps.setDate(3, (java.sql.Date) df.parse(_FechaPedido));
-            ps.setInt(4, Integer.parseInt(_CantidadHoras));
-            ps.setBoolean(5, Boolean.parseBoolean(_Reservado));
-            ps.setString(6, _idAlumno);
-            ps.setString(7, _idProfesor);
+            ps.setString(1, _idCiclo);
+            ps.setString(2, _idAlumno);
+            ps.setBoolean(3, Boolean.parseBoolean(_boleta1));
+            ps.setBoolean(4, Boolean.parseBoolean(_boleta2));
+            ps.setBoolean(5, Boolean.parseBoolean(_boleta3));
+            
             ps.executeUpdate();
             cn.commit();
             
@@ -97,27 +88,24 @@ public class RecursoDAO {
             }catch(Exception ex){}
         }
     }
-    public void editRecurso(String _idRecurso, String _nombreRecurso, String _FechaPedido, String _CantidadHoras, String _Reservado,String _idAlumno,String _idProfesor){
+    public void editCiclo(String _idCiclo, String _idAlumno, String _boleta1, String _boleta2, String _boleta3){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
             cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("UPDATE Recurso SET NombreRecurso = ?, FechaPedido = ?, CantidadHoras = ?, Reservado = ?, IDAlumno = ?, IDProfesor = ? WHERE IDRecurso= ?");
-            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-            
+            query.append("UPDATE Ciclo SET _idAlumno = ?, Boleta1 = ?, Boleta2 = ?, Boleta3 = ? WHERE IDCiclo= ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _nombreRecurso);
-            ps.setDate(2, (java.sql.Date) df.parse(_FechaPedido));
-            ps.setInt(3, Integer.parseInt(_CantidadHoras));
-            ps.setBoolean(4, Boolean.parseBoolean(_Reservado));
-            ps.setString(5, _idAlumno);
-            ps.setString(6, _idProfesor);
-            ps.setString(7, _idRecurso);
+            
+            ps.setString(1, _idAlumno);
+            ps.setBoolean(2, Boolean.parseBoolean(_boleta1));
+            ps.setBoolean(3, Boolean.parseBoolean(_boleta2));
+            ps.setBoolean(4, Boolean.parseBoolean(_boleta3));
+            ps.setString(5, _idCiclo);
             
             int realizado = ps.executeUpdate();
             if(realizado == 0)
-                throw  new SQLException("Recurso no existe!");            
+                throw  new SQLException("Ciclo no existe!");            
         }catch(SQLException ex){
             throw new RuntimeException(ex.getMessage());
         }catch(Exception e){
