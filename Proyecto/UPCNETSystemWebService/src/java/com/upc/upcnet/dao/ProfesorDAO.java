@@ -5,7 +5,7 @@
  */
 package com.upc.upcnet.dao;
 
-import com.upc.upcnet.entidades.Alumno;
+import com.upc.upcnet.entidades.Profesor;
 import java.util.ArrayList;
 import java.util.List;
 import com.upc.upcnet.BD.AccesoDB;
@@ -16,32 +16,31 @@ import java.sql.SQLException;
 
 /**
  *
- * @author win7
+ * @author Petith
  */
-public class AlumnoDAO {
+public class ProfesorDAO {
     
-    public List<Alumno> getAlumnos(){
-        List<Alumno> alumnos = new ArrayList<>();
+    public List<Profesor> getProfesores(){
+        List<Profesor> profesores = new ArrayList<>();
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
             StringBuilder query = new StringBuilder();
-            query.append("SELECT IDAlumno, Nombre, Apellido, DNI, Edad, Correo, Direccion, IDCategoria, IDApoderado FROM Alumno");
+            query.append("SELECT IDProfesor, Nombre, Apellido, DNI, Edad, Correo, Direccion, Sueldo FROM Profesor");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                Alumno a = new Alumno();
-                a.setIdAlumno(rs.getString("IDAlumno"));
-                a.setNombre(rs.getString("Nombre"));
-                a.setApellido(rs.getString("Apellido"));
-                a.setDni(rs.getInt("DNI"));
-                a.setEdad(rs.getInt("Edad"));
-                a.setCorreo(rs.getString("Correo"));
-                a.setDireccion(rs.getString("Direccion"));
-                a.setIdCategoria(rs.getString("IDCategoria"));
-                a.setIdApoderado(rs.getString("IDApoderado"));
+                Profesor p = new Profesor();
+                p.setIdProfesor(rs.getString("IDProfesor"));
+                p.setNombre(rs.getString("Nombre"));
+                p.setApellido(rs.getString("Apellido"));
+                p.setDni(rs.getInt("DNI"));
+                p.setEdad(rs.getInt("Edad"));
+                p.setCorreo(rs.getString("Correo"));
+                p.setDireccion(rs.getString("Direccion"));
+                p.setSueldo(rs.getDouble("Sueldo"));
                 
-                alumnos.add(a);
+                profesores.add(p);
             }
         }catch(SQLException ex){
             throw new RuntimeException(ex.getMessage());
@@ -52,35 +51,34 @@ public class AlumnoDAO {
                 if(cn != null)
                     cn.close();
             }catch(Exception ex){}
-        }
-        return alumnos;
+        }        
+        return profesores;
     }
     
-    public void setAlumno(String _idAlumno, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _idCategoria, String _idApoderado){
-        Connection cn = null;        
+    public void setProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo){
+        Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
             cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("SELECT * FROM Alumno WHERE IDAlumno = ?");
-            PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idAlumno);
+            query.append("SELECT * FROM Profesor WHERE IDProfesor = ?");
+             PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idProfesor);
             ResultSet rs = ps.executeQuery();
             if(rs.next())
-                throw new SQLException("El codigo del alumno ya existe");
+                throw new SQLException("El codigo del profesor ya existe");
             
             query = new StringBuilder();
-            query.append("INSERT INTO Alumno(IDAlumno, Nombre, Apellido, DNI, Edad, Correo, Direccion, IDCategoria, IDApoderado) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            query.append("INSERT INTO Profesor(IDProfesor, Nombre, Apellido, DNI, Edad, Correo, Direccion, Sueldo) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idAlumno);
+            ps.setString(1, _idProfesor);
             ps.setString(2, _nombre);
             ps.setString(3, _apellido);
             ps.setInt(4, Integer.parseInt(_dni));
             ps.setInt(5, Integer.parseInt(_edad));
             ps.setString(6, _correo);
             ps.setString(7, _direccion);
-            ps.setString(8, _idCategoria);
-            ps.setString(9, _idApoderado);
+            ps.setDouble(8, Double.parseDouble(_sueldo));
             ps.executeUpdate();
             cn.commit();
             
@@ -96,13 +94,13 @@ public class AlumnoDAO {
         }
     }
     
-    public void editAlumno(String _idAlumno, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _idCategoria, String _idApoderado){
+    public void editProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
             cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("UPDATE Alumno SET Nombre = ?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ?, IDCategoria = ?, IDApoderado = ? WHERE IDAlumno = ?");
+            query.append("UPDATE Profesor SET Nombre = ?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ?, Sueldo = ? WHERE IDProfesor = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ps.setString(1, _nombre);
             ps.setString(2, _apellido);
@@ -110,12 +108,12 @@ public class AlumnoDAO {
             ps.setInt(4, Integer.parseInt(_edad));
             ps.setString(5, _correo);
             ps.setString(6, _direccion);
-            ps.setString(7, _idCategoria);
-            ps.setString(8, _idApoderado);
-            ps.setString(9, _idAlumno);
+            ps.setDouble(7, Double.parseDouble(_sueldo));
+            ps.setString(8, _idProfesor);
             int realizado = ps.executeUpdate();
             if(realizado == 0)
-                throw  new SQLException("Alumno no existe!");            
+                throw  new SQLException("Alumno no existe!"); 
+            
         }catch(SQLException ex){
             throw new RuntimeException(ex.getMessage());
         }catch(Exception e){
@@ -126,6 +124,5 @@ public class AlumnoDAO {
                     cn.close();
             }catch(Exception ex){}
         }
-        
     }
 }
