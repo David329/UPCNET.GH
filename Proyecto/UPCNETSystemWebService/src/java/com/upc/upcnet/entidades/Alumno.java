@@ -13,99 +13,87 @@ import java.util.List;
  * @author ALEX
  */
 public class Alumno {
-    
-    private String Nombre;
-    private String Apellido;
-    private String Codigo;
-    private String Carrera;
-    private String DNI;
-    private String Correo;
-    private String Fecha;
-    private String IDCategoria;
-    
-    public List<Object> getAlumno(){
-        List<Object> lista=new ArrayList<>();
-        lista.add(Nombre);
-        lista.add(Apellido);
-        lista.add(Codigo);
-        lista.add(Carrera);
-        lista.add(DNI);
-        lista.add(Correo);
-        lista.add(Carrera);
-        lista.add(Fecha);
-        lista.add(IDCategoria);
-        return lista;
-    } 
-    public void setAlumno(List<Object> objAl){
-        
-        Nombre=(String) objAl.get(0);
-        Apellido=(String) objAl.get(1);
-        Codigo=(String) objAl.get(2);
-    }
-            
+      
+    private String idAlumno;
+    private String nombre;
+    private String apellido;
+    private Integer dni;
+    private Integer edad;
+    private String correo;
+    private String direccion;
+    private String idCategoria;
+    private String idApoderado;
 
-    public String getIDCategoria() {
-        return IDCategoria;
+    public String getIdAlumno() {
+        return idAlumno;
     }
 
-    public void setIDCategoria(String IDCategoria) {
-        this.IDCategoria = IDCategoria;
+    public void setIdAlumno(String idAlumno) {
+        this.idAlumno = idAlumno;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getCodigo() {
-        return Codigo;
+    public Integer getDni() {
+        return dni;
     }
 
-    public void setCodigo(String Codigo) {
-        this.Codigo = Codigo;
+    public void setDni(Integer dni) {
+        this.dni = dni;
     }
 
-    public String getCarrera() {
-        return Carrera;
+    public Integer getEdad() {
+        return edad;
     }
 
-    public void setCarrera(String Carrera) {
-        this.Carrera = Carrera;
-    }
-
-    public String getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public void setEdad(Integer edad) {
+        this.edad = edad;
     }
 
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
 
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public String getFecha() {
-        return Fecha;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setFecha(String Fecha) {
-        this.Fecha = Fecha;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(String idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getIdApoderado() {
+        return idApoderado;
+    }
+
+    public void setIdApoderado(String idApoderado) {
+        this.idApoderado = idApoderado;
     }
     
     
