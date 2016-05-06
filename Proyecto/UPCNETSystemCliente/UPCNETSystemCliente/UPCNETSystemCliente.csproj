@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -111,6 +112,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Entities\Alumno.cs" />
+    <Compile Include="Business Entities\Apoderado.cs" />
+    <Compile Include="Business Entities\Categoria.cs" />
+    <Compile Include="Business Entities\Ciclo.cs" />
+    <Compile Include="Business Entities\Curso.cs" />
+    <Compile Include="Business Entities\Documento.cs" />
+    <Compile Include="Business Entities\Incidencia.cs" />
+    <Compile Include="Business Entities\Profesor.cs" />
+    <Compile Include="Business Entities\Recurso.cs" />
+    <Compile Include="Business Entities\Seccion.cs" />
+    <Compile Include="Business Entities\Sec_Clase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
