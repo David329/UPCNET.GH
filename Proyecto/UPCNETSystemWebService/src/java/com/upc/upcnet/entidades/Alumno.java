@@ -1,17 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.upc.upcnet.entidades;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- *
- * @author ALEX
- */
 public class Alumno {
       
     private String idAlumno;
@@ -23,6 +11,15 @@ public class Alumno {
     private String direccion;
     private String idCategoria;
     private String idApoderado;
+    private String pass;
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 
     public String getIdAlumno() {
         return idAlumno;

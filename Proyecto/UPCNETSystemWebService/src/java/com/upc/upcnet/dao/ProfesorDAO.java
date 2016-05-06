@@ -26,7 +26,7 @@ public class ProfesorDAO {
         try{
             cn = AccesoDB.getConnection();
             StringBuilder query = new StringBuilder();
-            query.append("SELECT IDProfesor, Nombre, Apellido, DNI, Edad, Correo, Direccion, Sueldo FROM Profesor");
+            query.append("SELECT IDProfesor, Nombre, Apellido, DNI, Edad, Correo, Direccion, Sueldo, Pass FROM Profesor");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
@@ -39,6 +39,7 @@ public class ProfesorDAO {
                 p.setCorreo(rs.getString("Correo"));
                 p.setDireccion(rs.getString("Direccion"));
                 p.setSueldo(rs.getDouble("Sueldo"));
+                p.setPass(rs.getString("Pass"));
                 
                 profesores.add(p);
             }
@@ -55,7 +56,44 @@ public class ProfesorDAO {
         return profesores;
     }
     
-    public void setProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo){
+    public List<Profesor> getProfesorById(String _idProfesor){
+        List<Profesor> profesores = new ArrayList<>();
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT IDProfesor, Nombre, Apellido, DNI, Edad, Correo, Direccion, Sueldo, Pass FROM Profesor WHERE IDProfesor = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idProfesor);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Profesor p = new Profesor();
+                p.setIdProfesor(rs.getString("IDProfesor"));
+                p.setNombre(rs.getString("Nombre"));
+                p.setApellido(rs.getString("Apellido"));
+                p.setDni(rs.getInt("DNI"));
+                p.setEdad(rs.getInt("Edad"));
+                p.setCorreo(rs.getString("Correo"));
+                p.setDireccion(rs.getString("Direccion"));
+                p.setSueldo(rs.getDouble("Sueldo"));
+                p.setPass(rs.getString("Pass"));
+                
+                profesores.add(p);
+            }
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }        
+        return profesores;
+    }
+    
+    public void setProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo, String _pass){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
@@ -69,7 +107,7 @@ public class ProfesorDAO {
                 throw new SQLException("El codigo del profesor ya existe");
             
             query = new StringBuilder();
-            query.append("INSERT INTO Profesor(IDProfesor, Nombre, Apellido, DNI, Edad, Correo, Direccion, Sueldo) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+            query.append("INSERT INTO Profesor(IDProfesor, Nombre, Apellido, DNI, Edad, Correo, Direccion, Sueldo, Pass) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
             ps.setString(1, _idProfesor);
             ps.setString(2, _nombre);
@@ -79,6 +117,7 @@ public class ProfesorDAO {
             ps.setString(6, _correo);
             ps.setString(7, _direccion);
             ps.setDouble(8, Double.parseDouble(_sueldo));
+            ps.setString(9, _pass);
             ps.executeUpdate();
             cn.commit();
             
@@ -94,13 +133,13 @@ public class ProfesorDAO {
         }
     }
     
-    public void editProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo){
+    public void editProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo, String _pass){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
             cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("UPDATE Profesor SET Nombre = ?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ?, Sueldo = ? WHERE IDProfesor = ?");
+            query.append("UPDATE Profesor SET Nombre = ?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ?, Sueldo = ?, Pass = ? WHERE IDProfesor = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ps.setString(1, _nombre);
             ps.setString(2, _apellido);
@@ -109,7 +148,8 @@ public class ProfesorDAO {
             ps.setString(5, _correo);
             ps.setString(6, _direccion);
             ps.setDouble(7, Double.parseDouble(_sueldo));
-            ps.setString(8, _idProfesor);
+            ps.setString(8, _pass);
+            ps.setString(9, _idProfesor);
             int realizado = ps.executeUpdate();
             if(realizado == 0)
                 throw  new SQLException("Profesor no existe!"); 
@@ -124,5 +164,32 @@ public class ProfesorDAO {
                     cn.close();
             }catch(Exception ex){}
         }
+    }
+    
+    public boolean validarLogin(String _idProfesor, String _pass){
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT * FROM Profesor WHERE IDProfesor = ? AND Pass = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idProfesor);
+            ps.setString(1, _pass);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next())
+                return true;
+            else
+                return false;
+            
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }     
     }
 }

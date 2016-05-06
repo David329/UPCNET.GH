@@ -18,6 +18,15 @@ public class Profesor {
     private String correo;
     private String direccion;
     private Double sueldo;
+    private String pass;
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 
     public String getIdProfesor() {
         return idProfesor;
