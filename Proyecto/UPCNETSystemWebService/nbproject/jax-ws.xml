@@ -10,6 +10,9 @@
     <service name="UPCNETServiceProfesor">
       <implementation-class>com.upc.upcnet.Services.UPCNETServiceProfesor</implementation-class>
     </service>
+    <service name="UPCNETServiceSeccion">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceSeccion</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

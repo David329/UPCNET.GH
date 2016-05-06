@@ -112,7 +112,7 @@ public class ProfesorDAO {
             ps.setString(8, _idProfesor);
             int realizado = ps.executeUpdate();
             if(realizado == 0)
-                throw  new SQLException("Alumno no existe!"); 
+                throw  new SQLException("Profesor no existe!"); 
             
         }catch(SQLException ex){
             throw new RuntimeException(ex.getMessage());
