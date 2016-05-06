@@ -1,14 +1,15 @@
 ﻿@{
-   
-    Layout = "~/Shared/_Layout.cshtml";
+    ViewBag.Title = "Alumnos";
+    Layout = "~/Views/_Layout.cshtml";
 }
 
 <center>
-    <h1><u><b> UPCNET Lista de Alumnos </b></u></h1>
+    <h3><u><b> UPCNET Lista de Alumnos </b></u></h3>
     <h3> Número de Alumnos : @Model.Count</h3>
 </center>
 <br />
-<table class=" table table-hover" border="3" align="center" width="1300">
+
+<table class=" table table-hover table-bordered " align="center" width="1300">
     <thead>
         <tr bgcolor="#E6E6FA">
             <th> Código</th>

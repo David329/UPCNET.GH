@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/sb-admin.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/plugins/morris.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div id="wrapper">
+
+   
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    
+            <div class="navbar-header" >
+          
+            </div>
+            <!-- Top Menu Items -->
+           
+           
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        @Html.ActionLink("Principal", "Index");
+                    </li>
+                    <li>
+                        @Html.ActionLink("Lista de Alumnos", "Alumnos");
+                    </li>
+              
+                </ul> -
+                
+            </div>
+        </nav>
+       
+        <div id="body">
+
+         
+                @RenderBody()
+             
+                
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- body  -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    
+    
+</body>
+</html>
