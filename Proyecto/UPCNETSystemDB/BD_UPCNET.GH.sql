@@ -5,18 +5,20 @@ go
 use IntranetUPC
 go
 
-create table Apoderado(IDApoderado varchar(30)not null,Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),Condicion varchar(30));
+create table Administrador(IDAdministrador varchar(30)not null,Pass varchar(30),Nombre varchar(30),Apellido varchar(30),Correo varchar(30))
+create table Apoderado(IDApoderado varchar(30)not null,Pass varchar(30),Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),Condicion varchar(30));
 create table Categoria(IDCategoria varchar(30)not null ,Monto decimal(18,2));--definido x el sistema
-create table Alumno(IDAlumno varchar(30) not null,Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),IDCategoria varchar(30),IDApoderado varchar(30))
+create table Alumno(IDAlumno varchar(30) not null,Pass varchar(30),Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),IDCategoria varchar(30),IDApoderado varchar(30))
 create table Ciclo(IDCiclo varchar(30) not null,IDAlumno varchar(30) not null,Boleta1 bit,Boleta2 bit,Boleta3 bit)
 create table Incidencia(IDIncidencia varchar(30) not null,Asunto varchar(100),IDAlumno varchar(30),IDProfesor varchar(30))--allow nulls
 create table Recurso(IDRecurso varchar(30)not null,NombreRecurso varchar(30),FechaPedido date,CantidadHoras int,Reservado bit,IDAlumno varchar(30),IDProfesor varchar(30))--allow nulls
-create table Profesor(IDProfesor varchar(30)not null,Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),Sueldo decimal(18,2))
+create table Profesor(IDProfesor varchar(30)not null,Pass varchar(30),Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),Sueldo decimal(18,2))
 create table Curso(IDCurso varchar(30) not null,CicloDeCurso int,MaxInasistencia int,IDProfesor varchar(30))
 create table Seccion(IDSecclase varchar(30) not null,IDSeccion varchar(30),IDAlumno varchar(30),IDCurso varchar(30),PC1 decimal(10,2),PC2 decimal(10,2),EP decimal(10,2),EF decimal(10,2),Retirado bit,Inasistencias int,Delegado bit)
 create table Sec_Clase(IDClase varchar(30)not null,IDSecclase varchar(30)not null,Dia varchar(30),HoraIni time(0),HoraFin time(0))
 create table Documento(IDDocumento varchar(30) not null,IDCurso varchar(30)not null,NomDocumento varchar(30),Documento varbinary(MAX))
 
+alter table Administrador add constraint PK_Administrador primary key(IDAdministrador)
 alter table Apoderado add constraint PK_Apoderado primary key(IDApoderado)
 alter table Categoria add constraint PK_Categoria primary key(IDCategoria)
 alter table Alumno add constraint PK_Alumno primary key(IDAlumno)

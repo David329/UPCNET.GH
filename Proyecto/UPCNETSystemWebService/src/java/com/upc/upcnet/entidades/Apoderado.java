@@ -12,6 +12,7 @@ package com.upc.upcnet.entidades;
 public class Apoderado {
 
     private String IDApoderado;
+    private String Pass;
     private String Nombre;
     private String Apellido;
     private String Correo;
@@ -26,6 +27,14 @@ public class Apoderado {
 
     public void setIDApoderado(String IDApoderado) {
         this.IDApoderado = IDApoderado;
+    }
+    
+    public String getPass() {
+        return Pass;
+    }
+
+    public void setPass(String Pass) {
+        this.Pass = Pass;
     }
 
     public String getNombre() {

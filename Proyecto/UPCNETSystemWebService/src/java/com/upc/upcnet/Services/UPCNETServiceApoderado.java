@@ -26,17 +26,17 @@ public class UPCNETServiceApoderado {
     }
     
     @WebMethod(operationName = "setApoderado")
-    public void setApoderado(String _idApoderado, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
+    public void setApoderado(String _idApoderado,String _pass, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
         
         ApoderadoDAO objApoderadoDAO=new ApoderadoDAO();
-        objApoderadoDAO.setApoderado(_idApoderado, _nombre, _apellido, _dni, _edad, _correo, _direccion, _condicion);
+        objApoderadoDAO.setApoderado(_idApoderado, _pass, _nombre, _apellido, _dni, _edad, _correo, _direccion, _condicion);
     }
     
     @WebMethod(operationName = "editApoderado")
-    public void editApoderado(String _idApoderado, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
+    public void editApoderado(String _idApoderado,String _pass, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
         
         ApoderadoDAO objApoderadoDAO=new ApoderadoDAO();
-        objApoderadoDAO.editApoderado(_idApoderado, _nombre, _apellido, _dni, _edad, _correo, _direccion, _condicion);
+        objApoderadoDAO.editApoderado(_idApoderado, _pass, _nombre, _apellido, _dni, _edad, _correo, _direccion, _condicion);
     }
     
 }
