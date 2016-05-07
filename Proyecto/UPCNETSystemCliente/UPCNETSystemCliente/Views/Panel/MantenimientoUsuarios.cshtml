@@ -1,0 +1,45 @@
+﻿@model UPCNETSystemCliente.ViewModel.Panel._MantenimientoUsuarios
+<div class="panel panel-flat">
+    <div class="panel-heading">
+        <h5 class="panel-title"><strong>Mantenimiento de usuarios</strong></h5>
+    </div>
+    <div class="panel-body">
+        En esta sección podrás gestionar los usuarios del sistema.
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("NuevoUsuario", "Panel", FormMethod.Get))
+        {
+            <fieldset class="content-group">
+                <legend class="text-bold">Opciones</legend>
+                <button type="submit" class="btn bg-teal-400 btn-labeled pull-right"><b><i class="icon-user-plus"></i></b>Nuevo usuario</button>
+            </fieldset>
+        }
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListObjetos)
+            {
+                <tr>
+
+                    
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.Email</td>
+                    <td>@item.Usuario</td>
+                    <td>@item.Password</td>
+                </tr>
+                                        }
+
+
+        </tbody>
+    </table>
+</div>

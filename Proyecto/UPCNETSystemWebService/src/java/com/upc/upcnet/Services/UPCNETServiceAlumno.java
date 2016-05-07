@@ -7,6 +7,7 @@ package com.upc.upcnet.Services;
 
 import com.upc.upcnet.dao.AlumnoDAO;
 import com.upc.upcnet.entidades.Alumno;
+import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -21,8 +22,14 @@ public class UPCNETServiceAlumno {
 
     @WebMethod(operationName = "getAlumnos")
     public List<Alumno> getAlumnos() {
-        AlumnoDAO alumnoDAO = new AlumnoDAO();        
-        return alumnoDAO.getAlumnos();
+       // AlumnoDAO alumnoDAO = new AlumnoDAO(); 
+            List<Alumno> lista = new ArrayList<>(); 
+            Alumno a = new Alumno(); Alumno b = new Alumno();
+            a.setApellido("Maguiña");   a.setNombre("Ian");  a.setIdAlumno("001"); a.setPass("123");a.setCorreo("whaat@duspace.com");
+            b.setNombre("Persona"); b.setApellido("Aleatoria"); b.setIdAlumno("user"); b.setPass("1234");b.setCorreo("rcm@duspace.com");
+           
+            lista.add(a); lista.add(b);
+        return lista;
     }
 
     @WebMethod(operationName = "setAlumno")

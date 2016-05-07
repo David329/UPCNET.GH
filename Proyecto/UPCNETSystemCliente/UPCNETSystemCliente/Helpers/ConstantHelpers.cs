@@ -15,7 +15,7 @@ namespace UPCNETSystemCliente.Helpers
 
         public static class Layout
         {
-
+            public static readonly string PANEL = "~/Views/Layout/PanelLayout.cshtml";
         }
 
         public static PagedListRenderOptions Bootstrap3Pager

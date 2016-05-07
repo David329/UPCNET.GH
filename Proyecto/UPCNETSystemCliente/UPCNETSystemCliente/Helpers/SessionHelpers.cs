@@ -17,7 +17,9 @@ namespace UPCNETSystemCliente.Helpers
     public enum SessionKey
     {
         Usuario,
-        Password
+        Password,
+        Nombre,
+        Email
     }
 
     public static class SessionHelpers

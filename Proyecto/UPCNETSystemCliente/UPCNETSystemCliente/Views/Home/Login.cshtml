@@ -30,6 +30,9 @@
         #imgLogo {
             width: 100px;
         }
+        .pace.pace-active {
+            display: none;
+        }
     </style>
 
 </head>
@@ -55,6 +58,12 @@
                             <div class="icon-object border-slate-300 text-slate-300"><img src=@Url.Content("~/Content/images/upc.png") id="imgLogo" /></div>
                             <h5 class="content-group">Inicio de sesión<small class="display-block">Ingresa tus credenciales</small></h5>
                         </div>
+
+                        @if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+                        {
+                            @Html.ValidationSummary("", new { @class = "alert alert-danger" })
+                        }
+
 
                         <div class="form-group has-feedback has-feedback-left">
                             @Html.TextBoxFor(x => x.UsuarioCodigo, new { @class ="form-control", placeholder="Usuario" })

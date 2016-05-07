@@ -9,11 +9,13 @@ import com.upc.upcnet.dao.AdministradorDAO;
 import com.upc.upcnet.entidades.Administrador;
 import java.util.List;
 import javax.jws.WebMethod;
+import javax.jws.WebService;
 
 /**
  *
  * @author davidwesker
  */
+
 public class UPCNETServiceAdministrador {
     
     @WebMethod(operationName = "getAdministrador")

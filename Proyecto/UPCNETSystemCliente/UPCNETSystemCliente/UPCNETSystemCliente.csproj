@@ -130,18 +130,30 @@
     <Compile Include="Business Entities\Sec_Clase.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PanelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Globalization\ValidationString.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationString.resx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ConstantHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\UPCNETServiceAlumno\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UPCNETSystemWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Login\_LoginViewModel.cs" />
+    <Compile Include="ViewModel\Panel\_MantenimientoUsuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -688,9 +700,37 @@
     <Content Include="Content\demo_data\d3\pies\pies_update.tsv" />
     <Content Include="Content\demo_data\dimple\demo_data.tsv" />
     <Content Include="App_Code\RazorHelper.cshtml" />
+    <None Include="Service References\UPCNETServiceAlumno\UPCNETServiceAlumno.wsdl" />
+    <None Include="Service References\UPCNETServiceAlumno\UPCNETServiceAlumno.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\UPCNETServiceAlumno\UPCNETSystemCliente.UPCNETServiceAlumno.alumno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceAlumno\UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceAlumno\UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceAlumno\UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceAlumno\UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceAlumno\UPCNETSystemCliente.UPCNETServiceAlumno.validarLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\UPCNETSystemWebService\configuration91.svcinfo" />
     <None Include="Service References\UPCNETSystemWebService\configuration.svcinfo" />
     <None Include="Service References\UPCNETSystemWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UPCNETServiceAlumno\configuration91.svcinfo" />
+    <None Include="Service References\UPCNETServiceAlumno\configuration.svcinfo" />
+    <None Include="Service References\UPCNETServiceAlumno\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -712,11 +752,14 @@
     </Content>
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\_ViewStart.cshtml" />
+    <Content Include="Views\Panel\Administrador.cshtml" />
+    <Content Include="Views\Panel\_ViewStart.cshtml" />
+    <Content Include="Views\Layout\PanelLayout.cshtml" />
+    <Content Include="Views\Panel\MantenimientoUsuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Layout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -725,6 +768,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\UPCNETServiceAlumno\" />
     <WCFMetadataStorage Include="Service References\UPCNETSystemWebService\" />
   </ItemGroup>
   <ItemGroup>
@@ -732,6 +776,12 @@
     <None Include="Service References\UPCNETSystemWebService\UPCNETService.xsd">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globalization\ValidationString.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationString.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
