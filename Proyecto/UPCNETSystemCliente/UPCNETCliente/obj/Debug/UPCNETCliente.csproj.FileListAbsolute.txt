@@ -1,9 +1,0 @@
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\bin\Debug\UPCNETCliente.exe.config
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\bin\Debug\UPCNETCliente.exe
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\bin\Debug\UPCNETCliente.pdb
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\obj\Debug\UPCNETCliente.csprojResolveAssemblyReference.cache
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\obj\Debug\UPCNETCliente.Form1.resources
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\obj\Debug\UPCNETCliente.Properties.Resources.resources
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\obj\Debug\UPCNETCliente.csproj.GenerateResource.Cache
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\obj\Debug\UPCNETCliente.exe
-C:\Users\ALEX\Documents\Visual Studio 2015\Projects\UPCNETCliente\UPCNETCliente\obj\Debug\UPCNETCliente.pdb
