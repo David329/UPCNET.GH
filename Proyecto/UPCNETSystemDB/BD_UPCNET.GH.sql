@@ -57,3 +57,23 @@ CREATE LOGIN [AdminEvolucion] WITH PASSWORD=N'12345', DEFAULT_DATABASE=[Intranet
 GO
 EXEC master..sp_addsrvrolemember @loginame = N'AdminEvolucion', @rolename = N'sysadmin'
 GO 
+-------------NUEVO--------------
+insert into Administrador values('AD101','ad101ad','David','Silva','davidsilva3290@gmail.com')
+
+insert into Categoria values('Q',2300.70)
+insert into Categoria values('R',1800.60)
+insert into Categoria values('S',1500.50)
+insert into Categoria values('U',800.00)
+
+insert into Apoderado values('AP101','ap101ap','Julian','Kaori',92921311,33,'julian@gmail.com','Carlos leon Delgado 140','Padre')
+insert into Apoderado values('AP102','ap102ap','Ernesto','Silva',92343311,50,'ernesto@gmail.com','Usares de Junin 220','Tio')
+insert into Apoderado values('AP103','ap103ap','Luis','Veliz',12344411,34,'luis@hotmail.com','las trincheras 143','Abuelo')
+insert into Apoderado values('AP104','ap104ap','Vincenzo','Espartano',2221311,33,'vint@gmail.com','Gamarra 222, La victoria','Padre')
+insert into Apoderado values('AP105','ap105ap','Madeleine','Osterling',44421311,80,'rick@yahoo.com','Las piedritas 352','Madre')
+
+
+insert into Alumno values('AL101','al101al','Alex','Espino',828216,50,'ianelzukulemtho@gmail.com','Las orquideas140','Q','AP101')
+insert into Alumno values('AL102','al102al','Victor','Parassi',777621,22,'JuanPablo@gmail.com','School Street Grayslake 5563','Q','AP102')
+insert into Alumno values('AL103','al103al','Ale','Mendoza',2342162,23,'AleM@Ez.com','Avenue Bayonne 544','R','AP103')
+insert into Alumno values('AL104','al104al','Maricarmen','Peralta',31622,12,'MariP@Ez.com','Lincoln Street 8522','S','AP104')
+insert into Alumno values('AL105','al105al','Carolina','Herrera',456622,18,'CarolinaH@yahoo.com','Lincoln Street 1403','U','AP105')
