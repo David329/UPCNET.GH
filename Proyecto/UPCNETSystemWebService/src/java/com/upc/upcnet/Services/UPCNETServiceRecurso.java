@@ -10,11 +10,13 @@ import com.upc.upcnet.dao.RecursoDAO;
 import com.upc.upcnet.entidades.Recurso;
 import java.util.List;
 import javax.jws.WebMethod;
+import javax.jws.WebService;
 
 /**
  *
  * @author davidwesker
  */
+@WebService(serviceName = "UPCNETServiceRecurso")
 public class UPCNETServiceRecurso {
     
     @WebMethod(operationName = "getRecurso")

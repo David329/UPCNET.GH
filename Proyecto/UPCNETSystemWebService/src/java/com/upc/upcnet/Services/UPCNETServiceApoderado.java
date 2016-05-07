@@ -10,10 +10,12 @@ import java.util.List;
 import javax.jws.WebMethod;
 import com.upc.upcnet.dao.*;
 import java.util.ArrayList;
+import javax.jws.WebService;
 /**
  *
  * @author davidwesker
  */
+@WebService(serviceName = "UPCNETServiceApoderado")
 public class UPCNETServiceApoderado {
     
     @WebMethod(operationName = "getApoderado")

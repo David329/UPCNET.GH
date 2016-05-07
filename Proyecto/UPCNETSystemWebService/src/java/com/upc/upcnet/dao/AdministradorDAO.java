@@ -55,6 +55,39 @@ public class AdministradorDAO {
         return administradores;
     }
     
+    public List<Administrador> getAdministradoresById(String _idAdministrador){
+         List<Administrador> administradores = new ArrayList<>();
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT IDAdministrador,Pass ,Nombre, Apellido, Correo FROM Administrador WHERE IDAdministrador = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idAdministrador);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Administrador a = new Administrador();
+                a.setIDAdministrador(rs.getString("IDAdministrador"));
+                a.setPass(rs.getString("Pass"));
+                a.setNombre(rs.getString("Nombre"));
+                a.setApellido(rs.getString("Apellido"));
+                a.setCorreo(rs.getString("Correo"));
+                
+                administradores.add(a);
+            }
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }
+        return administradores;
+    }
+    
     public void setAdministrador(String _idAdministrador,String _pass,String _nombre, String _apellido, String _correo){
         Connection cn = null;        
         try{
@@ -117,5 +150,32 @@ public class AdministradorDAO {
                     cn.close();
             }catch(Exception ex){}
         }
+    }
+    
+    public boolean validarLoginAdminitrador(String _idAdministrador, String _pass){
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT * FROM Administrador WHERE IDAdministrador = ? AND Pass = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idAdministrador);
+            ps.setString(1, _pass);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next())
+                return true;
+            else
+                return false;        
+            
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }       
     }
 }

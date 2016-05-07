@@ -11,11 +11,11 @@ package com.upc.upcnet.entidades;
  */
 public class Administrador {
     
-    public String IDAdministrador;
-    public String Pass;
-    public String Nombre;
-    public String Apellido;
-    public String Correo;
+    private String IDAdministrador;
+    private String Pass;
+    private String Nombre;
+    private String Apellido;
+    private String Correo;
 
     public String getIDAdministrador() {
         return IDAdministrador;

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using UPCNETSystemCliente.ViewModel.Login;
 using UPCNETSystemCliente.UPCNETServiceAlumno;
+using UPCNETSystemCliente.UPCNETServiceAdministrador;
 using UPCNETSystemCliente.Globalization;
 using UPCNETSystemCliente.Helpers;
 
@@ -36,16 +37,16 @@ namespace UPCNETSystemCliente.Controllers
             if (!ModelState.IsValid) {
                 return View(objLoginViewModel);
             }
-
-            UPCNETServiceAlumnoClient proxy = new UPCNETServiceAlumnoClient();
-            UPCNETServiceAlumno.alumno[] lista = proxy.getAlumnos();
+            
+            UPCNETServiceAdministradorClient proxy = new UPCNETServiceAdministradorClient();
+            UPCNETServiceAdministrador.administrador[] lista = proxy.getAdministrador();
 
             bool existe_cuenta = false;
             string nombre = "";
             string email = "";
             foreach (var item in lista)
             {
-                if (objLoginViewModel.UsuarioCodigo == item.idAlumno && objLoginViewModel.UsuarioPassword == item.pass) {
+                if (objLoginViewModel.UsuarioCodigo == item.IDAdministrador && objLoginViewModel.UsuarioPassword == item.pass) {
                     existe_cuenta = true;
                     nombre = item.nombre;
                     email = item.correo;

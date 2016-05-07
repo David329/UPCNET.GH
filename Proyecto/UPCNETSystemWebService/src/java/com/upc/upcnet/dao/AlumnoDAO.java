@@ -169,7 +169,7 @@ public class AlumnoDAO {
         }
     }
     
-    public boolean validarLogin(String _idAlumno, String _pass){
+    public boolean validarLoginAlumno(String _idAlumno, String _pass){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();

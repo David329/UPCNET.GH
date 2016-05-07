@@ -1,5 +1,8 @@
 use master
 go
+
+IF DB_ID('IntranetUPC') IS NOT NULL DROP DATABASE IntranetUPC;
+
 CREATE DATABASE IntranetUPC
 go
 use IntranetUPC
@@ -52,12 +55,14 @@ alter table Sec_Clase add constraint FK_SecClase_Sec foreign key(IDSecclase)refe
 
 alter table Documento add constraint FK_Documento_Curso foreign key(IDCurso) references Curso(IDCurso)
 
-USE [master]
-CREATE LOGIN [AdminEvolucion] WITH PASSWORD=N'12345', DEFAULT_DATABASE=[IntranetUPC], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
-GO
-EXEC master..sp_addsrvrolemember @loginame = N'AdminEvolucion', @rolename = N'sysadmin'
-GO 
--------------NUEVO--------------
+IF NOT EXISTS 
+    (SELECT name FROM master.sys.server_principals WHERE name = 'AdminEvolucion')
+BEGIN
+    CREATE LOGIN [AdminEvolucion] WITH PASSWORD=N'12345', DEFAULT_DATABASE=[IntranetUPC], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+    EXEC master..sp_addsrvrolemember @loginame = N'AdminEvolucion', @rolename = N'sysadmin'
+END
+
+-------------DATOS DE PRUEBA--------------
 insert into Administrador values('AD101','ad101ad','David','Silva','davidsilva3290@gmail.com')
 
 insert into Categoria values('Q',2300.70)

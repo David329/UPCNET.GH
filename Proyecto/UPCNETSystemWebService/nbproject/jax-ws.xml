@@ -10,6 +10,21 @@
     <service name="UPCNETServiceSeccion">
       <implementation-class>com.upc.upcnet.Services.UPCNETServiceSeccion</implementation-class>
     </service>
+    <service name="UPCNETServiceAdministrador">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceAdministrador</implementation-class>
+    </service>
+    <service name="UPCNETServiceApoderado">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceApoderado</implementation-class>
+    </service>
+    <service name="UPCNETServiceCiclo">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceCiclo</implementation-class>
+    </service>
+    <service name="UPCNETServiceRecurso">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceRecurso</implementation-class>
+    </service>
+    <service name="UPCNETServiceCategoria">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceCategoria</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

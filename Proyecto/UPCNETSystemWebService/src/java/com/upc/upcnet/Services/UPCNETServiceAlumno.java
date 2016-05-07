@@ -22,14 +22,10 @@ public class UPCNETServiceAlumno {
 
     @WebMethod(operationName = "getAlumnos")
     public List<Alumno> getAlumnos() {
-       // AlumnoDAO alumnoDAO = new AlumnoDAO(); 
-            List<Alumno> lista = new ArrayList<>(); 
-            Alumno a = new Alumno(); Alumno b = new Alumno();
-            a.setApellido("Maguiña");   a.setNombre("Ian");  a.setIdAlumno("001"); a.setPass("123");a.setCorreo("whaat@duspace.com");
-            b.setNombre("Persona"); b.setApellido("Aleatoria"); b.setIdAlumno("user"); b.setPass("1234");b.setCorreo("rcm@duspace.com");
-           
-            lista.add(a); lista.add(b);
-        return lista;
+       AlumnoDAO objAlumnoDAO=new AlumnoDAO();
+        List<Alumno>ListaAlumnos=objAlumnoDAO.getAlumnos();
+        
+        return ListaAlumnos; 
     }
 
     @WebMethod(operationName = "setAlumno")
@@ -46,10 +42,10 @@ public class UPCNETServiceAlumno {
         
     }
 
-    @WebMethod(operationName = "validarLogin")
+    @WebMethod(operationName = "validarLoginAlumno")
     public boolean validarLogin(String _idAlumno, String _pass) {
         AlumnoDAO alumnoDAO = new AlumnoDAO();
-        return alumnoDAO.validarLogin(_idAlumno, _pass);
+        return alumnoDAO.validarLoginAlumno(_idAlumno, _pass);
     }
 
     @WebMethod(operationName = "getAlumnoById")

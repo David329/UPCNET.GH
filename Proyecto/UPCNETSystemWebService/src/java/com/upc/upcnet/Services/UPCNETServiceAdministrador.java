@@ -15,7 +15,7 @@ import javax.jws.WebService;
  *
  * @author davidwesker
  */
-
+@WebService(serviceName = "UPCNETServiceAdministrador")
 public class UPCNETServiceAdministrador {
     
     @WebMethod(operationName = "getAdministrador")
@@ -40,4 +40,16 @@ public class UPCNETServiceAdministrador {
         AdministradorDAO objAdministradorDAO=new AdministradorDAO();
         objAdministradorDAO.editAdministrador(_idAdministrador, _pass, _nombre, _apellido, _correo);
     }
+    @WebMethod(operationName = "validarLoginAdministrador")
+    public boolean validarLoginAdministrador(String _idAdministrador, String _pass) {
+        AdministradorDAO administradorDAO = new AdministradorDAO();
+        return administradorDAO.validarLoginAdminitrador(_idAdministrador, _pass);
+    }
+
+    @WebMethod(operationName = "getAdministradorById")
+    public Administrador getAdministradorById(String _idAdministrador) {
+        AdministradorDAO administradorDAO = new AdministradorDAO();
+        List<Administrador> administradores = administradorDAO.getAdministradoresById(_idAdministrador);
+        return administradores.get(0);
+    } 
 }

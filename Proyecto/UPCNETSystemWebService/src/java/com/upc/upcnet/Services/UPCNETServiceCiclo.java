@@ -9,11 +9,13 @@ import com.upc.upcnet.dao.CicloDAO;
 import com.upc.upcnet.entidades.Ciclo;
 import java.util.List;
 import javax.jws.WebMethod;
+import javax.jws.WebService;
 
 /**
  *
  * @author davidwesker
  */
+@WebService(serviceName = "UPCNETServiceCiclo")
 public class UPCNETServiceCiclo {
     
     @WebMethod(operationName = "getCiclo")

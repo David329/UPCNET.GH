@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author davidwesker
+ * @a   uthor davidwesker
  */
 public class CicloDAO {
     public List<Ciclo> getCiclo() {

@@ -16,8 +16,10 @@ namespace UPCNETSystemCliente.Business_Entities
         private String Correo;
         private String Fecha;
         private String IDCategoria;
+        private String IDApoderado;
+        private String Pass;
 
-        public Alumno(string idAlumno, string nombre, string apellido, string codigo, string carrera, string dNI, string correo, string fecha, string iDCategoria)
+        public Alumno(string idAlumno, string nombre, string apellido, string codigo, string carrera, string dNI, string correo, string fecha, string iDCategoria,string IDApoderado,string Pass)
         {
             IdAlumno = idAlumno;
             Nombre = nombre;
@@ -28,6 +30,8 @@ namespace UPCNETSystemCliente.Business_Entities
             Correo = correo;
             Fecha = fecha;
             IDCategoria = iDCategoria;
+            this.IDApoderado = IDApoderado;
+            this.Pass = Pass;
         }
 
         public String getIdAlumno() { return IdAlumno; }
@@ -39,6 +43,8 @@ namespace UPCNETSystemCliente.Business_Entities
         public String getCorreo() { return Correo; }
         public String getFecha() { return Fecha; }
         public String getIDCategoria() { return IDCategoria; }
+        public String getIDApoderado() { return IDApoderado; }
+        public String getPass() { return Pass; }
 
     }
 }
