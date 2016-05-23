@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="sg3ZjbmvqD/VtCzVPn8mvxngBos=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="/FedNTnyh7O6On3TNOMkUPUK7KE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="UPCNETServiceCategoriaPortBinding">
       <properties>
@@ -94,7 +94,7 @@
           <serializedValue>TransportSelected</serializedValue>
         </property>
         <property path="/security/transport/extendedProtectionPolicy/customServiceNames" isComplexType="true" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>(Colección)</serializedValue>
+          <serializedValue>(Collection)</serializedValue>
         </property>
         <property path="/security/transport/realm" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="UPCNETServiceCategoriaPort" contract="UPCNETServiceCategoria.UPCNETServiceCategoria" bindingType="basicHttpBinding" address="http://davidzilva:8080/UPCNETSystemWebService/UPCNETServiceCategoria" bindingConfiguration="UPCNETServiceCategoriaPortBinding">
+    <endpoint name="UPCNETServiceCategoriaPort" contract="UPCNETServiceCategoria.UPCNETServiceCategoria" bindingType="basicHttpBinding" address="http://localhost:8080/UPCNETSystemWebService/UPCNETServiceCategoria" bindingConfiguration="UPCNETServiceCategoriaPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://davidzilva:8080/UPCNETSystemWebService/UPCNETServiceCategoria</serializedValue>
+          <serializedValue>http://localhost:8080/UPCNETSystemWebService/UPCNETServiceCategoria</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

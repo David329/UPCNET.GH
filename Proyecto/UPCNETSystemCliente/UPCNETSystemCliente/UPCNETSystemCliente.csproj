@@ -736,10 +736,6 @@
     <Content Include="Content\demo_data\d3\pies\pies_update.tsv" />
     <Content Include="Content\demo_data\dimple\demo_data.tsv" />
     <Content Include="App_Code\RazorHelper.cshtml" />
-    <None Include="Service References\UPCNETServiceAdministrador\UPCNETServiceAdministrador.wsdl" />
-    <None Include="Service References\UPCNETServiceAdministrador\UPCNETServiceAdministrador.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\UPCNETServiceAdministrador\UPCNETSystemCliente.UPCNETServiceAdministrador.administrador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -758,6 +754,10 @@
     <Content Include="Service References\UPCNETServiceAdministrador\UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\UPCNETServiceAdministrador\UPCNETServiceAdministrador1.wsdl" />
+    <None Include="Service References\UPCNETServiceAdministrador\UPCNETServiceAdministrador1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UPCNETServiceAlumno\UPCNETServiceAlumno.wsdl" />
     <None Include="Service References\UPCNETServiceAlumno\UPCNETServiceAlumno.xsd">
       <SubType>Designer</SubType>
@@ -786,10 +786,6 @@
     <Content Include="Service References\UPCNETServiceAlumno\UPCNETSystemCliente.UPCNETServiceAlumno.validarLoginAlumnoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\UPCNETServiceApoderado\UPCNETServiceApoderado.wsdl" />
-    <None Include="Service References\UPCNETServiceApoderado\UPCNETServiceApoderado.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\UPCNETServiceApoderado\UPCNETSystemCliente.UPCNETServiceApoderado.apoderado.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -802,8 +798,8 @@
     <Content Include="Service References\UPCNETServiceApoderado\UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\UPCNETServiceCategoria\UPCNETServiceCategoria.wsdl" />
-    <None Include="Service References\UPCNETServiceCategoria\UPCNETServiceCategoria.xsd">
+    <None Include="Service References\UPCNETServiceApoderado\UPCNETServiceApoderado1.wsdl" />
+    <None Include="Service References\UPCNETServiceApoderado\UPCNETServiceApoderado1.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Service References\UPCNETServiceCategoria\UPCNETSystemCliente.UPCNETServiceCategoria.categoria.datasource">
@@ -818,8 +814,8 @@
     <Content Include="Service References\UPCNETServiceCategoria\UPCNETSystemCliente.UPCNETServiceCategoria.setCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\UPCNETServiceCiclo\UPCNETServiceCiclo.wsdl" />
-    <None Include="Service References\UPCNETServiceCiclo\UPCNETServiceCiclo.xsd">
+    <None Include="Service References\UPCNETServiceCategoria\UPCNETServiceCategoria1.wsdl" />
+    <None Include="Service References\UPCNETServiceCategoria\UPCNETServiceCategoria1.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Service References\UPCNETServiceCiclo\UPCNETSystemCliente.UPCNETServiceCiclo.ciclo.datasource">
@@ -834,8 +830,8 @@
     <Content Include="Service References\UPCNETServiceCiclo\UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\UPCNETServiceProfesor\UPCNETServiceProfesor.wsdl" />
-    <None Include="Service References\UPCNETServiceProfesor\UPCNETServiceProfesor.xsd">
+    <None Include="Service References\UPCNETServiceCiclo\UPCNETServiceCiclo1.wsdl" />
+    <None Include="Service References\UPCNETServiceCiclo\UPCNETServiceCiclo1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UPCNETServiceApoderado\configuration91.svcinfo" />
@@ -874,8 +870,8 @@
     <Content Include="Service References\UPCNETServiceProfesor\UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\UPCNETServiceRecurso\UPCNETServiceRecurso.wsdl" />
-    <None Include="Service References\UPCNETServiceRecurso\UPCNETServiceRecurso.xsd">
+    <None Include="Service References\UPCNETServiceProfesor\UPCNETServiceProfesor1.wsdl" />
+    <None Include="Service References\UPCNETServiceProfesor\UPCNETServiceProfesor1.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Service References\UPCNETServiceRecurso\UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse.datasource">
@@ -890,8 +886,8 @@
     <Content Include="Service References\UPCNETServiceRecurso\UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\UPCNETServiceSeccion\UPCNETServiceSeccion.wsdl" />
-    <None Include="Service References\UPCNETServiceSeccion\UPCNETServiceSeccion.xsd">
+    <None Include="Service References\UPCNETServiceRecurso\UPCNETServiceRecurso1.wsdl" />
+    <None Include="Service References\UPCNETServiceRecurso\UPCNETServiceRecurso1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UPCNETServiceRecurso\configuration91.svcinfo" />
@@ -912,6 +908,10 @@
     <Content Include="Service References\UPCNETServiceSeccion\UPCNETSystemCliente.UPCNETServiceSeccion.setSeccionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\UPCNETServiceSeccion\UPCNETServiceSeccion1.wsdl" />
+    <None Include="Service References\UPCNETServiceSeccion\UPCNETServiceSeccion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UPCNETSystemWebService\configuration91.svcinfo" />
     <None Include="Service References\UPCNETSystemWebService\configuration.svcinfo" />
     <None Include="Service References\UPCNETSystemWebService\Reference.svcmap">

@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://DavidZilva:8080/UPCNETSystemWebService/UPCNETServiceProfesor?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/UPCNETSystemWebService/UPCNETServiceProfesor?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UPCNETServiceProfesor.wsdl" MetadataType="Wsdl" ID="6d1a3a78-98de-4930-8306-f4f74f67f9b1" SourceId="1" SourceUrl="http://davidzilva:8080/UPCNETSystemWebService/UPCNETServiceProfesor?wsdl" />
-    <MetadataFile FileName="UPCNETServiceProfesor.xsd" MetadataType="Schema" ID="d5809c50-fc17-4155-b8bd-93af19f5653e" SourceId="1" SourceUrl="http://davidzilva:8080/UPCNETSystemWebService/UPCNETServiceProfesor?xsd=1" />
+    <MetadataFile FileName="UPCNETServiceProfesor1.xsd" MetadataType="Schema" ID="0c84b585-bfbc-480e-97cf-0c43c1be7644" SourceId="1" SourceUrl="http://localhost:8080/UPCNETSystemWebService/UPCNETServiceProfesor?xsd=1" />
+    <MetadataFile FileName="UPCNETServiceProfesor1.wsdl" MetadataType="Wsdl" ID="43071e5c-721a-4c49-a8f3-b893899b8899" SourceId="1" SourceUrl="http://localhost:8080/UPCNETSystemWebService/UPCNETServiceProfesor?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
