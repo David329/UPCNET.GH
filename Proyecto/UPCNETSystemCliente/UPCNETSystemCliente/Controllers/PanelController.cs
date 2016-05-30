@@ -27,5 +27,72 @@ namespace UPCNETSystemCliente.Controllers
             return View(objMantenimientoUsuarios);
         }
 
+        public ActionResult AddEditUsuario(string IDAlumno)
+        {
+            _AddEditUsuario objAddEditUsuario = new _AddEditUsuario();
+            objAddEditUsuario.Fill(IDAlumno);
+            return View(objAddEditUsuario);
+        }
+
+/*
+        [HttpPost]
+        public ActionResult AddEditUsuario(_AddEditUsuario objViewModel)
+        {
+            try
+            {
+                UPCNETServiceAlumno.alumno objAlumno = null;
+                UPCNETServiceAlumnoClient proxy = new UPCNETServiceAlumnoClient();
+                if(objViewModel.IDAlumno !="" && objViewModel.IDAlumno!=null)
+                {
+                    objAlumno = proxy.getAlumnoById(objViewModel.IDAlumno);
+                }
+                else
+                {
+                    objAlumno = new UPCNETServiceAlumno.alumno();
+                    objAlumno.nombre = objViewModel.Nombre;
+                    objAlumno.apellido = objViewModel.Apellido;
+                    objAlumno.correo = objViewModel.Correo;
+                    objAlumno.direccion = objViewModel.Direccion;
+                    objAlumno.dni = objViewModel.DNI;
+                    objAlumno.idAlumno = objViewModel.IDAlumno;
+
+                  
+                }
+            }
+            catch(Exception ex)
+            {
+                return View(objViewModel);
+            }
+        }
+      /*
+        [HttpPost]
+        public ActionResult AddEditDistrito(AddEditDistritoViewModel objViewModel)
+        {
+            try
+            {
+                Distrito objDistrito = null;
+                ONPEEntities context = new ONPEEntities();
+
+                if (objViewModel.DistritoId.HasValue)
+                    objDistrito = context.Distrito.FirstOrDefault(
+                                 x => x.DistritoId == objViewModel.DistritoId);
+                else
+                {
+                    objDistrito = new Distrito();
+                    context.Distrito.Add(objDistrito);
+                }
+
+                objDistrito.Descripcion = objViewModel.Descripcion;
+                objDistrito.Estado = "ACT";
+
+                context.SaveChanges();
+                return RedirectToAction("LstDistrito");
+            }
+            catch (Exception ex)
+            {
+                return View(objViewModel);
+            }
+        } */
+
     }
 }

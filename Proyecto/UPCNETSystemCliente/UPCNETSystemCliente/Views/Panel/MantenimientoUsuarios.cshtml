@@ -7,22 +7,26 @@
         En esta sección podrás gestionar los usuarios del sistema.
     </div>
     <div class="panel-body">
-        @using (Html.BeginForm("NuevoUsuario", "Panel", FormMethod.Get))
-        {
+      
+        
             <fieldset class="content-group">
                 <legend class="text-bold">Opciones</legend>
-                <button type="submit" class="btn bg-teal-400 btn-labeled pull-right"><b><i class="icon-user-plus"></i></b>Nuevo usuario</button>
+                <i class="icon-user-plus">
+                <a href="@Url.Action("AddEditUsuario",  new { IDAlumno = "" })"> Nuevo usuario </a></i>
             </fieldset>
-        }
+        
     </div>
     <table class="table">
         <thead>
             <tr>
+                <th>IDAlumno</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>
-                <th>Usuario</th>
-                <th>Contraseña</th>
+                <th>Password</th>
+                <th>Dirección</th>
+                <th>DNI</th>
+                <th>Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -30,12 +34,22 @@
             {
                 <tr>
 
-                    
+                    <td>@item.IDAlumno</td>
                     <td>@item.Nombre</td>
                     <td>@item.Apellido</td>
-                    <td>@item.Email</td>
-                    <td>@item.Usuario</td>
+                    <td>@item.Correo</td>
                     <td>@item.Password</td>
+                    <td>@item.Direccion</td>
+                    <td>@item.DNI</td>
+                    <td>
+
+                        <a href="@Url.Action("AddEditUsuario",
+                              new
+                                { IDAlumno = item.IDAlumno })">
+                            <i class="fa fa-edit"></i> Editar
+                        </a>
+
+                    </td>
                 </tr>
                                         }
 

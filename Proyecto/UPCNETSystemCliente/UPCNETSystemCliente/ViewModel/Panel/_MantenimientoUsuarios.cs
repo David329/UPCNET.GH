@@ -18,9 +18,11 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                 Alumno objAlumno = new Alumno();
                 objAlumno.Nombre = item.nombre;
                 objAlumno.Apellido = item.apellido;
-                objAlumno.Email = item.correo;
-                objAlumno.Usuario = item.idAlumno;
+                objAlumno.Correo = item.correo;
                 objAlumno.Password = item.pass;
+                objAlumno.IDAlumno = item.idAlumno;
+                objAlumno.Direccion = item.direccion;
+                objAlumno.DNI = item.dni;
 
                 ListObjetos.Add(objAlumno);
             }
@@ -30,8 +32,10 @@ namespace UPCNETSystemCliente.ViewModel.Panel
     public class Alumno {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Email { get; set; }
-        public string Usuario { get; set; }
+        public string Correo { get; set; }
         public string Password { get; set; }
+        public string IDAlumno { get; set; }
+        public int DNI { get; set; }
+        public string Direccion { get; set; }
     }
 }
