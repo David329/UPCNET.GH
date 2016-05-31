@@ -34,7 +34,7 @@ namespace UPCNETSystemCliente.Controllers
             return View(objAddEditUsuario);
         }
 
-/*
+
         [HttpPost]
         public ActionResult AddEditUsuario(_AddEditUsuario objViewModel)
         {
@@ -42,22 +42,41 @@ namespace UPCNETSystemCliente.Controllers
             {
                 UPCNETServiceAlumno.alumno objAlumno = null;
                 UPCNETServiceAlumnoClient proxy = new UPCNETServiceAlumnoClient();
-                if(objViewModel.IDAlumno !="" && objViewModel.IDAlumno!=null)
+                if (objViewModel.IDAlumno != "" && objViewModel.IDAlumno != null)
                 {
                     objAlumno = proxy.getAlumnoById(objViewModel.IDAlumno);
-                }
-                else
-                {
-                    objAlumno = new UPCNETServiceAlumno.alumno();
                     objAlumno.nombre = objViewModel.Nombre;
                     objAlumno.apellido = objViewModel.Apellido;
                     objAlumno.correo = objViewModel.Correo;
                     objAlumno.direccion = objViewModel.Direccion;
                     objAlumno.dni = objViewModel.DNI;
                     objAlumno.idAlumno = objViewModel.IDAlumno;
+                    objAlumno.pass = objViewModel.Password;
+                    objAlumno.edad = objViewModel.Edad;
+
+                    proxy.editAlumno(objAlumno);
+                }
+                else
+                {
+                    objAlumno = new UPCNETServiceAlumno.alumno();
+
+
+                    objAlumno.nombre = objViewModel.Nombre;
+                    objAlumno.apellido = objViewModel.Apellido;
+                    objAlumno.correo = objViewModel.Correo;
+                    objAlumno.direccion = objViewModel.Direccion;
+                    objAlumno.dni = objViewModel.DNI;
+                    objAlumno.idAlumno = objViewModel.IDAlumno;
+                    objAlumno.pass = objViewModel.Password;
+                    objAlumno.edad = objViewModel.Edad;
+
+                    proxy.setAlumno(objAlumno);
+                }
+
+                return RedirectToAction("MantenimientoUsuarios","Panel");
 
                   
-                }
+                
             }
             catch(Exception ex)
             {

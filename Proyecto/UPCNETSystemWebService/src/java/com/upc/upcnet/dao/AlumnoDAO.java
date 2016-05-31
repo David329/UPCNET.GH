@@ -95,7 +95,7 @@ public class AlumnoDAO {
         return alumnos;
     }
     
-    public void setAlumno(String _idAlumno, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _idCategoria, String _idApoderado, String _pass){
+    public void setAlumno(Alumno objAlumno){
         Connection cn = null;        
         try{
             cn = AccesoDB.getConnection();
@@ -103,7 +103,7 @@ public class AlumnoDAO {
             StringBuilder query = new StringBuilder();
             query.append("SELECT * FROM Alumno WHERE IDAlumno = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idAlumno);
+            ps.setString(1, objAlumno.getIdAlumno());
             ResultSet rs = ps.executeQuery();
             if(rs.next())
                 throw new SQLException("El codigo del alumno ya existe");
@@ -111,16 +111,16 @@ public class AlumnoDAO {
             query = new StringBuilder();
             query.append("INSERT INTO Alumno(IDAlumno, Nombre, Apellido, DNI, Edad, Correo, Direccion, IDCategoria, IDApoderado, Pass) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idAlumno);
-            ps.setString(2, _nombre);
-            ps.setString(3, _apellido);
-            ps.setInt(4, Integer.parseInt(_dni));
-            ps.setInt(5, Integer.parseInt(_edad));
-            ps.setString(6, _correo);
-            ps.setString(7, _direccion);
-            ps.setString(8, _idCategoria);
-            ps.setString(9, _idApoderado);
-            ps.setString(10, _pass);
+            ps.setString(1, objAlumno.getIdAlumno());
+            ps.setString(2, objAlumno.getNombre());
+            ps.setString(3, objAlumno.getApellido());
+            ps.setInt(4, objAlumno.getDni());
+            ps.setInt(5, objAlumno.getEdad());
+            ps.setString(6, objAlumno.getCorreo());
+            ps.setString(7, objAlumno.getDireccion());
+            ps.setString(8, objAlumno.getIdCategoria());
+            ps.setString(9, objAlumno.getIdApoderado());
+            ps.setString(10, objAlumno.getPass());
             ps.executeUpdate();
             cn.commit();
             
@@ -136,7 +136,7 @@ public class AlumnoDAO {
         }
     }
     
-    public void editAlumno(String _idAlumno, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _idCategoria, String _idApoderado, String _pass){
+    public void editAlumno(Alumno objAlumno){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
@@ -144,17 +144,18 @@ public class AlumnoDAO {
             StringBuilder query = new StringBuilder();
             query.append("UPDATE Alumno SET Nombre = ?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ?, IDCategoria = ?, IDApoderado = ?, Pass = ? WHERE IDAlumno = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _nombre);
-            ps.setString(2, _apellido);
-            ps.setInt(3, Integer.parseInt(_dni));
-            ps.setInt(4, Integer.parseInt(_edad));
-            ps.setString(5, _correo);
-            ps.setString(6, _direccion);
-            ps.setString(7, _idCategoria);
-            ps.setString(8, _idApoderado);
-            ps.setString(9, _pass);
-            ps.setString(10, _idAlumno);
+            ps.setString(1, objAlumno.getNombre());
+            ps.setString(2, objAlumno.getApellido());
+            ps.setInt(3, objAlumno.getDni());
+            ps.setInt(4, objAlumno.getEdad());
+            ps.setString(5, objAlumno.getCorreo());
+            ps.setString(6, objAlumno.getDireccion());
+            ps.setString(7, objAlumno.getIdCategoria());
+            ps.setString(8, objAlumno.getIdApoderado());
+            ps.setString(9, objAlumno.getPass());
+            ps.setString(10, objAlumno.getIdAlumno());
             int realizado = ps.executeUpdate();
+            cn.commit();
             if(realizado == 0)
                 throw  new SQLException("Alumno no existe!");            
         }catch(SQLException ex){

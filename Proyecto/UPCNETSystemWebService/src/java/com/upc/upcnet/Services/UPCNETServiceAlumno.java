@@ -29,16 +29,16 @@ public class UPCNETServiceAlumno {
     }
 
     @WebMethod(operationName = "setAlumno")
-    public void setAlumno(String _idAlumno, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _idCategoria, String _idApoderado, String _pass) {
+    public void setAlumno(Alumno objAlumno) {
         AlumnoDAO alumnoDAO = new AlumnoDAO();
-        alumnoDAO.setAlumno(_idAlumno, _nombre, _apellido, _dni, _edad, _correo, _direccion, _idCategoria, _idApoderado, _pass);
+        alumnoDAO.setAlumno(objAlumno);
         
     }
 
     @WebMethod(operationName = "editAlumno")
-    public void editAlumno(String _idAlumno, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _idCategoria, String _idApoderado, String _pass) {
+    public void editAlumno(Alumno objAlumno) {
         AlumnoDAO alumnoDAO = new AlumnoDAO();
-        alumnoDAO.editAlumno(_idAlumno, _nombre, _apellido, _dni, _edad, _correo, _direccion, _idCategoria, _idApoderado, _pass);
+        alumnoDAO.editAlumno( objAlumno);
         
     }
 

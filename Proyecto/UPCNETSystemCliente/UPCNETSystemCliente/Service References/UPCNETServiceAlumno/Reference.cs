@@ -16,6 +16,15 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
     public interface UPCNETServiceAlumno {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse getAlumnoById(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse> getAlumnoByIdAsync(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/validarLoginAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/validarLoginAlumnoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -23,6 +32,14 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/validarLoginAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/validarLoginAlumnoResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.validarLoginAlumnoResponse> validarLoginAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.validarLoginAlumnoRequest request);
+        
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse editAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse> editAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request);
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/setAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/setAlumnoResponse")]
@@ -33,15 +50,6 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoResponse> setAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse getAlumnoById(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnoByIdResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse> getAlumnoByIdAsync(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnosRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnosResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -49,128 +57,6 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnosRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/getAlumnosResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnosResponse> getAlumnosAsync(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnosRequest request);
-        
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse editAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAlumno/editAlumnoResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse> editAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class validarLoginAlumnoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        public validarLoginAlumnoRequest() {
-        }
-        
-        public validarLoginAlumnoRequest(string arg0, string arg1) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class validarLoginAlumnoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public validarLoginAlumnoResponse() {
-        }
-        
-        public validarLoginAlumnoResponse(bool @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setAlumnoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg7;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg8;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=9)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg9;
-        
-        public setAlumnoRequest() {
-        }
-        
-        public setAlumnoRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-            this.arg8 = arg8;
-            this.arg9 = arg9;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setAlumnoResponse {
-        
-        public setAlumnoResponse() {
-        }
     }
     
     /// <remarks/>
@@ -398,6 +284,103 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class validarLoginAlumnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public validarLoginAlumnoRequest() {
+        }
+        
+        public validarLoginAlumnoRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class validarLoginAlumnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public validarLoginAlumnoResponse() {
+        }
+        
+        public validarLoginAlumnoResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editAlumnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0;
+        
+        public editAlumnoRequest() {
+        }
+        
+        public editAlumnoRequest(UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editAlumnoResponse {
+        
+        public editAlumnoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setAlumnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0;
+        
+        public setAlumnoRequest() {
+        }
+        
+        public setAlumnoRequest(UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setAlumnoResponse {
+        
+        public setAlumnoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getAlumnos", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
     public partial class getAlumnosRequest {
         
@@ -420,79 +403,6 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
         
         public getAlumnosResponse(UPCNETSystemCliente.UPCNETServiceAlumno.alumno[] @return) {
             this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editAlumnoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg7;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg8;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=9)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg9;
-        
-        public editAlumnoRequest() {
-        }
-        
-        public editAlumnoRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-            this.arg8 = arg8;
-            this.arg9 = arg9;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editAlumnoResponse {
-        
-        public editAlumnoResponse() {
         }
     }
     
@@ -524,6 +434,29 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.getAlumnoById(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request) {
+            return base.Channel.getAlumnoById(request);
+        }
+        
+        public UPCNETSystemCliente.UPCNETServiceAlumno.alumno getAlumnoById(string arg0) {
+            UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse retVal = ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).getAlumnoById(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse> UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.getAlumnoByIdAsync(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request) {
+            return base.Channel.getAlumnoByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse> getAlumnoByIdAsync(string arg0) {
+            UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).getAlumnoByIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceAlumno.validarLoginAlumnoResponse UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.validarLoginAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.validarLoginAlumnoRequest request) {
             return base.Channel.validarLoginAlumno(request);
         }
@@ -549,22 +482,35 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.editAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request) {
+            return base.Channel.editAlumno(request);
+        }
+        
+        public void editAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0) {
+            UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).editAlumno(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse> UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.editAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request) {
+            return base.Channel.editAlumnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse> editAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0) {
+            UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).editAlumnoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoResponse UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.setAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoRequest request) {
             return base.Channel.setAlumno(request);
         }
         
-        public void setAlumno(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
+        public void setAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0) {
             UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            inValue.arg9 = arg9;
             UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).setAlumno(inValue);
         }
         
@@ -573,42 +519,10 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
             return base.Channel.setAlumnoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoResponse> setAlumnoAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoResponse> setAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.alumno arg0) {
             UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.setAlumnoRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            inValue.arg9 = arg9;
             return ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).setAlumnoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.getAlumnoById(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request) {
-            return base.Channel.getAlumnoById(request);
-        }
-        
-        public UPCNETSystemCliente.UPCNETServiceAlumno.alumno getAlumnoById(string arg0) {
-            UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest();
-            inValue.arg0 = arg0;
-            UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse retVal = ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).getAlumnoById(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse> UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.getAlumnoByIdAsync(UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest request) {
-            return base.Channel.getAlumnoByIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdResponse> getAlumnoByIdAsync(string arg0) {
-            UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnoByIdRequest();
-            inValue.arg0 = arg0;
-            return ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).getAlumnoByIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -630,46 +544,6 @@ namespace UPCNETSystemCliente.UPCNETServiceAlumno {
         public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnosResponse> getAlumnosAsync() {
             UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnosRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.getAlumnosRequest();
             return ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).getAlumnosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.editAlumno(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request) {
-            return base.Channel.editAlumno(request);
-        }
-        
-        public void editAlumno(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
-            UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            inValue.arg9 = arg9;
-            UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).editAlumno(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse> UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno.editAlumnoAsync(UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest request) {
-            return base.Channel.editAlumnoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoResponse> editAlumnoAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
-            UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceAlumno.editAlumnoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            inValue.arg9 = arg9;
-            return ((UPCNETSystemCliente.UPCNETServiceAlumno.UPCNETServiceAlumno)(this)).editAlumnoAsync(inValue);
         }
     }
 }

@@ -21,6 +21,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                 objAlumno.Correo = item.correo;
                 objAlumno.Password = item.pass;
                 objAlumno.IDAlumno = item.idAlumno;
+                objAlumno.Edad = item.edad;
                 objAlumno.Direccion = item.direccion;
                 objAlumno.DNI = item.dni;
 
@@ -37,5 +38,6 @@ namespace UPCNETSystemCliente.ViewModel.Panel
         public string IDAlumno { get; set; }
         public int DNI { get; set; }
         public string Direccion { get; set; }
+        public int Edad { get; set; }
     }
 }
