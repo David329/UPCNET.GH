@@ -27,10 +27,10 @@ namespace UPCNETSystemCliente.Controllers
             return View(objMantenimientoUsuarios);
         }
 
-        public ActionResult AddEditUsuario(string IDAlumno)
+        public ActionResult AddEditUsuario(string IDAlumno,string Modo)
         {
             _AddEditUsuario objAddEditUsuario = new _AddEditUsuario();
-            objAddEditUsuario.Fill(IDAlumno);
+            objAddEditUsuario.Fill(IDAlumno,Modo);
             return View(objAddEditUsuario);
         }
 
@@ -42,7 +42,7 @@ namespace UPCNETSystemCliente.Controllers
             {
                 UPCNETServiceAlumno.alumno objAlumno = null;
                 UPCNETServiceAlumnoClient proxy = new UPCNETServiceAlumnoClient();
-                if (objViewModel.IDAlumno != "" && objViewModel.IDAlumno != null)
+                if (objViewModel.Modo == "Editar")
                 {
                     objAlumno = proxy.getAlumnoById(objViewModel.IDAlumno);
                     objAlumno.nombre = objViewModel.Nombre;

@@ -12,7 +12,7 @@
             <fieldset class="content-group">
                 <legend class="text-bold">Opciones</legend>
                 <i class="icon-user-plus">
-                <a href="@Url.Action("AddEditUsuario",  new { IDAlumno = "" })"> Nuevo usuario </a></i>
+                <a href="@Url.Action("AddEditUsuario",  new { IDAlumno = "",Modo="Nuevo" })"> Nuevo usuario </a></i>
             </fieldset>
         
     </div>
@@ -47,7 +47,8 @@
 
                         <a href="@Url.Action("AddEditUsuario",
                               new
-                                { IDAlumno = item.IDAlumno })">
+                              { IDAlumno = item.IDAlumno,
+                                Modo= "Editar"})">
                             <i class="fa fa-edit"></i> Editar
                         </a>
 
