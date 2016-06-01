@@ -25,6 +25,9 @@
     <service name="UPCNETServiceCategoria">
       <implementation-class>com.upc.upcnet.Services.UPCNETServiceCategoria</implementation-class>
     </service>
+    <service name="UPCNETServiceCurso">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceCurso</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

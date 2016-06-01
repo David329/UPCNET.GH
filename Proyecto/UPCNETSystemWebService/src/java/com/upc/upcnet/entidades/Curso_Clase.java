@@ -9,9 +9,9 @@ package com.upc.upcnet.entidades;
  *
  * @author ALEX
  */
-public class Seccion_Clase {
+public class Curso_Clase {
     private String idClase;
-    private String idSecclase;
+    private String idCurso;
     private String dia;
     private String horaIni;
     private String horaFin;
@@ -24,12 +24,12 @@ public class Seccion_Clase {
         this.idClase = idClase;
     }
 
-    public String getIdSecclase() {
-        return idSecclase;
+    public String getIdCurso() {
+        return idCurso;
     }
 
-    public void setIdSecclase(String idSecclase) {
-        this.idSecclase = idSecclase;
+    public void setIdCurso(String idCurso) {
+        this.idCurso = idCurso;
     }
 
     public String getDia() {
