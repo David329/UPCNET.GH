@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Petith/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCurso.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceApoderado.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Curso.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Alumno.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Apoderado.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCurso.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCiclo.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCategoria.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceAlumno.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/AlumnoDAO.java</file>
         </group>
     </open-files>
 </project-private>

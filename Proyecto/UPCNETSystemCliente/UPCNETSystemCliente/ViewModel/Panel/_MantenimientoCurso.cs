@@ -17,10 +17,10 @@ namespace UPCNETSystemCliente.ViewModel.Panel
             foreach (var item in curso)
             {
                 Curso objCurso = new Curso();
-                objCurso.IDCurso = item.IDCurso;
-                objCurso.CicloDeCurso = item.CicloDeCurso;
-                objCurso.MaxInasistencia = item.MaxInasistencia;
-                objCurso.IDProfesor = item.IDProfesor;
+                objCurso.IDCurso = item.idCurso;
+                objCurso.CicloDeCurso = item.cicloDeCurso;
+                objCurso.MaxInasistencia = item.maxInasistencia;
+                objCurso.IDProfesor = item.idProfesor;
                 objCurso.Nombre = item.Nombre;
 
                 objListCurso.Add(objCurso);

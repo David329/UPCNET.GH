@@ -220,5 +220,54 @@ namespace UPCNETSystemCliente.Controllers
             objMantenimientoCurso.CargarDatos(proxy.getCursos());
             return View(objMantenimientoCurso);
         }
+        public ActionResult AddEditCurso(string IDCurso, string Modo)
+        {
+            _AddEditCurso objAddEditCurso = new _AddEditCurso();
+            objAddEditCurso.Fill(IDCurso, Modo);
+            return View(objAddEditCurso);
+        }
+        [HttpPost]
+        public ActionResult AddEditCurso(_AddEditCurso objViewModel)
+        {
+            try
+            {
+                UPCNETServiceCurso.curso objCurso = null;
+                UPCNETServiceCursoClient proxy = new UPCNETServiceCursoClient();
+                if (objViewModel.Modo == "Editar")
+                {
+                    objCurso = proxy.getCursoById(objViewModel.IDCurso);
+                    objCurso.idCurso = objViewModel.IDCurso;
+                    objCurso.Nombre = objViewModel.Nombre;
+                    objCurso.cicloDeCurso = objViewModel.CicloDeCurso;
+                    objCurso.maxInasistencia = objViewModel.MaxInasistencia;
+                    objCurso.idProfesor = objViewModel.IDProfesor;
+
+                    proxy.editCurso(objCurso);
+                }
+                else
+                {
+                    objCurso = new UPCNETServiceCurso.curso();
+
+
+                    objCurso.idCurso = objViewModel.IDCurso;
+                    objCurso.Nombre = objViewModel.Nombre;
+                    objCurso.cicloDeCurso = objViewModel.CicloDeCurso;
+                    objCurso.maxInasistencia = objViewModel.MaxInasistencia;
+                    objCurso.idProfesor = objViewModel.IDProfesor;
+
+                    proxy.setCurso(objCurso);
+                }
+
+                return RedirectToAction("MantenimientoCurso", "Panel");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return View(objViewModel);
+            }
+        }
+
     }
 }
