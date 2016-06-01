@@ -17,8 +17,8 @@ create table Incidencia(IDIncidencia varchar(30) not null,Asunto varchar(100),ID
 create table Recurso(IDRecurso varchar(30)not null,NombreRecurso varchar(30),FechaPedido date,CantidadHoras int,Reservado bit,IDAlumno varchar(30),IDProfesor varchar(30))--allow nulls
 create table Profesor(IDProfesor varchar(30)not null,Pass varchar(30),Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),Sueldo decimal(18,2))
 create table Curso(IDCurso varchar(30) not null,CicloDeCurso int,MaxInasistencia int,IDProfesor varchar(30))
-create table Seccion(IDSecclase varchar(30) not null,IDSeccion varchar(30),IDAlumno varchar(30),IDCurso varchar(30),PC1 decimal(10,2),PC2 decimal(10,2),EP decimal(10,2),EF decimal(10,2),Retirado bit,Inasistencias int,Delegado bit)
-create table Sec_Clase(IDClase varchar(30)not null,IDSecclase varchar(30)not null,Dia varchar(30),HoraIni time(0),HoraFin time(0))
+create table Curso_Alumno(IDAlumno varchar(30) not null,IDCurso varchar(30) not null,PC1 decimal(10,2),PC2 decimal(10,2),EP decimal(10,2),EF decimal(10,2),Retirado bit,Inasistencias int,Delegado bit)
+create table Curso_Clase(IDClase varchar(30)not null,IDCurso varchar(30)not null,Dia varchar(30),HoraIni time(0),HoraFin time(0))
 create table Documento(IDDocumento varchar(30) not null,IDCurso varchar(30)not null,NomDocumento varchar(30),Documento varbinary(MAX))
 
 alter table Administrador add constraint PK_Administrador primary key(IDAdministrador)
@@ -30,8 +30,8 @@ alter table Incidencia add constraint PK_Incidencia primary key(IDIncidencia)
 alter table Recurso add constraint PK_Recurso primary key(IDRecurso)
 alter table Profesor add constraint PK_Profesor primary key(IDProfesor)
 alter table Curso add constraint PK_Curso primary key(IDCurso)
-alter table Seccion add constraint PK_Seccion primary key(IDSecclase)
-alter table Sec_Clase add constraint PK_SecClase primary key(IDClase,IDSecclase)
+alter table Curso_Alumno add constraint PK_Curso_Alumno primary key(IDAlumno,IDCurso)
+alter table Curso_Clase add constraint PK_SecClase primary key(IDClase,IDCurso)
 alter table Documento add constraint PK_Documento primary key(IDDocumento,IDCurso)
 
 ---FKs
@@ -48,10 +48,10 @@ alter table Curso add constraint FK_Curso_Profesor foreign key(IDProfesor)refere
 alter table Recurso add constraint FK_Recurso_Alumno foreign key(IDAlumno) references Alumno(IDAlumno)
 alter table Recurso add constraint FK_Recurso_Profesor foreign key(IDProfesor) references Profesor(IDProfesor)
 
-alter table Seccion add constraint FK_Seccion_Alumno foreign key(IDAlumno) references Alumno(IDAlumno)
-alter table Seccion add constraint FK_Seccion_Curso foreign key(IDCurso) references Curso(IDCurso)
+alter table Curso_Alumno add constraint FK_Seccion_Curso_Alumno1 foreign key(IDAlumno) references Alumno(IDAlumno)
+alter table Curso_Alumno add constraint FK_Seccion_Curso_Alumno2 foreign key(IDCurso) references Curso(IDCurso)
 
-alter table Sec_Clase add constraint FK_SecClase_Sec foreign key(IDSecclase)references Seccion(IDSecclase)
+alter table Curso_Clase add constraint FK_Curso_Clase foreign key(IDCurso)references Curso(IDCurso)
 
 alter table Documento add constraint FK_Documento_Curso foreign key(IDCurso) references Curso(IDCurso)
 
@@ -82,6 +82,7 @@ insert into Alumno values('AL102','al102al','Victor','Parassi',777621,22,'JuanPa
 insert into Alumno values('AL103','al103al','Ale','Mendoza',2342162,23,'AleM@Ez.com','Avenue Bayonne 544','R','AP103')
 insert into Alumno values('AL104','al104al','Maricarmen','Peralta',31622,12,'MariP@Ez.com','Lincoln Street 8522','S','AP104')
 insert into Alumno values('AL105','al105al','Carolina','Herrera',456622,18,'CarolinaH@yahoo.com','Lincoln Street 1403','U','AP105')
+
 
 insert into Profesor values('P0001','1234','Victor', 'De la Cruz', 99999999,20,'ianfollower@gmail.com','Av. Evergreen 123',1500)
 insert into Profesor values('P0002','1234','Vincenzo', 'Delacrois', 99999998,20,'ianfollower2@gmail.com','Av. Evergreen 123',1500)

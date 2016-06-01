@@ -57,7 +57,42 @@ public class ApoderadoDAO {
         }
         return apoderados;
     }
-    
+    public List<Apoderado> getApoderadoById(String _idApoderado){
+         List<Apoderado> apoderados = new ArrayList<>();
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT IDApoderado, Nombre, Apellido, DNI, Edad, Correo, Direccion, Condicion, Pass FROM Apoderado WHERE IDApoderado = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idApoderado);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Apoderado a = new Apoderado();
+                a.setIDApoderado(rs.getString("IDApoderado"));
+                a.setNombre(rs.getString("Nombre"));
+                a.setApellido(rs.getString("Apellido"));
+                a.setDNI(rs.getInt("DNI"));
+                a.setEdad(rs.getInt("Edad"));
+                a.setCorreo(rs.getString("Correo"));
+                a.setDireccion(rs.getString("Direccion"));
+                a.setCondicion(rs.getString("Condicion"));
+                a.setPass(rs.getString("Pass"));
+                
+                apoderados.add(a);
+            }
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }
+        return apoderados;
+    }
     public void setApoderado(String _idApoderado,String _pass,String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
         Connection cn = null;        
         try{
@@ -129,4 +164,31 @@ public class ApoderadoDAO {
             }catch(Exception ex){}
         }
     }
+    public boolean validarLoginApoderado(String _idApoderado, String _pass){
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT * FROM Apoderado WHERE IDApoderado = ? AND Pass = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idApoderado);
+            ps.setString(1, _pass);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next())
+                return true;
+            else
+                return false;        
+            
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }       
+    }
+    
 }

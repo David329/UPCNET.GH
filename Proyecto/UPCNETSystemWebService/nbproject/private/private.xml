@@ -3,17 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/AlumnoDAO.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceRecurso.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Alumno.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Seccion.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Profesor.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceSeccion.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Documento.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Seccion_Clase.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceAdministrador.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceAlumno.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evolucion/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/SeccionDAO.java</file>
+            <file>file:/C:/Users/Petith/Desktop/Evo4/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/AlumnoDAO.java</file>
+            <file>file:/C:/Users/Petith/Desktop/Evo4/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/ApoderadoDAO.java</file>
         </group>
     </open-files>
 </project-private>
