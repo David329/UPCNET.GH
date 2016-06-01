@@ -32,7 +32,7 @@ public class CursoClaseDAO {
             while(rs.next()){
                 CursoClaseReporte cc = new CursoClaseReporte();
                 cc.setiDClase(rs.getString("IDClase"));
-                cc.setiDCurso(rs.getString("IDClase"));
+                cc.setiDCurso(rs.getString("IDCurso"));
                 cc.setAlumnoNombre(rs.getString("NombreAlumno"));
                 cc.setAlumnoApellido(rs.getString("ApellidoAlumno"));
                 cc.setCursoNombre(rs.getString("CursoNombre"));
@@ -70,7 +70,7 @@ public class CursoClaseDAO {
             while(rs.next()){
                 CursoClaseReporte cc = new CursoClaseReporte();
                 cc.setiDClase(rs.getString("IDClase"));
-                cc.setiDCurso(rs.getString("IDClase"));
+                cc.setiDCurso(rs.getString("IDCurso"));
                 cc.setAlumnoNombre(rs.getString("NombreAlumno"));
                 cc.setAlumnoApellido(rs.getString("ApellidoAlumno"));
                 cc.setCursoNombre(rs.getString("CursoNombre"));

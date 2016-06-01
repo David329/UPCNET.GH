@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/UPCNETSystemWebService/UPCNETServiceCursoClase?xsd=1" namespace="http://Services.upcnet.upc.com/" />
     </xsd:schema>
   </types>
+  <message name="getCursoClaseById">
+    <part name="parameters" element="tns:getCursoClaseById" />
+  </message>
+  <message name="getCursoClaseByIdResponse">
+    <part name="parameters" element="tns:getCursoClaseByIdResponse" />
+  </message>
   <message name="hello">
     <part name="parameters" element="tns:hello" />
   </message>
   <message name="helloResponse">
     <part name="parameters" element="tns:helloResponse" />
-  </message>
-  <message name="getCursoClases">
-    <part name="parameters" element="tns:getCursoClases" />
-  </message>
-  <message name="getCursoClasesResponse">
-    <part name="parameters" element="tns:getCursoClasesResponse" />
   </message>
   <message name="setCursoClase">
     <part name="parameters" element="tns:setCursoClase" />
@@ -23,33 +23,33 @@
   <message name="setCursoClaseResponse">
     <part name="parameters" element="tns:setCursoClaseResponse" />
   </message>
-  <message name="getCursoClaseById">
-    <part name="parameters" element="tns:getCursoClaseById" />
+  <message name="getCursoClases">
+    <part name="parameters" element="tns:getCursoClases" />
   </message>
-  <message name="getCursoClaseByIdResponse">
-    <part name="parameters" element="tns:getCursoClaseByIdResponse" />
+  <message name="getCursoClasesResponse">
+    <part name="parameters" element="tns:getCursoClasesResponse" />
   </message>
   <portType name="UPCNETServiceCursoClase">
+    <operation name="getCursoClaseById">
+      <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClaseByIdRequest" message="tns:getCursoClaseById" />
+      <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClaseByIdResponse" message="tns:getCursoClaseByIdResponse" />
+    </operation>
     <operation name="hello">
       <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/helloRequest" message="tns:hello" />
       <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/helloResponse" message="tns:helloResponse" />
-    </operation>
-    <operation name="getCursoClases">
-      <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClasesRequest" message="tns:getCursoClases" />
-      <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClasesResponse" message="tns:getCursoClasesResponse" />
     </operation>
     <operation name="setCursoClase">
       <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/setCursoClaseRequest" message="tns:setCursoClase" />
       <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/setCursoClaseResponse" message="tns:setCursoClaseResponse" />
     </operation>
-    <operation name="getCursoClaseById">
-      <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClaseByIdRequest" message="tns:getCursoClaseById" />
-      <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClaseByIdResponse" message="tns:getCursoClaseByIdResponse" />
+    <operation name="getCursoClases">
+      <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClasesRequest" message="tns:getCursoClases" />
+      <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCursoClase/getCursoClasesResponse" message="tns:getCursoClasesResponse" />
     </operation>
   </portType>
   <binding name="UPCNETServiceCursoClasePortBinding" type="tns:UPCNETServiceCursoClase">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="hello">
+    <operation name="getCursoClaseById">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getCursoClases">
+    <operation name="hello">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getCursoClaseById">
+    <operation name="getCursoClases">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

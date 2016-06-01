@@ -276,5 +276,56 @@ namespace UPCNETSystemCliente.Controllers
             objMantenimientoHorario.CargarDatos(proxy.getCursoClases());
             return View(objMantenimientoHorario);
         }
+
+        public ActionResult AddEditHorario(string IDHorario, string Modo)
+        {
+            _AddEditHorario objAddEditHorario = new _AddEditHorario();
+            objAddEditHorario.Fill(IDHorario, Modo);
+            return View(objAddEditHorario);
+        }
+        [HttpPost]
+        public ActionResult AddEditHorario(_AddEditHorario objViewModel)
+        {
+            try
+            {
+                UPCNETServiceCursoClase.cursoClaseReporte objCursoClaseReporte = null;
+                UPCNETServiceCursoClaseClient proxy = new UPCNETServiceCursoClaseClient();
+                if (objViewModel.Modo == "Editar")
+                {
+                    objCursoClaseReporte = proxy.getCursoClaseById(objViewModel.IDHorario);
+
+                    UPCNETServiceCursoClase.cursoClase objCursoClase = new UPCNETServiceCursoClase.cursoClase();
+                    objCursoClase.idClase = objCursoClaseReporte.iDClase;
+                    objCursoClase.idCurso = objCursoClaseReporte.iDCurso;
+                    objCursoClase.dia = objCursoClaseReporte.dia;
+                    objCursoClase.horaIni = objCursoClaseReporte.horaIni;
+                    objCursoClase.horaFin = objCursoClaseReporte.horaFin;
+
+                    proxy.setCursoClase(objCursoClase);
+                }
+                else
+                {
+                    UPCNETServiceCursoClase.cursoClase objCursoClase = new UPCNETServiceCursoClase.cursoClase();
+
+
+                    objCursoClase.idClase = objViewModel.IDHorario;
+                    objCursoClase.idCurso = objViewModel.IDCurso;
+                    objCursoClase.dia = objViewModel.Dia;
+                    objCursoClase.horaIni = objViewModel.HoraIni;
+                    objCursoClase.horaFin = objViewModel.HoraFin;
+
+                    proxy.setCursoClase(objCursoClase);
+                }
+
+                return RedirectToAction("MantenimientoHorario", "Panel");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return View(objViewModel);
+            }
+        }
     }
 }
