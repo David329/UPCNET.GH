@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Services.upcnet.upc.com/" targetNamespace="http://Services.upcnet.upc.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="editAlumno" type="tns:editAlumno" />
+  <xs:element name="editAlumnoResponse" type="tns:editAlumnoResponse" />
+  <xs:element name="getCursoAlumnoById" type="tns:getCursoAlumnoById" />
+  <xs:element name="getCursoAlumnoByIdResponse" type="tns:getCursoAlumnoByIdResponse" />
+  <xs:element name="getCursoAlumnos" type="tns:getCursoAlumnos" />
+  <xs:element name="getCursoAlumnosResponse" type="tns:getCursoAlumnosResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="setCursoAlumno" type="tns:setCursoAlumno" />
+  <xs:element name="setCursoAlumnoResponse" type="tns:setCursoAlumnoResponse" />
+  <xs:complexType name="getCursoAlumnoById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCurso" type="xs:string" />
+      <xs:element minOccurs="0" name="idAlumno" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCursoAlumnoByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cursoAlumnoReporte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cursoAlumnoReporte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alumnoApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="alumnoNombre" type="xs:string" />
+      <xs:element minOccurs="0" name="cursoNombre" type="xs:string" />
+      <xs:element minOccurs="0" name="idAlumno" type="xs:string" />
+      <xs:element minOccurs="0" name="idCurso" type="xs:string" />
+      <xs:element minOccurs="0" name="profesorApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="profesorNombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCursoAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:alumnoCurso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="alumnoCurso">
+    <xs:sequence>
+      <xs:element name="delegado" type="xs:int" />
+      <xs:element minOccurs="0" name="ef" type="xs:double" />
+      <xs:element minOccurs="0" name="ep" type="xs:double" />
+      <xs:element minOccurs="0" name="idAlumno" type="xs:string" />
+      <xs:element minOccurs="0" name="idCurso" type="xs:string" />
+      <xs:element name="inasistencias" type="xs:int" />
+      <xs:element minOccurs="0" name="pc1" type="xs:double" />
+      <xs:element minOccurs="0" name="pc2" type="xs:double" />
+      <xs:element name="retirado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCursoAlumnoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="editAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:alumno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="alumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:int" />
+      <xs:element minOccurs="0" name="edad" type="xs:int" />
+      <xs:element minOccurs="0" name="idAlumno" type="xs:string" />
+      <xs:element minOccurs="0" name="idApoderado" type="xs:string" />
+      <xs:element minOccurs="0" name="idCategoria" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="pass" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editAlumnoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCursoAlumnos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCursoAlumnosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cursoAlumnoReporte" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

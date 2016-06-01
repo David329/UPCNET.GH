@@ -9,6 +9,7 @@ using UPCNETSystemCliente.UPCNETServiceApoderado;
 using UPCNETSystemCliente.UPCNETServiceProfesor;
 using UPCNETSystemCliente.UPCNETServiceCurso;
 using UPCNETSystemCliente.UPCNETServiceCursoClase;
+using UPCNETSystemCliente.UPCNETServiceCursoAlumno;
 using UPCNETSystemCliente.Globalization;
 using UPCNETSystemCliente.Helpers;
 
@@ -326,6 +327,14 @@ namespace UPCNETSystemCliente.Controllers
             {
                 return View(objViewModel);
             }
+        }
+
+        public ActionResult MantenimientoRelacion()
+        {
+            UPCNETServiceCursoAlumnoClient proxy = new UPCNETServiceCursoAlumnoClient();
+            _MantenimientoRelaciones objMantenimientoRelaciones = new _MantenimientoRelaciones();
+            objMantenimientoRelaciones.CargarDatos(proxy.getCursoAlumnos());
+            return View(objMantenimientoRelaciones);
         }
     }
 }

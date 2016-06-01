@@ -1,0 +1,64 @@
+﻿@model UPCNETSystemCliente.ViewModel.Panel._MantenimientoRelaciones
+
+<div class="panel panel-flat">
+    <div class="panel-heading">
+        <h5 class="panel-title"><strong>Mantenimiento de Relaciones</strong></h5>
+    </div>
+    <div class="panel-body">
+        En esta sección podrás gestionar las relaciones de alumnos y cursos del sistema.
+    </div>
+    <div class="panel-body">
+
+
+        <fieldset class="content-group">
+            <legend class="text-bold">Opciones</legend>
+            <i class="icon-user-plus">
+                <a href="@Url.Action("AddEditRelacion",  new { IDCurso = "", IDAlumno = "", Modo="Nuevo" })"> Registrar Relacion </a>
+            </i>
+        </fieldset>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Id del alumno</th>
+                <th>Id del curso</th>
+                <th>Nombre del alumno</th>
+                <th>Apellido del alumno</th>
+                <th>Nombre del curso</th>
+                <th>Nombre del profesor</th>
+                <th>Apellido del profesor</th>
+
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.objListRelacion)
+            {
+                <tr>
+
+                    <td>@item.IDAlumno</td>
+                    <td>@item.IDCurso</td>
+                    <td>@item.NombreAlumno</td>
+                    <td>@item.ApellidoAlumno</td>
+                    <td>@item.CursoNombre</td>
+                    <td>@item.ProfesorNombre</td>
+                    <td>@item.ProfesorApellido</td>
+                    <td>
+
+                        <a href="@Url.Action("AddEditRelacion",
+                              new
+                              { IDCurso = item.IDCurso, IDAlumno = item.IDAlumno,
+                                Modo= "Editar"})">
+                            <i class="fa fa-edit"></i> Editar
+                        </a>
+
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
