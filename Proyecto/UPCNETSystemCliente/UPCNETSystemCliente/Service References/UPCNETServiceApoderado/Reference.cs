@@ -16,20 +16,33 @@ namespace UPCNETSystemCliente.UPCNETServiceApoderado {
     public interface UPCNETServiceApoderado {
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse setApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse> setApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request);
-        
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/editApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/editApoderadoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoResponse editApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/editApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/editApoderadoResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoResponse> editApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/validarLoginApoderadoReques" +
+            "t", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/validarLoginApoderadoRespon" +
+            "se")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoResponse validarLoginApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/validarLoginApoderadoReques" +
+            "t", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/validarLoginApoderadoRespon" +
+            "se")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoResponse> validarLoginApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest request);
+        
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse setApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/setApoderadoResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse> setApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoResponse")]
@@ -39,142 +52,15 @@ namespace UPCNETSystemCliente.UPCNETServiceApoderado {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoResponse> getApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setApoderado", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setApoderadoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoByIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdResponse getApoderadoById(UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg7;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg8;
-        
-        public setApoderadoRequest() {
-        }
-        
-        public setApoderadoRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-            this.arg8 = arg8;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setApoderadoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setApoderadoResponse {
-        
-        public setApoderadoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editApoderado", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editApoderadoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg7;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg8;
-        
-        public editApoderadoRequest() {
-        }
-        
-        public editApoderadoRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-            this.arg8 = arg8;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editApoderadoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editApoderadoResponse {
-        
-        public editApoderadoResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceApoderado/getApoderadoByIdResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdResponse> getApoderadoByIdAsync(UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest request);
     }
     
     /// <remarks/>
@@ -324,6 +210,103 @@ namespace UPCNETSystemCliente.UPCNETServiceApoderado {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editApoderado", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editApoderadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0;
+        
+        public editApoderadoRequest() {
+        }
+        
+        public editApoderadoRequest(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editApoderadoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editApoderadoResponse {
+        
+        public editApoderadoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginApoderado", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class validarLoginApoderadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public validarLoginApoderadoRequest() {
+        }
+        
+        public validarLoginApoderadoRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginApoderadoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class validarLoginApoderadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public validarLoginApoderadoResponse() {
+        }
+        
+        public validarLoginApoderadoResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setApoderado", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setApoderadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0;
+        
+        public setApoderadoRequest() {
+        }
+        
+        public setApoderadoRequest(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setApoderadoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setApoderadoResponse {
+        
+        public setApoderadoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getApoderado", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
     public partial class getApoderadoRequest {
         
@@ -345,6 +328,42 @@ namespace UPCNETSystemCliente.UPCNETServiceApoderado {
         }
         
         public getApoderadoResponse(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getApoderadoById", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getApoderadoByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public getApoderadoByIdRequest() {
+        }
+        
+        public getApoderadoByIdRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getApoderadoByIdResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getApoderadoByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceApoderado.apoderado @return;
+        
+        public getApoderadoByIdResponse() {
+        }
+        
+        public getApoderadoByIdResponse(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado @return) {
             this.@return = @return;
         }
     }
@@ -377,59 +396,13 @@ namespace UPCNETSystemCliente.UPCNETServiceApoderado {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.setApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request) {
-            return base.Channel.setApoderado(request);
-        }
-        
-        public void setApoderado(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).setApoderado(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse> UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.setApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request) {
-            return base.Channel.setApoderadoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse> setApoderadoAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            return ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).setApoderadoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoResponse UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.editApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoRequest request) {
             return base.Channel.editApoderado(request);
         }
         
-        public void editApoderado(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
+        public void editApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0) {
             UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
             UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).editApoderado(inValue);
         }
         
@@ -438,18 +411,57 @@ namespace UPCNETSystemCliente.UPCNETServiceApoderado {
             return base.Channel.editApoderadoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoResponse> editApoderadoAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoResponse> editApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0) {
             UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.editApoderadoRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
             return ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).editApoderadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoResponse UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.validarLoginApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest request) {
+            return base.Channel.validarLoginApoderado(request);
+        }
+        
+        public bool validarLoginApoderado(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).validarLoginApoderado(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoResponse> UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.validarLoginApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest request) {
+            return base.Channel.validarLoginApoderadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoResponse> validarLoginApoderadoAsync(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            return ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).validarLoginApoderadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.setApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request) {
+            return base.Channel.setApoderado(request);
+        }
+        
+        public void setApoderado(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0) {
+            UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).setApoderado(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse> UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.setApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest request) {
+            return base.Channel.setApoderadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoResponse> setApoderadoAsync(UPCNETSystemCliente.UPCNETServiceApoderado.apoderado arg0) {
+            UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.setApoderadoRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).setApoderadoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -471,6 +483,29 @@ namespace UPCNETSystemCliente.UPCNETServiceApoderado {
         public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoResponse> getApoderadoAsync() {
             UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoRequest();
             return ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).getApoderadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdResponse UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.getApoderadoById(UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest request) {
+            return base.Channel.getApoderadoById(request);
+        }
+        
+        public UPCNETSystemCliente.UPCNETServiceApoderado.apoderado getApoderadoById(string arg0) {
+            UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdResponse retVal = ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).getApoderadoById(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdResponse> UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado.getApoderadoByIdAsync(UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest request) {
+            return base.Channel.getApoderadoByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdResponse> getApoderadoByIdAsync(string arg0) {
+            UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceApoderado.UPCNETServiceApoderado)(this)).getApoderadoByIdAsync(inValue);
         }
     }
 }

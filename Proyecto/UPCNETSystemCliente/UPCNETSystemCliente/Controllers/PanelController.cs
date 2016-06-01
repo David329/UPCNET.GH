@@ -45,6 +45,66 @@ namespace UPCNETSystemCliente.Controllers
         }
 
 
+        public ActionResult AddEditApoderado(string IDApoderado, string Modo)
+        {
+            _AddEditApoderado objAddEditApoderado = new _AddEditApoderado();
+            objAddEditApoderado.Fill(IDApoderado, Modo);
+            return View(objAddEditApoderado);
+        }
+
+
+        [HttpPost]
+        public ActionResult AddEditApoderado(_AddEditApoderado objViewModel)
+        {
+            try
+            {
+                UPCNETServiceApoderado.apoderado objApoderado = null;
+                UPCNETServiceApoderadoClient proxy = new UPCNETServiceApoderadoClient();
+                if (objViewModel.Modo == "Editar")
+                {
+                    objApoderado = proxy.getApoderadoById(objViewModel.IDApoderado);
+                    objApoderado.nombre = objViewModel.Nombre;
+                    objApoderado.apellido = objViewModel.Apellido;
+                    objApoderado.correo = objViewModel.Correo;
+                    objApoderado.direccion = objViewModel.Direccion;
+                    objApoderado.DNI = objViewModel.DNI;
+                    objApoderado.IDApoderado = objViewModel.IDApoderado;
+                    objApoderado.pass = objViewModel.Password;
+                    objApoderado.edad = objViewModel.Edad;
+                    objApoderado.condicion = objViewModel.Condicion;
+
+                    proxy.editApoderado(objApoderado);
+                }
+                else
+                {
+                    objApoderado = new UPCNETServiceApoderado.apoderado();
+
+
+                    objApoderado.nombre = objViewModel.Nombre;
+                    objApoderado.apellido = objViewModel.Apellido;
+                    objApoderado.correo = objViewModel.Correo;
+                    objApoderado.direccion = objViewModel.Direccion;
+                    objApoderado.DNI = objViewModel.DNI;
+                    objApoderado.IDApoderado = objViewModel.IDApoderado;
+                    objApoderado.pass = objViewModel.Password;
+                    objApoderado.edad = objViewModel.Edad;
+                    objApoderado.condicion = objViewModel.Condicion;
+
+                    proxy.setApoderado(objApoderado);
+                }
+
+                return RedirectToAction("MantenimientoApoderado", "Panel");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return View(objViewModel);
+            }
+        }
+
+
         public ActionResult AddEditProfesor(string IDProfesor, string Modo)
         {
             _AddEditProfesor objAddEditProfesor = new _AddEditProfesor();

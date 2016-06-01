@@ -22,16 +22,16 @@ public class UPCNETServiceProfesor {
     }
 
     @WebMethod(operationName = "setProfesor")
-    public void setProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo, String _pass) {
+    public void setProfesor(Profesor objProfesor) {
         ProfesorDAO profesorDAO = new ProfesorDAO();
-        profesorDAO.setProfesor(_idProfesor, _nombre, _apellido, _dni, _edad, _correo, _direccion, _sueldo, _pass);
+        profesorDAO.setProfesor(objProfesor);
         
     }
 
     @WebMethod(operationName = "editProfesor")
-    public void editProfesor(String _idProfesor, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _sueldo, String _pass) {
+    public void editProfesor(Profesor objProfesor) {
         ProfesorDAO profesorDAO = new ProfesorDAO();
-        profesorDAO.editProfesor(_idProfesor, _nombre, _apellido, _dni, _edad, _correo, _direccion, _sueldo, _pass);        
+        profesorDAO.editProfesor(objProfesor);        
     }
 
     @WebMethod(operationName = "validarLogin")

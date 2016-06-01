@@ -189,6 +189,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Login\_LoginViewModel.cs" />
+    <Compile Include="ViewModel\Panel\_AddEditApoderado.cs" />
     <Compile Include="ViewModel\Panel\_AddEditProfesor.cs" />
     <Compile Include="ViewModel\Panel\_AddEditUsuario.cs" />
     <Compile Include="ViewModel\Panel\_MantenimientoApoderado.cs" />
@@ -818,6 +819,12 @@
     <Content Include="Service References\UPCNETServiceCategoria\UPCNETSystemCliente.UPCNETServiceCategoria.setCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\UPCNETServiceApoderado\UPCNETSystemCliente.UPCNETServiceApoderado.getApoderadoByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceApoderado\UPCNETSystemCliente.UPCNETServiceApoderado.validarLoginApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\UPCNETServiceCategoria\UPCNETServiceCategoria1.wsdl" />
     <None Include="Service References\UPCNETServiceCategoria\UPCNETServiceCategoria1.xsd">
       <SubType>Designer</SubType>
@@ -966,6 +973,7 @@
     <Content Include="Views\Panel\MantenimientoApoderado.cshtml" />
     <Content Include="Views\Panel\MantenimientoProfesores.cshtml" />
     <Content Include="Views\Panel\AddEditProfesor.cshtml" />
+    <Content Include="Views\Panel\AddEditApoderado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

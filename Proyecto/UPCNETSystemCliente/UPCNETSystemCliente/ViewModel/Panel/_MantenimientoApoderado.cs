@@ -25,6 +25,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                 objApoderado.Edad = item.edad;
                 objApoderado.Direccion = item.direccion;
                 objApoderado.DNI = item.DNI;
+                objApoderado.Condicion = item.condicion;
 
                 ListObjetos.Add(objApoderado);
             }

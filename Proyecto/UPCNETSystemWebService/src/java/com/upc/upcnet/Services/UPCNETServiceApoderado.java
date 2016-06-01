@@ -28,17 +28,28 @@ public class UPCNETServiceApoderado {
     }
     
     @WebMethod(operationName = "setApoderado")
-    public void setApoderado(String _idApoderado,String _pass, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
+    public void setApoderado(Apoderado objApoderado){
         
         ApoderadoDAO objApoderadoDAO=new ApoderadoDAO();
-        objApoderadoDAO.setApoderado(_idApoderado, _pass, _nombre, _apellido, _dni, _edad, _correo, _direccion, _condicion);
+        objApoderadoDAO.setApoderado(objApoderado);
     }
     
     @WebMethod(operationName = "editApoderado")
-    public void editApoderado(String _idApoderado,String _pass, String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
+    public void editApoderado( Apoderado objApoderado){
         
         ApoderadoDAO objApoderadoDAO=new ApoderadoDAO();
-        objApoderadoDAO.editApoderado(_idApoderado, _pass, _nombre, _apellido, _dni, _edad, _correo, _direccion, _condicion);
+        objApoderadoDAO.editApoderado(objApoderado);
+    }
+    @WebMethod(operationName = "getApoderadoById")
+    public Apoderado getApoderadooById(String _idApoderado) {
+        ApoderadoDAO apoderadoDAO = new ApoderadoDAO();
+        List<Apoderado> apoderados = apoderadoDAO.getApoderadoById(_idApoderado);
+        return apoderados.get(0);
     }
     
+    @WebMethod(operationName = "validarLoginApoderado")
+    public boolean validarLogin(String _idApoderado, String _pass) {
+        ApoderadoDAO apoderadoDAO = new ApoderadoDAO();
+        return apoderadoDAO.validarLoginApoderado(_idApoderado, _pass);
+    }
 }

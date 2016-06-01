@@ -93,7 +93,7 @@ public class ApoderadoDAO {
         }
         return apoderados;
     }
-    public void setApoderado(String _idApoderado,String _pass,String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
+    public void setApoderado(Apoderado objApoderado){
         Connection cn = null;        
         try{
             cn = AccesoDB.getConnection();
@@ -101,7 +101,7 @@ public class ApoderadoDAO {
             StringBuilder query = new StringBuilder();
             query.append("SELECT * FROM Apoderado WHERE IDApoderado = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idApoderado);
+            ps.setString(1, objApoderado.getIDApoderado());
             ResultSet rs = ps.executeQuery();
             if(rs.next())
                 throw new SQLException("El codigo del Apoderado ya existe");
@@ -109,15 +109,15 @@ public class ApoderadoDAO {
             query = new StringBuilder();
             query.append("INSERT INTO Apoderado(IDApoderado,Pass ,Nombre, Apellido, DNI, Edad, Correo,Direccion, Condicion) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idApoderado);
-            ps.setString(2, _pass);
-            ps.setString(3, _nombre);
-            ps.setString(4, _apellido);
-            ps.setInt(5, Integer.parseInt(_dni));
-            ps.setInt(6, Integer.parseInt(_edad));
-            ps.setString(7, _correo);
-            ps.setString(8, _direccion);
-            ps.setString(9, _condicion);
+            ps.setString(1, objApoderado.getIDApoderado());
+            ps.setString(2, objApoderado.getPass());
+            ps.setString(3, objApoderado.getNombre());
+            ps.setString(4, objApoderado.getApellido());
+            ps.setInt(5, objApoderado.getDNI());
+            ps.setInt(6, objApoderado.getEdad());
+            ps.setString(7, objApoderado.getCorreo());
+            ps.setString(8, objApoderado.getDireccion());
+            ps.setString(9, objApoderado.getCondicion());
             ps.executeUpdate();
             cn.commit();
             
@@ -133,7 +133,7 @@ public class ApoderadoDAO {
         }
     }
     
-    public void editApoderado(String _idApoderado,String _pass,String _nombre, String _apellido, String _dni, String _edad, String _correo, String _direccion, String _condicion){
+    public void editApoderado(Apoderado objApoderado){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
@@ -141,16 +141,17 @@ public class ApoderadoDAO {
             StringBuilder query = new StringBuilder();
             query.append("UPDATE Apoderado SET Nombre = ?,Pass=?, Apellido = ?, DNI = ?, Edad = ?, Correo = ?, Direccion = ?,Condicion=? WHERE IDApoderado= ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _nombre);
-            ps.setString(2, _pass);
-            ps.setString(3, _apellido);
-            ps.setInt(4, Integer.parseInt(_dni));
-            ps.setInt(5, Integer.parseInt(_edad));
-            ps.setString(6, _correo);
-            ps.setString(7, _direccion);
-            ps.setString(8, _condicion);
-            ps.setString(9, _idApoderado);
+            ps.setString(1, objApoderado.getNombre());
+            ps.setString(2, objApoderado.getPass());
+            ps.setString(3, objApoderado.getApellido());
+            ps.setInt(4, objApoderado.getDNI());
+            ps.setInt(5, objApoderado.getEdad());
+            ps.setString(6, objApoderado.getCorreo());
+            ps.setString(7, objApoderado.getDireccion());
+            ps.setString(8, objApoderado.getCondicion());
+            ps.setString(9, objApoderado.getIDApoderado());
             int realizado = ps.executeUpdate();
+            cn.commit();
             if(realizado == 0)
                 throw  new SQLException("Apoderado no existe!");            
         }catch(SQLException ex){
