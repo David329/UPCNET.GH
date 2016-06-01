@@ -82,3 +82,9 @@ insert into Alumno values('AL102','al102al','Victor','Parassi',777621,22,'JuanPa
 insert into Alumno values('AL103','al103al','Ale','Mendoza',2342162,23,'AleM@Ez.com','Avenue Bayonne 544','R','AP103')
 insert into Alumno values('AL104','al104al','Maricarmen','Peralta',31622,12,'MariP@Ez.com','Lincoln Street 8522','S','AP104')
 insert into Alumno values('AL105','al105al','Carolina','Herrera',456622,18,'CarolinaH@yahoo.com','Lincoln Street 1403','U','AP105')
+
+insert into Profesor values('P0001','1234','Victor', 'De la Cruz', 99999999,20,'ianfollower@gmail.com','Av. Evergreen 123',1500)
+insert into Profesor values('P0002','1234','Vincenzo', 'Delacrois', 99999998,20,'ianfollower2@gmail.com','Av. Evergreen 123',1500)
+insert into Profesor values('P0003','1234','Gregorio', 'Ian', 91239938,20,'wowforever@gmail.com','Av. Neverever 123',3500)
+insert into Profesor values('P0004','1234','Richi', 'Kina', 99999938,20,'foreverian@gmail.com','Av. Always Yours 123',3000)
+insert into Profesor values('P0005','1234','David', 'Brancacho', 99999123,20,'foreverian@gmail.com','Av. Always Yours 1231',3000)

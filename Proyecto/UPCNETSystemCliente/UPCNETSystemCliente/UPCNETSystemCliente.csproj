@@ -190,6 +190,8 @@
     </Compile>
     <Compile Include="ViewModel\Login\_LoginViewModel.cs" />
     <Compile Include="ViewModel\Panel\_AddEditUsuario.cs" />
+    <Compile Include="ViewModel\Panel\_MantenimientoApoderado.cs" />
+    <Compile Include="ViewModel\Panel\_MantenimientoProfesores.cs" />
     <Compile Include="ViewModel\Panel\_MantenimientoUsuarios.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -960,6 +962,8 @@
     <Content Include="Views\Layout\PanelLayout.cshtml" />
     <Content Include="Views\Panel\MantenimientoUsuarios.cshtml" />
     <Content Include="Views\Panel\AddEditUsuario.cshtml" />
+    <Content Include="Views\Panel\MantenimientoApoderado.cshtml" />
+    <Content Include="Views\Panel\MantenimientoProfesores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
