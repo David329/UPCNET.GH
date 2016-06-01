@@ -8,6 +8,7 @@ using UPCNETSystemCliente.UPCNETServiceAlumno;
 using UPCNETSystemCliente.UPCNETServiceApoderado;
 using UPCNETSystemCliente.UPCNETServiceProfesor;
 using UPCNETSystemCliente.UPCNETServiceCurso;
+using UPCNETSystemCliente.UPCNETServiceCursoClase;
 using UPCNETSystemCliente.Globalization;
 using UPCNETSystemCliente.Helpers;
 
@@ -267,6 +268,13 @@ namespace UPCNETSystemCliente.Controllers
             {
                 return View(objViewModel);
             }
+        }
+        public ActionResult MantenimientoHorario()
+        {
+            UPCNETServiceCursoClase proxy = new UPCNETServiceCursoClase();
+            _MantenimientoHorario objMantenimientoHorario = new _MantenimientoHorario();
+            objMantenimientoHorario.CargarDatos(proxy.getCursoClases());
+            return View(objMantenimientoHorario);
         }
 
     }

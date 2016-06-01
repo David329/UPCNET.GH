@@ -1,0 +1,65 @@
+﻿@model UPCNETSystemCliente.ViewModel.Panel._MantenimientoHorario
+
+<div class="panel panel-flat">
+    <div class="panel-heading">
+        <h5 class="panel-title"><strong>Mantenimiento de Horario</strong></h5>
+    </div>
+    <div class="panel-body">
+        En esta sección podrás gestionar los horarios del sistema.
+    </div>
+    <div class="panel-body">
+
+
+        <fieldset class="content-group">
+            <legend class="text-bold">Opciones</legend>
+            <i class="icon-user-plus">
+                <a href="@Url.Action("AddEditHorario",  new { IDHorario = "", Modo="Nuevo" })"> Registrar Horario </a>
+            </i>
+        </fieldset>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Nombre del alumno</th>
+                <th>Apellido del alumno</th>
+                <th>Nombre del curso</th>
+                <th>Nombre del profesor</th>
+                <th>Dia</th>
+                <th>Hora de Inicio</th>
+                <th>Hora Fin</th>
+
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.objListHorario)
+            {
+                <tr>
+
+                    <td>@item.NombreAlumno</td>
+                    <td>@item.ApellidoAlumno</td>
+                    <td>@item.NombreDelCurso</td>
+                    <td>@item.NombreDelProfesor</td>
+                    <td>@item.ApellidoProfesor</td>
+                    <td>@item.Dia</td>
+                    <td>@item.HoraInicio</td>
+                    <td>@item.HoraFin</td>
+                    <td>
+
+                        <a href="@Url.Action("AddEditHorario",
+                              new
+                              { IDHorario = item.IDHorario,
+                                Modo= "Editar"})">
+                            <i class="fa fa-edit"></i> Editar
+                        </a>
+
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
