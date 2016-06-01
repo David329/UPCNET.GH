@@ -31,6 +31,9 @@
     <service name="UPCNETServiceCursoClase">
       <implementation-class>com.upc.upcnet.Services.UPCNETServiceCursoClase</implementation-class>
     </service>
+    <service name="UPCNETServiceCursoAlumno">
+      <implementation-class>com.upc.upcnet.Services.UPCNETServiceCursoAlumno</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
