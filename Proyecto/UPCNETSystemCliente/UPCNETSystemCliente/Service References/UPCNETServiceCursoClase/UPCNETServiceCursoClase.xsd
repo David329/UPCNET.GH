@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Services.upcnet.upc.com/" targetNamespace="http://Services.upcnet.upc.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getCursoClaseById" type="tns:getCursoClaseById" />
+  <xs:element name="getCursoClaseByIdResponse" type="tns:getCursoClaseByIdResponse" />
+  <xs:element name="getCursoClases" type="tns:getCursoClases" />
+  <xs:element name="getCursoClasesResponse" type="tns:getCursoClasesResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="setCursoClase" type="tns:setCursoClase" />
+  <xs:element name="setCursoClaseResponse" type="tns:setCursoClaseResponse" />
+  <xs:complexType name="setCursoClase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cursoClase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cursoClase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dia" type="xs:string" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:string" />
+      <xs:element minOccurs="0" name="horaIni" type="xs:string" />
+      <xs:element minOccurs="0" name="idClase" type="xs:string" />
+      <xs:element minOccurs="0" name="idCurso" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCursoClaseResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCursoClases">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCursoClasesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cursoClaseReporte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cursoClaseReporte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alumnoApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="alumnoNombre" type="xs:string" />
+      <xs:element minOccurs="0" name="cursoNombre" type="xs:string" />
+      <xs:element minOccurs="0" name="dia" type="xs:string" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:string" />
+      <xs:element minOccurs="0" name="horaIni" type="xs:string" />
+      <xs:element minOccurs="0" name="profesorApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="profesorNombre" type="xs:string" />
+      <xs:element minOccurs="0" name="iDClase" type="xs:string" />
+      <xs:element minOccurs="0" name="iDCurso" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCursoClaseById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idClase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCursoClaseByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cursoClaseReporte" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

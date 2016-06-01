@@ -5,12 +5,17 @@
         <group>
             <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceApoderado.java</file>
             <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Curso.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCurso.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCategoria.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceProfesor.java</file>
             <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Alumno.java</file>
             <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Apoderado.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCurso.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceRecurso.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceAdministrador.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCursoClase.java</file>
             <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCiclo.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceCategoria.java</file>
             <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceAlumno.java</file>
+            <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceSeccion.java</file>
             <file>file:/C:/Users/Victor/Desktop/Richi/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/AlumnoDAO.java</file>
         </group>
     </open-files>

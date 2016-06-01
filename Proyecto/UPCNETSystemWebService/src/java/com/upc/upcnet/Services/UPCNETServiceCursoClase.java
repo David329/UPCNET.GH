@@ -19,7 +19,6 @@ import javax.xml.ws.BindingType;
  * @author Petith
  */
 @WebService(serviceName = "UPCNETServiceCursoClase")
-@BindingType(value = "http://java.sun.com/xml/ns/jaxws/2003/05/soap/bindings/HTTP/")
 public class UPCNETServiceCursoClase {
 
     /**

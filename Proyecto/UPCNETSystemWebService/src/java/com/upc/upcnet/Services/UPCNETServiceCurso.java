@@ -35,14 +35,14 @@ public class UPCNETServiceCurso {
     }
 
     @WebMethod(operationName = "editCurso")
-    public void editAlumno(Curso objCurso) {
+    public void editCurso(Curso objCurso) {
         CursoDAO cursoDAO = new CursoDAO();
         cursoDAO.editCurso(objCurso);
         
     }
 
     @WebMethod(operationName = "getCursoById")
-    public Curso getAlumnoById(String _idCurso) {
+    public Curso getCursoById(String _idCurso) {
         CursoDAO cursoDAO = new CursoDAO();
         List<Curso> cursos = cursoDAO.getCursosById(_idCurso);
         return cursos.get(0);

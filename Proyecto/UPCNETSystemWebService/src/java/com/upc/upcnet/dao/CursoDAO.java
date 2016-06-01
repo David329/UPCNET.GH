@@ -34,7 +34,7 @@ public class CursoDAO {
                 c.setNombre(rs.getString("Nombre"));
                 c.setCicloDeCurso(rs.getInt("CicloDeCurso"));
                 c.setMaxInasistencia(rs.getInt("MaxInasistencia"));
-                c.setIdProfesor(rs.getString("idProfesor"));
+                c.setIdProfesor(rs.getString("IDProfesor"));
                 cursos.add(c);
             }
         }catch(SQLException ex){
@@ -96,7 +96,7 @@ public class CursoDAO {
                 throw new SQLException("El codigo del curso ya existe");
             
             query = new StringBuilder();
-            query.append("INSERT INTO Curso(IDCurso, Nombre, CicloDeCurso, MaxInasistencia, IDProfesor) VALUES(?, ?, ?, ?)");
+            query.append("INSERT INTO Curso(IDCurso, Nombre, CicloDeCurso, MaxInasistencia, IDProfesor) VALUES(?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
             ps.setString(1, objCurso.getIdCurso());
             ps.setString(2, objCurso.getNombre());
@@ -130,6 +130,7 @@ public class CursoDAO {
             ps.setInt(2, objCurso.getCicloDeCurso());
             ps.setInt(3, objCurso.getMaxInasistencia());
             ps.setString(4, objCurso.getIdProfesor());
+            ps.setString(5, objCurso.getIdCurso());
             int realizado = ps.executeUpdate();
             cn.commit();
             if(realizado == 0)

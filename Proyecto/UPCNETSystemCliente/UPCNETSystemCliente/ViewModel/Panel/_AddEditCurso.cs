@@ -27,7 +27,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                 this.CicloDeCurso = objCurso.cicloDeCurso;
                 this.MaxInasistencia = objCurso.maxInasistencia;
                 this.IDProfesor = objCurso.idProfesor;
-                this.Nombre = objCurso.Nombre;
+                this.Nombre = objCurso.nombre;
             }
             this.Modo = Modo;
         }

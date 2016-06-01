@@ -238,7 +238,7 @@ namespace UPCNETSystemCliente.Controllers
                 {
                     objCurso = proxy.getCursoById(objViewModel.IDCurso);
                     objCurso.idCurso = objViewModel.IDCurso;
-                    objCurso.Nombre = objViewModel.Nombre;
+                    objCurso.nombre = objViewModel.Nombre;
                     objCurso.cicloDeCurso = objViewModel.CicloDeCurso;
                     objCurso.maxInasistencia = objViewModel.MaxInasistencia;
                     objCurso.idProfesor = objViewModel.IDProfesor;
@@ -251,7 +251,7 @@ namespace UPCNETSystemCliente.Controllers
 
 
                     objCurso.idCurso = objViewModel.IDCurso;
-                    objCurso.Nombre = objViewModel.Nombre;
+                    objCurso.nombre = objViewModel.Nombre;
                     objCurso.cicloDeCurso = objViewModel.CicloDeCurso;
                     objCurso.maxInasistencia = objViewModel.MaxInasistencia;
                     objCurso.idProfesor = objViewModel.IDProfesor;
@@ -271,11 +271,10 @@ namespace UPCNETSystemCliente.Controllers
         }
         public ActionResult MantenimientoHorario()
         {
-            UPCNETServiceCursoClase proxy = new UPCNETServiceCursoClase();
+            UPCNETServiceCursoClaseClient proxy = new UPCNETServiceCursoClaseClient();
             _MantenimientoHorario objMantenimientoHorario = new _MantenimientoHorario();
             objMantenimientoHorario.CargarDatos(proxy.getCursoClases());
             return View(objMantenimientoHorario);
         }
-
     }
 }

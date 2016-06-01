@@ -109,7 +109,7 @@ public class CursoClaseDAO {
                 throw new SQLException("Objeto ya existe");
             
             query = new StringBuilder();
-            query.append("INSERT INTO Curso_Clase(IDClase, IDCurso, Dia, HoraIni, HoraFin) VALUES('{0}', '{1}', {3}, {4})");
+            query.append("INSERT INTO Curso_Clase(IDClase, IDCurso, Dia, HoraIni, HoraFin) VALUES(?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
             ps.setString(1, objCursoClase.getIdClase());
             ps.setString(2, objCursoClase.getIdCurso());

@@ -14,16 +14,19 @@ namespace UPCNETSystemCliente.ViewModel.Panel
         public void CargarDatos(UPCNETServiceCurso.curso[] curso)
         {
             objListCurso = new List<Curso>();
-            foreach (var item in curso)
+            if (curso != null)
             {
-                Curso objCurso = new Curso();
-                objCurso.IDCurso = item.idCurso;
-                objCurso.CicloDeCurso = item.cicloDeCurso;
-                objCurso.MaxInasistencia = item.maxInasistencia;
-                objCurso.IDProfesor = item.idProfesor;
-                objCurso.Nombre = item.Nombre;
+                foreach (var item in curso)
+                {
+                    Curso objCurso = new Curso();
+                    objCurso.IDCurso = item.idCurso;
+                    objCurso.CicloDeCurso = item.cicloDeCurso;
+                    objCurso.MaxInasistencia = item.maxInasistencia;
+                    objCurso.IDProfesor = item.idProfesor;
+                    objCurso.Nombre = item.nombre;
 
-                objListCurso.Add(objCurso);
+                    objListCurso.Add(objCurso);
+                }
             }
         }
         
