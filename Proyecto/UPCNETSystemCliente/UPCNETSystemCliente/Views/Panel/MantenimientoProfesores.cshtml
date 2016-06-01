@@ -12,7 +12,7 @@
         <fieldset class="content-group">
             <legend class="text-bold">Opciones</legend>
             <i class="icon-user-plus">
-                <a href="@Url.Action("",  new { IDProfesor = "",Modo="Nuevo" })"> Registrar Apoderado </a>
+                <a href="@Url.Action("AddEditProfesor",  new { IDProfesor = "",Modo="Nuevo" })"> Registrar Profesor </a>
             </i>
         </fieldset>
 
@@ -46,9 +46,9 @@
                     <td>@item.Edad</td>
                     <td>
 
-                        <a href="@Url.Action("",
+                        <a href="@Url.Action("AddEditProfesor",
                               new
-                              { IDApopderado = item.IDProfesor,
+                              { IDProfesor = item.IDProfesor,
                                 Modo= "Editar"})">
                             <i class="fa fa-edit"></i> Editar
                         </a>

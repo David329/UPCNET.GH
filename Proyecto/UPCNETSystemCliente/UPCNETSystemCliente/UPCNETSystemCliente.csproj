@@ -189,6 +189,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Login\_LoginViewModel.cs" />
+    <Compile Include="ViewModel\Panel\_AddEditProfesor.cs" />
     <Compile Include="ViewModel\Panel\_AddEditUsuario.cs" />
     <Compile Include="ViewModel\Panel\_MantenimientoApoderado.cs" />
     <Compile Include="ViewModel\Panel\_MantenimientoProfesores.cs" />
@@ -964,6 +965,7 @@
     <Content Include="Views\Panel\AddEditUsuario.cshtml" />
     <Content Include="Views\Panel\MantenimientoApoderado.cshtml" />
     <Content Include="Views\Panel\MantenimientoProfesores.cshtml" />
+    <Content Include="Views\Panel\AddEditProfesor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

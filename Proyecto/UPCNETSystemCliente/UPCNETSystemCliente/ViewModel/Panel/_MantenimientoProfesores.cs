@@ -14,7 +14,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
 
         public void Procesar(UPCNETServiceProfesor.profesor[] profesor)
         {
-            if (profesor == null) return;
+           
             ListObjetos = new List<Profesor>();
             foreach (var item in profesor)
             {
@@ -27,6 +27,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                 objProfesor.Edad = item.edad;
                 objProfesor.Direccion = item.direccion;
                 objProfesor.DNI = item.dni;
+                objProfesor.Sueldo = item.sueldo;
 
                 ListObjetos.Add(objProfesor);
             }

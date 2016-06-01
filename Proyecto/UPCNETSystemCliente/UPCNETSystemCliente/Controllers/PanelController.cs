@@ -45,6 +45,70 @@ namespace UPCNETSystemCliente.Controllers
         }
 
 
+        public ActionResult AddEditProfesor(string IDProfesor, string Modo)
+        {
+            _AddEditProfesor objAddEditProfesor = new _AddEditProfesor();
+            objAddEditProfesor.Fill(IDProfesor, Modo);
+            return View(objAddEditProfesor);
+        }
+
+
+        [HttpPost]
+        public ActionResult AddEditProfesor(_AddEditProfesor objViewModel)
+        {
+            try
+            {
+                UPCNETServiceProfesor.profesor objProfesor = null;
+                UPCNETServiceProfesorClient proxy = new UPCNETServiceProfesorClient();
+                if (objViewModel.Modo == "Editar")
+                {
+                    objProfesor = proxy.getProfesorById(objViewModel.IDProfesor);
+                    objProfesor.nombre = objViewModel.Nombre;
+                    objProfesor.apellido = objViewModel.Apellido;
+                    objProfesor.correo = objViewModel.Correo;
+                    objProfesor.direccion = objViewModel.Direccion;
+                    objProfesor.dni = objViewModel.DNI;
+                    objProfesor.idProfesor = objViewModel.IDProfesor;
+                    objProfesor.pass = objViewModel.Password;
+                    objProfesor.edad = objViewModel.Edad;
+                    objProfesor.sueldo = objViewModel.Sueldo;
+
+                    proxy.editProfesor(objProfesor);
+                }
+                else
+                {
+                    objProfesor = new UPCNETServiceProfesor.profesor();
+
+
+                    objProfesor.nombre = objViewModel.Nombre;
+                    objProfesor.apellido = objViewModel.Apellido;
+                    objProfesor.correo = objViewModel.Correo;
+                    objProfesor.direccion = objViewModel.Direccion;
+                    objProfesor.dni = objViewModel.DNI;
+                    objProfesor.idProfesor = objViewModel.IDProfesor;
+                    objProfesor.pass = objViewModel.Password;
+                    objProfesor.edad = objViewModel.Edad;
+                    objProfesor.sueldo = objViewModel.Sueldo;
+                    objProfesor.edadSpecified = true;
+                    objProfesor.sueldoSpecified = true;
+                    objProfesor.dniSpecified = true;
+
+                    proxy.setProfesor(objProfesor);
+                }
+
+                return RedirectToAction("MantenimientoProfesores", "Panel");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return View(objViewModel);
+            }
+        }
+
+
+
         public ActionResult AddEditUsuario(string IDAlumno,string Modo)
         {
             _AddEditUsuario objAddEditUsuario = new _AddEditUsuario();
@@ -103,35 +167,7 @@ namespace UPCNETSystemCliente.Controllers
                 return View(objViewModel);
             }
         }
-      /*
-        [HttpPost]
-        public ActionResult AddEditDistrito(AddEditDistritoViewModel objViewModel)
-        {
-            try
-            {
-                Distrito objDistrito = null;
-                ONPEEntities context = new ONPEEntities();
-
-                if (objViewModel.DistritoId.HasValue)
-                    objDistrito = context.Distrito.FirstOrDefault(
-                                 x => x.DistritoId == objViewModel.DistritoId);
-                else
-                {
-                    objDistrito = new Distrito();
-                    context.Distrito.Add(objDistrito);
-                }
-
-                objDistrito.Descripcion = objViewModel.Descripcion;
-                objDistrito.Estado = "ACT";
-
-                context.SaveChanges();
-                return RedirectToAction("LstDistrito");
-            }
-            catch (Exception ex)
-            {
-                return View(objViewModel);
-            }
-        } */
+    
 
     }
 }

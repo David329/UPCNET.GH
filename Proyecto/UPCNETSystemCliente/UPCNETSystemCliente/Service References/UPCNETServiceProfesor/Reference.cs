@@ -15,6 +15,15 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Services.upcnet.upc.com/", ConfigurationName="UPCNETServiceProfesor.UPCNETServiceProfesor")]
     public interface UPCNETServiceProfesor {
         
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorResponse getProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorResponse> getProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorRequest request);
+        
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/setProfesorRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/setProfesorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -22,6 +31,15 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/setProfesorRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/setProfesorResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse> setProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginResponse validarLogin(UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginResponse> validarLoginAsync(UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginRequest request);
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/editProfesorRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/editProfesorResponse")]
@@ -32,15 +50,6 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse> editProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorResponse getProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorResponse> getProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorByIdResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -48,151 +57,6 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorByIdRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/getProfesorByIdResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse> getProfesorByIdAsync(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginResponse validarLogin(UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceProfesor/validarLoginResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginResponse> validarLoginAsync(UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setProfesor", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setProfesorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg7;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg8;
-        
-        public setProfesorRequest() {
-        }
-        
-        public setProfesorRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-            this.arg8 = arg8;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setProfesorResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setProfesorResponse {
-        
-        public setProfesorResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editProfesor", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editProfesorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg7;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg8;
-        
-        public editProfesorRequest() {
-        }
-        
-        public editProfesorRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-            this.arg8 = arg8;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editProfesorResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editProfesorResponse {
-        
-        public editProfesorResponse() {
-        }
     }
     
     /// <remarks/>
@@ -412,17 +276,17 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getProfesorById", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class getProfesorByIdRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setProfesor", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setProfesorRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
+        public UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0;
         
-        public getProfesorByIdRequest() {
+        public setProfesorRequest() {
         }
         
-        public getProfesorByIdRequest(string arg0) {
+        public setProfesorRequest(UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0) {
             this.arg0 = arg0;
         }
     }
@@ -430,18 +294,10 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getProfesorByIdResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class getProfesorByIdResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setProfesorResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setProfesorResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public UPCNETSystemCliente.UPCNETServiceProfesor.profesor @return;
-        
-        public getProfesorByIdResponse() {
-        }
-        
-        public getProfesorByIdResponse(UPCNETSystemCliente.UPCNETServiceProfesor.profesor @return) {
-            this.@return = @return;
+        public setProfesorResponse() {
         }
     }
     
@@ -486,6 +342,70 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editProfesor", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editProfesorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0;
+        
+        public editProfesorRequest() {
+        }
+        
+        public editProfesorRequest(UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editProfesorResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editProfesorResponse {
+        
+        public editProfesorResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getProfesorById", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getProfesorByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public getProfesorByIdRequest() {
+        }
+        
+        public getProfesorByIdRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getProfesorByIdResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getProfesorByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceProfesor.profesor @return;
+        
+        public getProfesorByIdResponse() {
+        }
+        
+        public getProfesorByIdResponse(UPCNETSystemCliente.UPCNETServiceProfesor.profesor @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface UPCNETServiceProfesorChannel : UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor, System.ServiceModel.IClientChannel {
     }
@@ -514,82 +434,6 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.setProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest request) {
-            return base.Channel.setProfesor(request);
-        }
-        
-        public void setProfesor(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse retVal = ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).setProfesor(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse> UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.setProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest request) {
-            return base.Channel.setProfesorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse> setProfesorAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            return ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).setProfesorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.editProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest request) {
-            return base.Channel.editProfesor(request);
-        }
-        
-        public void editProfesor(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse retVal = ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).editProfesor(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse> UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.editProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest request) {
-            return base.Channel.editProfesorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse> editProfesorAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            inValue.arg8 = arg8;
-            return ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).editProfesorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorResponse UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.getProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorRequest request) {
             return base.Channel.getProfesor(request);
         }
@@ -611,26 +455,25 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.getProfesorById(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest request) {
-            return base.Channel.getProfesorById(request);
+        UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.setProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest request) {
+            return base.Channel.setProfesor(request);
         }
         
-        public UPCNETSystemCliente.UPCNETServiceProfesor.profesor getProfesorById(string arg0) {
-            UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest();
+        public void setProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0) {
+            UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest();
             inValue.arg0 = arg0;
-            UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse retVal = ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).getProfesorById(inValue);
-            return retVal.@return;
+            UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse retVal = ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).setProfesor(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse> UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.getProfesorByIdAsync(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest request) {
-            return base.Channel.getProfesorByIdAsync(request);
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse> UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.setProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest request) {
+            return base.Channel.setProfesorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse> getProfesorByIdAsync(string arg0) {
-            UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest();
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorResponse> setProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0) {
+            UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.setProfesorRequest();
             inValue.arg0 = arg0;
-            return ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).getProfesorByIdAsync(inValue);
+            return ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).setProfesorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -656,6 +499,51 @@ namespace UPCNETSystemCliente.UPCNETServiceProfesor {
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             return ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).validarLoginAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.editProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest request) {
+            return base.Channel.editProfesor(request);
+        }
+        
+        public void editProfesor(UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0) {
+            UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse retVal = ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).editProfesor(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse> UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.editProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest request) {
+            return base.Channel.editProfesorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse> editProfesorAsync(UPCNETSystemCliente.UPCNETServiceProfesor.profesor arg0) {
+            UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).editProfesorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.getProfesorById(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest request) {
+            return base.Channel.getProfesorById(request);
+        }
+        
+        public UPCNETSystemCliente.UPCNETServiceProfesor.profesor getProfesorById(string arg0) {
+            UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse retVal = ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).getProfesorById(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse> UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor.getProfesorByIdAsync(UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest request) {
+            return base.Channel.getProfesorByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdResponse> getProfesorByIdAsync(string arg0) {
+            UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest inValue = new UPCNETSystemCliente.UPCNETServiceProfesor.getProfesorByIdRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceProfesor.UPCNETServiceProfesor)(this)).getProfesorByIdAsync(inValue);
         }
     }
 }
