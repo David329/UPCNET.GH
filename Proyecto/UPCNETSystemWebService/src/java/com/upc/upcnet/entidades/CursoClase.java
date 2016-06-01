@@ -9,12 +9,28 @@ package com.upc.upcnet.entidades;
  *
  * @author ALEX
  */
-public class Curso_Clase {
+public class CursoClase {
     private String idClase;
     private String idCurso;
     private String dia;
     private String horaIni;
     private String horaFin;
+
+    public String getHoraIni() {
+        return horaIni;
+    }
+
+    public void setHoraIni(String horaIni) {
+        this.horaIni = horaIni;
+    }
+
+    public String getHoraFin() {
+        return horaFin;
+    }
+
+    public void setHoraFin(String horaFin) {
+        this.horaFin = horaFin;
+    }
 
     public String getIdClase() {
         return idClase;
@@ -38,22 +54,5 @@ public class Curso_Clase {
 
     public void setDia(String dia) {
         this.dia = dia;
-    }
-
-    public String getHoraIni() {
-        return horaIni;
-    }
-
-    public void setHoraIni(String horaIni) {
-        this.horaIni = horaIni;
-    }
-
-    public String getHoraFin() {
-        return horaFin;
-    }
-
-    public void setHoraFin(String horaFin) {
-        this.horaFin = horaFin;
-    }
-    
+    }    
 }

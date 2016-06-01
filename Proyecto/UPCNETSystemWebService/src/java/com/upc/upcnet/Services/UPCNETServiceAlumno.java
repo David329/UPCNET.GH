@@ -53,5 +53,6 @@ public class UPCNETServiceAlumno {
         AlumnoDAO alumnoDAO = new AlumnoDAO();
         List<Alumno> alumnos = alumnoDAO.getAlumnosById(_idAlumno);
         return alumnos.get(0);
-    }   
+    }
+    
 }
