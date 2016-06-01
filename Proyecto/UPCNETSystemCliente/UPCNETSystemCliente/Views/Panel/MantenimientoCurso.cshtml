@@ -1,0 +1,58 @@
+﻿@model UPCNETSystemCliente.ViewModel.Panel._MantenimientoCurso
+
+<div class="panel panel-flat">
+    <div class="panel-heading">
+        <h5 class="panel-title"><strong>Mantenimiento de Cursos</strong></h5>
+    </div>
+    <div class="panel-body">
+        En esta sección podrás gestionar los Cursos del sistema.
+    </div>
+    <div class="panel-body">
+
+
+        <fieldset class="content-group">
+            <legend class="text-bold">Opciones</legend>
+            <i class="icon-user-plus">
+                <a href="@Url.Action("AddEditCurso",  new { IDCurso = "", Modo="Nuevo" })"> Registrar Curso </a>
+            </i>
+        </fieldset>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id del ciclo</th>
+                <th>Nombre del curso</th>
+                <th>Ciclo del Curso</th>
+                <th>Máximo de Inasistencias</th>
+                <th>Id del profesor</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.objListCurso)
+            {
+                <tr>
+
+                    <td>@item.IDCurso</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.CicloDeCurso</td>
+                    <td>@item.MaxInasistencia</td>
+                    <td>@item.IDProfesor</td>
+                    <td>
+
+                        <a href="@Url.Action("AddEditCurso",
+                              new
+                              { IDCurso = item.IDCurso,
+                                Modo= "Editar"})">
+                            <i class="fa fa-edit"></i> Editar
+                        </a>
+
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>

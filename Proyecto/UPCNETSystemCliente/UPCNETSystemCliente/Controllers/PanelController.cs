@@ -7,6 +7,7 @@ using UPCNETSystemCliente.ViewModel.Panel;
 using UPCNETSystemCliente.UPCNETServiceAlumno;
 using UPCNETSystemCliente.UPCNETServiceApoderado;
 using UPCNETSystemCliente.UPCNETServiceProfesor;
+using UPCNETSystemCliente.UPCNETServiceCurso;
 using UPCNETSystemCliente.Globalization;
 using UPCNETSystemCliente.Helpers;
 
@@ -20,7 +21,6 @@ namespace UPCNETSystemCliente.Controllers
 
             return RedirectToAction("MantenimientoUsuarios");
         }
-
         public ActionResult MantenimientoProfesores()
         {
             UPCNETServiceProfesorClient proxy = new UPCNETServiceProfesorClient();
@@ -28,7 +28,6 @@ namespace UPCNETSystemCliente.Controllers
             objMantenimientoProfesor.Procesar(proxy.getProfesor());
             return View(objMantenimientoProfesor);
         }
-
         public ActionResult MantenimientoApoderado()
         {
             UPCNETServiceApoderadoClient proxy = new UPCNETServiceApoderadoClient();
@@ -43,16 +42,12 @@ namespace UPCNETSystemCliente.Controllers
             objMantenimientoUsuarios.Procesar(proxy.getAlumnos());
             return View(objMantenimientoUsuarios);
         }
-
-
         public ActionResult AddEditApoderado(string IDApoderado, string Modo)
         {
             _AddEditApoderado objAddEditApoderado = new _AddEditApoderado();
             objAddEditApoderado.Fill(IDApoderado, Modo);
             return View(objAddEditApoderado);
         }
-
-
         [HttpPost]
         public ActionResult AddEditApoderado(_AddEditApoderado objViewModel)
         {
@@ -103,16 +98,12 @@ namespace UPCNETSystemCliente.Controllers
                 return View(objViewModel);
             }
         }
-
-
         public ActionResult AddEditProfesor(string IDProfesor, string Modo)
         {
             _AddEditProfesor objAddEditProfesor = new _AddEditProfesor();
             objAddEditProfesor.Fill(IDProfesor, Modo);
             return View(objAddEditProfesor);
         }
-
-
         [HttpPost]
         public ActionResult AddEditProfesor(_AddEditProfesor objViewModel)
         {
@@ -166,17 +157,12 @@ namespace UPCNETSystemCliente.Controllers
                 return View(objViewModel);
             }
         }
-
-
-
         public ActionResult AddEditUsuario(string IDAlumno,string Modo)
         {
             _AddEditUsuario objAddEditUsuario = new _AddEditUsuario();
             objAddEditUsuario.Fill(IDAlumno,Modo);
             return View(objAddEditUsuario);
         }
-
-
         [HttpPost]
         public ActionResult AddEditUsuario(_AddEditUsuario objViewModel)
         {
@@ -227,7 +213,12 @@ namespace UPCNETSystemCliente.Controllers
                 return View(objViewModel);
             }
         }
-    
-
+        public ActionResult MantenimientoCurso()
+        {
+            UPCNETServiceCursoClient proxy = new UPCNETServiceCursoClient();
+            _MantenimientoCurso objMantenimientoCurso = new _MantenimientoCurso();
+            objMantenimientoCurso.CargarDatos(proxy.getCursos());
+            return View(objMantenimientoCurso);
+        }
     }
 }

@@ -260,3 +260,8 @@ C:\Users\Victor\Desktop\Evo5\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\ob
 C:\Users\Victor\Desktop\Evo5\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.csproj.GenerateResource.Cache
 C:\Users\Victor\Desktop\Evo5\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.dll
 C:\Users\Victor\Desktop\Evo5\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.pdb
+C:\Users\Victor\Desktop\Richi\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.csprojResolveAssemblyReference.cache
+C:\Users\Victor\Desktop\Richi\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.Globalization.ValidationString.resources
+C:\Users\Victor\Desktop\Richi\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.csproj.GenerateResource.Cache
+C:\Users\Victor\Desktop\Richi\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.dll
+C:\Users\Victor\Desktop\Richi\Proyecto\UPCNETSystemCliente\UPCNETSystemCliente\obj\Debug\UPCNETSystemCliente.pdb
