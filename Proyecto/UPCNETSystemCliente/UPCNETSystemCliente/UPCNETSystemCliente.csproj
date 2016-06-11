@@ -123,12 +123,12 @@
     <Compile Include="Business Entities\Categoria.cs" />
     <Compile Include="Business Entities\Ciclo.cs" />
     <Compile Include="Business Entities\Curso.cs" />
+    <Compile Include="Business Entities\CursoAlumno.cs" />
+    <Compile Include="Business Entities\CursoClase.cs" />
     <Compile Include="Business Entities\Documento.cs" />
     <Compile Include="Business Entities\Incidencia.cs" />
     <Compile Include="Business Entities\Profesor.cs" />
     <Compile Include="Business Entities\Recurso.cs" />
-    <Compile Include="Business Entities\Seccion.cs" />
-    <Compile Include="Business Entities\Sec_Clase.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PanelController.cs" />
@@ -168,6 +168,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\UPCNETServiceCursoAlumno\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UPCNETServiceCursoClase\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UPCNETServiceCurso\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UPCNETServiceProfesor\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,9 +205,15 @@
     </Compile>
     <Compile Include="ViewModel\Login\_LoginViewModel.cs" />
     <Compile Include="ViewModel\Panel\_AddEditApoderado.cs" />
+    <Compile Include="ViewModel\Panel\_AddEditCurso.cs" />
+    <Compile Include="ViewModel\Panel\_AddEditCursoAlumno.cs" />
+    <Compile Include="ViewModel\Panel\_AddEditCursoClase.cs" />
     <Compile Include="ViewModel\Panel\_AddEditProfesor.cs" />
     <Compile Include="ViewModel\Panel\_AddEditUsuario.cs" />
     <Compile Include="ViewModel\Panel\_MantenimientoApoderado.cs" />
+    <Compile Include="ViewModel\Panel\_MantenimientoCurso.cs" />
+    <Compile Include="ViewModel\Panel\_MantenimientoCursoAlumno.cs" />
+    <Compile Include="ViewModel\Panel\_MantenimientoCursoClase.cs" />
     <Compile Include="ViewModel\Panel\_MantenimientoProfesores.cs" />
     <Compile Include="ViewModel\Panel\_MantenimientoUsuarios.cs" />
   </ItemGroup>
@@ -863,6 +884,74 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\UPCNETServiceCursoAlumno\UPCNETServiceCursoAlumno.wsdl" />
+    <None Include="Service References\UPCNETServiceCursoAlumno\UPCNETServiceCursoAlumno.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIdCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.curso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoByIdAlumnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\UPCNETServiceCursoClase\UPCNETServiceCursoClase.wsdl" />
+    <None Include="Service References\UPCNETServiceCursoClase\UPCNETServiceCursoClase.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.cursoClase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.editCursoClaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.getCursoClaseByIdCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.getCursoClaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.setCursoClaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.getCursoClaseByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\UPCNETServiceCurso\configuration91.svcinfo" />
+    <None Include="Service References\UPCNETServiceCurso\configuration.svcinfo" />
+    <None Include="Service References\UPCNETServiceCurso\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UPCNETServiceCursoAlumno\configuration91.svcinfo" />
+    <None Include="Service References\UPCNETServiceCursoAlumno\configuration.svcinfo" />
+    <None Include="Service References\UPCNETServiceCursoAlumno\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UPCNETServiceCursoClase\configuration91.svcinfo" />
+    <None Include="Service References\UPCNETServiceCursoClase\configuration.svcinfo" />
+    <None Include="Service References\UPCNETServiceCursoClase\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\UPCNETServiceProfesor\UPCNETSystemCliente.UPCNETServiceProfesor.editProfesorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -879,6 +968,25 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\UPCNETServiceProfesor\UPCNETSystemCliente.UPCNETServiceProfesor.validarLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\UPCNETServiceCurso\UPCNETServiceCurso.wsdl" />
+    <None Include="Service References\UPCNETServiceCurso\UPCNETServiceCurso.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\UPCNETServiceCurso\UPCNETSystemCliente.UPCNETServiceCurso.curso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCurso\UPCNETSystemCliente.UPCNETServiceCurso.editCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCurso\UPCNETSystemCliente.UPCNETServiceCurso.getCursoByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCurso\UPCNETSystemCliente.UPCNETServiceCurso.getCursosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCurso\UPCNETSystemCliente.UPCNETServiceCurso.setCursoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\UPCNETServiceProfesor\UPCNETServiceProfesor1.wsdl" />
@@ -974,6 +1082,12 @@
     <Content Include="Views\Panel\MantenimientoProfesores.cshtml" />
     <Content Include="Views\Panel\AddEditProfesor.cshtml" />
     <Content Include="Views\Panel\AddEditApoderado.cshtml" />
+    <Content Include="Views\Panel\AddEditCurso.cshtml" />
+    <Content Include="Views\Panel\MantenimientoCurso.cshtml" />
+    <Content Include="Views\Panel\AddEditCursoClase.cshtml" />
+    <Content Include="Views\Panel\MantenimientoCursoClase.cshtml" />
+    <Content Include="Views\Panel\AddEditCursoAlumno.cshtml" />
+    <Content Include="Views\Panel\MantenimientoCursoAlumno.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -991,6 +1105,9 @@
     <WCFMetadataStorage Include="Service References\UPCNETServiceApoderado\" />
     <WCFMetadataStorage Include="Service References\UPCNETServiceCategoria\" />
     <WCFMetadataStorage Include="Service References\UPCNETServiceCiclo\" />
+    <WCFMetadataStorage Include="Service References\UPCNETServiceCursoAlumno\" />
+    <WCFMetadataStorage Include="Service References\UPCNETServiceCursoClase\" />
+    <WCFMetadataStorage Include="Service References\UPCNETServiceCurso\" />
     <WCFMetadataStorage Include="Service References\UPCNETServiceProfesor\" />
     <WCFMetadataStorage Include="Service References\UPCNETServiceRecurso\" />
     <WCFMetadataStorage Include="Service References\UPCNETServiceSeccion\" />

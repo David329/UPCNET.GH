@@ -7,14 +7,15 @@
         En esta sección podrás gestionar los usuarios del sistema.
     </div>
     <div class="panel-body">
-      
-        
-            <fieldset class="content-group">
-                <legend class="text-bold">Opciones</legend>
-                <i class="icon-user-plus">
-                <a href="@Url.Action("AddEditUsuario",  new { IDAlumno = "",Modo="Nuevo" })"> Nuevo usuario </a></i>
-            </fieldset>
-        
+
+
+        <fieldset class="content-group">
+            <legend class="text-bold">Opciones</legend>
+            <i class="icon-user-plus">
+                <a href="@Url.Action("AddEditUsuario",  new { IDAlumno = "",Modo="Nuevo" })"> Nuevo usuario </a>
+            </i>
+        </fieldset>
+
     </div>
     <table class="table">
         <thead>
@@ -45,18 +46,16 @@
                     <td>@item.Edad</td>
                     <td>
 
-                        <a href="@Url.Action("AddEditUsuario",
-                              new
-                              { IDAlumno = item.IDAlumno,
-                                Modo= "Editar"})">
-                            <i class="fa fa-edit"></i> Editar
-                        </a>
-
+                        <a href="@Url.Action("AddEditUsuario",new{ IDAlumno = item.IDAlumno,Modo= "Editar"})"><i class="fa fa-edit"></i> Editar</a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("AddEditCursoAlumno",new{ IDCurso= "",IDAlumno=item.IDAlumno,Modo="Nuevo"})"><i class="icon-add"></i> Agregar Curso</a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("MantenimientoCursoAlumnos",new{ IDAlumno= item.IDAlumno})"><i class="fa fa-edit"></i> Ver Todas los cursos del alumno</a>
                     </td>
                 </tr>
-                                        }
-
-
+            }
         </tbody>
     </table>
 </div>

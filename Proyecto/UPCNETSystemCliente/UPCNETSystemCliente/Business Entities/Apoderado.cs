@@ -7,39 +7,15 @@ namespace UPCNETSystemCliente.Business_Entities
 {
     public class Apoderado
     {
-        private String IdApoderado;
-        private String Pass;
-        private String Nombre;
-        private String Apellido;
-        private String DNI;
-        private String Edad;
-        private String Correo;
-        private String Direccion;
-        private String Condicion;
-
-        public Apoderado(String nombre, String apellido, String idapoderado, String Pass,String carrera, String dni, String correo,
-                 String direccion, String condicion, String edad)
-        {
-            this.IdApoderado = idapoderado;
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.DNI = dni;
-            this.Edad = edad;
-            this.Correo = correo;
-            this.Direccion = direccion;
-            this.Pass = Pass;
-            this.Condicion = condicion;
-        }
-        public String getIdApoderado() { return IdApoderado; }
-        public String getNombre() { return Nombre; }
-        public String getApellido() { return Apellido; }
-        public String getDNI() { return DNI; }
-        public String getEdad() { return Edad; }
-        public String getCorreo() { return Correo; }
-        public String getDireccion() { return Direccion; }
-        public String getCondicion() { return Condicion; }
-        public String getPass() { return Pass; }
-
-
+        public string IDApoderado  { get; set; }
+        public string Pass { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int DNI { get; set; }
+        public int Edad{ get; set; }
+        public string Correo { get; set; }
+        public string Direccion { get; set; }
+        public string Condicion{ get; set; }
+        public Apoderado() { }
     }
 }

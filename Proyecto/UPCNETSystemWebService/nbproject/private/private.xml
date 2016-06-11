@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/ProfesorDAO.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceProfesor.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/AlumnoDAO.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/entidades/Apoderado.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/dao/ApoderadoDAO.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceAlumno.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceAdministrador.java</file>
-            <file>file:/C:/Users/Victor/Desktop/Evo5/Proyecto/UPCNETSystemWebService/src/java/com/upc/upcnet/Services/UPCNETServiceApoderado.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
