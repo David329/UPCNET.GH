@@ -234,6 +234,8 @@ namespace UPCNETSystemCliente.Controllers
         {
             try
             {
+                var HoraI = Request.Form["HoraInicio"].ToString();
+                var HoraF = Request.Form["HoraFin"].ToString();
                 UPCNETServiceCursoClase.cursoClase objCursoclase = new cursoClase();
                 UPCNETServiceCursoClaseClient proxyCC = new UPCNETServiceCursoClaseClient();
                 if (objViewModel.Modo == "Editar")
@@ -245,8 +247,8 @@ namespace UPCNETSystemCliente.Controllers
                 {
                     //Curso
                     objCursoclase.dia = objViewModel.objCursoClase.Dia;
-                    objCursoclase.horaFin = objViewModel.objCursoClase.HoraFin;
-                    objCursoclase.horaIni = objViewModel.objCursoClase.HoraIni;
+                    objCursoclase.horaFin = DateTime.Parse( HoraF);
+                    objCursoclase.horaIni = DateTime.Parse(HoraI );
                     objCursoclase.idClase = objViewModel.objCursoClase.IDClase;
                     objCursoclase.idCurso = objViewModel.objCursoClase.IDCurso;
 
