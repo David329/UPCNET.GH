@@ -220,6 +220,7 @@ namespace UPCNETSystemCliente.Controllers
             UPCNETServiceCursoClaseClient proxy = new UPCNETServiceCursoClaseClient();
             _MantenimientoCursoClase objMantenimientoCursoClase = new _MantenimientoCursoClase();
             objMantenimientoCursoClase.Procesar(proxy.getCursoClaseByIdCurso(IDCurso));
+            if(objMantenimientoCursoClase.ListObjetos==null)objMantenimientoCursoClase.ListObjetos = new List<Business_Entities.CursoClase>();
             return View(objMantenimientoCursoClase);
         }
         public ActionResult AddEditCursoClase(string IDCurso,string IDClase, string Modo)

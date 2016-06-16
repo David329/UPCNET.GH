@@ -12,18 +12,20 @@ namespace UPCNETSystemCliente.ViewModel.Panel
         public void Procesar(UPCNETServiceCursoAlumno.curso[] cursos)
         {
             ListObjetos = new List<Business_Entities.Curso>();
-
-            foreach (var item in cursos)
+            if (cursos != null)
             {
+                foreach (var item in cursos)
+                {
 
-                Business_Entities.Curso objCurso= new Business_Entities.Curso();
-                objCurso.CicloDeCurso=item.cicloDeCurso;
-                objCurso.IDCurso = item.idCurso;
-                objCurso.IDProfesor = item.idProfesor;
-                objCurso.MaxInasistencia = item.maxInasistencia;
+                    Business_Entities.Curso objCurso = new Business_Entities.Curso();
+                    objCurso.CicloDeCurso = item.cicloDeCurso;
+                    objCurso.IDCurso = item.idCurso;
+                    objCurso.IDProfesor = item.idProfesor;
+                    objCurso.MaxInasistencia = item.maxInasistencia;
 
 
-                ListObjetos.Add(objCurso);
+                    ListObjetos.Add(objCurso);
+                }
             }
         }
     }

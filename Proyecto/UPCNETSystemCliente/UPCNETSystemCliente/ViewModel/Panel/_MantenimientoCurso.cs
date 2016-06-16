@@ -12,7 +12,8 @@ namespace UPCNETSystemCliente.ViewModel.Panel
         public void Procesar(UPCNETServiceCurso.curso[] cursos)
         {
             ListObjetos = new List<Business_Entities.Curso>();
-           
+            if (cursos != null)
+            {
                 foreach (var item in cursos)
                 {
                     Business_Entities.Curso objCurso = new Business_Entities.Curso();
@@ -22,6 +23,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                     objCurso.IDProfesor = item.idProfesor;
 
                     ListObjetos.Add(objCurso);//deberiamos agregar Profesor.Nombre();Si es q lo necesitamos///
+                }
             }
         }
     }

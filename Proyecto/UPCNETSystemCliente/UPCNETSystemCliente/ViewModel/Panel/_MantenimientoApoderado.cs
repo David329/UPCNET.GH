@@ -14,20 +14,23 @@ namespace UPCNETSystemCliente.ViewModel.Panel
         public void Procesar(UPCNETServiceApoderado.apoderado[] apoderado)
         {
             ListObjetos = new List<Apoderado>();
-            foreach (var item in apoderado)
+            if (apoderado != null)
             {
-                Apoderado objApoderado = new Apoderado();
-                objApoderado.Nombre = item.nombre;
-                objApoderado.Apellido = item.apellido;
-                objApoderado.Correo = item.correo;
-                objApoderado.Password = item.pass;
-                objApoderado.IDApoderado = item.IDApoderado;
-                objApoderado.Edad = item.edad;
-                objApoderado.Direccion = item.direccion;
-                objApoderado.DNI = item.DNI;
-                objApoderado.Condicion = item.condicion;
+                foreach (var item in apoderado)
+                {
+                    Apoderado objApoderado = new Apoderado();
+                    objApoderado.Nombre = item.nombre;
+                    objApoderado.Apellido = item.apellido;
+                    objApoderado.Correo = item.correo;
+                    objApoderado.Password = item.pass;
+                    objApoderado.IDApoderado = item.IDApoderado;
+                    objApoderado.Edad = item.edad;
+                    objApoderado.Direccion = item.direccion;
+                    objApoderado.DNI = item.DNI;
+                    objApoderado.Condicion = item.condicion;
 
-                ListObjetos.Add(objApoderado);
+                    ListObjetos.Add(objApoderado);
+                }
             }
         }
     }

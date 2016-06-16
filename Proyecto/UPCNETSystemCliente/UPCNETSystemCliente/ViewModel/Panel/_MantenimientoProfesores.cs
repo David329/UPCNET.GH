@@ -16,20 +16,23 @@ namespace UPCNETSystemCliente.ViewModel.Panel
         {
            
             ListObjetos = new List<Profesor>();
-            foreach (var item in profesor)
+            if (profesor != null)
             {
-                Profesor objProfesor = new Profesor();
-                objProfesor.Nombre = item.nombre;
-                objProfesor.Apellido = item.apellido;
-                objProfesor.Correo = item.correo;
-                objProfesor.Password = item.pass;
-                objProfesor.IDProfesor = item.idProfesor;
-                objProfesor.Edad = item.edad;
-                objProfesor.Direccion = item.direccion;
-                objProfesor.DNI = item.dni;
-                objProfesor.Sueldo = item.sueldo;
+                foreach (var item in profesor)
+                {
+                    Profesor objProfesor = new Profesor();
+                    objProfesor.Nombre = item.nombre;
+                    objProfesor.Apellido = item.apellido;
+                    objProfesor.Correo = item.correo;
+                    objProfesor.Password = item.pass;
+                    objProfesor.IDProfesor = item.idProfesor;
+                    objProfesor.Edad = item.edad;
+                    objProfesor.Direccion = item.direccion;
+                    objProfesor.DNI = item.dni;
+                    objProfesor.Sueldo = item.sueldo;
 
-                ListObjetos.Add(objProfesor);
+                    ListObjetos.Add(objProfesor);
+                }
             }
         }
     }

@@ -13,16 +13,19 @@ namespace UPCNETSystemCliente.ViewModel.Panel
         {
             ListObjetos = new List<Business_Entities.CursoClase>();
 
-            foreach (var item in cursoclases)
+            if (cursoclases != null)
             {
-                Business_Entities.CursoClase objCursoClase = new Business_Entities.CursoClase();
-                objCursoClase.Dia = item.dia;
-                objCursoClase.HoraFin = item.horaFin;
-                objCursoClase.HoraIni = item.horaIni;
-                objCursoClase.IDClase = item.idClase;
-                objCursoClase.IDCurso = item.idCurso;
+                foreach (var item in cursoclases)
+                {
+                    Business_Entities.CursoClase objCursoClase = new Business_Entities.CursoClase();
+                    objCursoClase.Dia = item.dia;
+                    objCursoClase.HoraFin = item.horaFin;
+                    objCursoClase.HoraIni = item.horaIni;
+                    objCursoClase.IDClase = item.idClase;
+                    objCursoClase.IDCurso = item.idCurso;
 
-                ListObjetos.Add(objCursoClase);
+                    ListObjetos.Add(objCursoClase);
+                }
             }
         }
     }

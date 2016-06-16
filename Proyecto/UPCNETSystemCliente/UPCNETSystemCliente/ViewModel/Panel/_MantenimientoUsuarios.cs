@@ -5,7 +5,6 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using UPCNETSystemCliente.UPCNETServiceAlumno;
 
-
 namespace UPCNETSystemCliente.ViewModel.Panel
 {
     public class _MantenimientoUsuarios
@@ -14,19 +13,22 @@ namespace UPCNETSystemCliente.ViewModel.Panel
 
         public void Procesar(UPCNETServiceAlumno.alumno[] alumnos) {
             ListObjetos = new List<Alumno>();
-            foreach (var item in alumnos)
+            if (alumnos != null)
             {
-                Alumno objAlumno = new Alumno();
-                objAlumno.Nombre = item.nombre;
-                objAlumno.Apellido = item.apellido;
-                objAlumno.Correo = item.correo;
-                objAlumno.Password = item.pass;
-                objAlumno.IDAlumno = item.idAlumno;
-                objAlumno.Edad = item.edad;
-                objAlumno.Direccion = item.direccion;
-                objAlumno.DNI = item.dni;
+                foreach (var item in alumnos)
+                {
+                    Alumno objAlumno = new Alumno();
+                    objAlumno.Nombre = item.nombre;
+                    objAlumno.Apellido = item.apellido;
+                    objAlumno.Correo = item.correo;
+                    objAlumno.Password = item.pass;
+                    objAlumno.IDAlumno = item.idAlumno;
+                    objAlumno.Edad = item.edad;
+                    objAlumno.Direccion = item.direccion;
+                    objAlumno.DNI = item.dni;
 
-                ListObjetos.Add(objAlumno);
+                    ListObjetos.Add(objAlumno);
+                }
             }
         }
     }
