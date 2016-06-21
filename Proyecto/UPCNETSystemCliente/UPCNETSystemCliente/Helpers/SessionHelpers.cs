@@ -19,6 +19,7 @@ namespace UPCNETSystemCliente.Helpers
         Usuario,
         Password,
         Nombre,
+        id,
         Email
     }
 

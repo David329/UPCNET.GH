@@ -7,6 +7,7 @@ package com.upc.upcnet.dao;
 
 import com.upc.upcnet.BD.AccesoDB;
 import com.upc.upcnet.entidades.CursoClase;
+import com.upc.upcnet.entidades.CursoClaseAlumno;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -187,4 +188,47 @@ public class CursoClaseDAO {
         }
         return cursoclases;
     }
+    
+    public List<CursoClaseAlumno> getCursoClaseAlumno(String idAlumno) {
+        List<CursoClaseAlumno> lista = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT c.IDCurso ,c.Nombre AS CursoN, p.Nombre AS ProfesorN, cc.Dia, cc.HoraIni, cc.HoraFin FROM Curso_Clase cc\n" +
+                            "JOIN Curso c ON c.IDCurso = cc.IDCurso\n" +
+                            "JOIN Profesor p ON p.IDProfesor = c.IDProfesor\n" +
+                            "JOIN Curso_Alumno ca ON ca.IDCurso = c.IDCurso\n" +
+                            "JOIN Alumno a ON a.IDAlumno = ca.IDAlumno\n" +
+                            "WHERE a.IDAlumno = ?");
+            PreparedStatement ps = con.prepareStatement(query.toString());
+            ps.setString(1, idAlumno);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                CursoClaseAlumno objeto = new CursoClaseAlumno();
+                objeto.setIdCurso(rs.getString("IDCurso"));
+                objeto.setCurso(rs.getString("CursoN"));
+                objeto.setProfesor(rs.getString("ProfesorN"));
+                objeto.setDia(rs.getString("Dia"));
+                objeto.setHoraInicial(rs.getDate("HoraIni"));
+                objeto.setHoraFinal(rs.getDate("HoraFin"));
+                
+                lista.add(objeto);
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException("No se tiene acceso al servidor");
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception ex) {
+            }
+        }
+        return lista;
+    }
 }
+
+

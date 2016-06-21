@@ -122,6 +122,8 @@
     <Compile Include="Business Entities\Apoderado.cs" />
     <Compile Include="Business Entities\Categoria.cs" />
     <Compile Include="Business Entities\Ciclo.cs" />
+    <Compile Include="Business Entities\CursoAlumnoReporte.cs" />
+    <Compile Include="Business Entities\CursoClaseAlumno.cs" />
     <Compile Include="Business Entities\Curso.cs" />
     <Compile Include="Business Entities\CursoAlumno.cs" />
     <Compile Include="Business Entities\CursoClase.cs" />
@@ -129,6 +131,7 @@
     <Compile Include="Business Entities\Incidencia.cs" />
     <Compile Include="Business Entities\Profesor.cs" />
     <Compile Include="Business Entities\Recurso.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PanelController.cs" />
@@ -203,6 +206,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Alumno\HorarioViewModel.cs" />
+    <Compile Include="ViewModel\Alumno\LstCursoViewModel.cs" />
     <Compile Include="ViewModel\Login\_LoginViewModel.cs" />
     <Compile Include="ViewModel\Panel\_AddEditApoderado.cs" />
     <Compile Include="ViewModel\Panel\_AddEditCurso.cs" />
@@ -912,6 +917,12 @@
     <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoByIdAlumnoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumnoReporte.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoAlumno\UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoReporteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\UPCNETServiceCursoClase\UPCNETServiceCursoClase.wsdl" />
     <None Include="Service References\UPCNETServiceCursoClase\UPCNETServiceCursoClase.xsd">
       <SubType>Designer</SubType>
@@ -932,6 +943,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.getCursoClaseByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.cursoClaseAlumno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UPCNETServiceCursoClase\UPCNETSystemCliente.UPCNETServiceCursoClase.getCursoClaseAlumnoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\UPCNETServiceCurso\configuration91.svcinfo" />
@@ -1088,6 +1105,9 @@
     <Content Include="Views\Panel\MantenimientoCursoClase.cshtml" />
     <Content Include="Views\Panel\AddEditCursoAlumno.cshtml" />
     <Content Include="Views\Panel\MantenimientoCursoAlumno.cshtml" />
+    <Content Include="Views\Layout\AlumnoLayout.cshtml" />
+    <Content Include="Views\Alumno\Principal.cshtml" />
+    <Content Include="Views\Alumno\LstCurso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

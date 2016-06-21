@@ -7,6 +7,7 @@ package com.upc.upcnet.Services;
 
 import com.upc.upcnet.dao.CursoClaseDAO;
 import com.upc.upcnet.entidades.CursoClase;
+import com.upc.upcnet.entidades.CursoClaseAlumno;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -53,5 +54,17 @@ public class UPCNETServiceCursoClase {
         CursoClaseDAO cursoClaseDAO = new CursoClaseDAO();
         List<CursoClase> cursosclase = cursoClaseDAO.getCursoClaseByID(_idCurso, _idClase);
         return cursosclase.get(0);
-    }    
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getCursoClaseAlumno")
+    public List<CursoClaseAlumno> getCursoClaseAlumno(@WebParam(name = "idAlumno") String idAlumno) {
+        CursoClaseDAO cursoClaseDAO = new CursoClaseDAO();
+        List<CursoClaseAlumno> lista = cursoClaseDAO.getCursoClaseAlumno(idAlumno);
+        return lista;
+    }
+    
+    
 }
