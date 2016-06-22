@@ -9,6 +9,10 @@ import com.upc.upcnet.entidades.Profesor;
 import java.util.ArrayList;
 import java.util.List;
 import com.upc.upcnet.BD.AccesoDB;
+import com.upc.upcnet.entidades.AlumnosEnCurso;
+import com.upc.upcnet.entidades.CursoClase;
+import com.upc.upcnet.entidades.CursoProfesor;
+import com.upc.upcnet.entidades.HorarioProfesor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -192,5 +196,104 @@ public class ProfesorDAO {
                     cn.close();
             }catch(Exception ex){}
         }     
+    }
+    
+    public List<HorarioProfesor> getHorarioProfesor(String _idProfesor){
+        List<HorarioProfesor> horarioProfesor = new ArrayList<>();
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT c.IDCurso, c.Nombre, cc.Dia, cc.HoraIni, cc.HoraFin FROM Curso c JOIN Profesor p ON p.IDProfesor = c.IDProfesor JOIN Curso_Clase cc ON cc.IDCurso = c.IDCurso WHERE p.IDProfesor = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idProfesor);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                HorarioProfesor hp = new HorarioProfesor();
+                hp.setIDCurso(rs.getString("c.IDCurso"));
+                hp.setNombre(rs.getString("c.Nombre"));
+                hp.setDia(rs.getString("cc.Dia"));
+                hp.setHoraIni(rs.getDate("cc.HoraIni"));
+                hp.setHoraFin(rs.getDate("cc.HoraFin"));
+                
+                horarioProfesor.add(hp);
+            }
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }        
+        return horarioProfesor;
+    }
+    public List<CursoProfesor> getCursoProfesor(String _idProfesor){
+        List<CursoProfesor> cursoProfesor = new ArrayList<>();
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT c.IDCurso, c.Nombre, c.CicloDeCurso AS Ciclo FROM Curso c JOIN Profesor p ON p.IDProfesor = c.IDProfesor WHERE p.IDProfesor = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idProfesor);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                CursoProfesor cp= new CursoProfesor();
+                cp.setIDCurso(rs.getString("c.IDCurso"));
+                cp.setNombre(rs.getString("c.Nombre"));
+                cp.setCicloDeCurso(rs.getInt("Ciclo"));
+                
+                cursoProfesor.add(cp);
+            }
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }        
+        return cursoProfesor;
+    }
+    
+    public List<AlumnosEnCurso> getAlumnosEnCurso(String _idCurso){
+        List<AlumnosEnCurso> alumnosEnCurso = new ArrayList<>();
+        Connection cn = null;
+        try{
+            cn = AccesoDB.getConnection();
+            StringBuilder query = new StringBuilder();
+            query.append("SELECT C.IDCurso, c.Nombre AS Curso, a.Nombre AS AlumnoNombre, a.Apellido AS AlumnoApellido, ca.PC1, ca.PC2, ca.EP, ca.EF  FROM Curso c JOIN Curso_Alumno ca ON ca.IDCurso = c.IDCurso JOIN Alumno a ON a.IDAlumno = ca.IDAlumno WHERE c.IDCurso = ?");
+            PreparedStatement ps = cn.prepareStatement(query.toString());
+            ps.setString(1, _idCurso);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                AlumnosEnCurso cp= new AlumnosEnCurso();
+                cp.setIDCurso(rs.getString("c.IDCurso"));
+                cp.setNombrec(rs.getString("Curso"));
+                cp.setNombrea(rs.getString("AlumnoNombre"));
+                cp.setApellido(rs.getString("AlumnoApellido"));
+                cp.setPc1(rs.getDouble("ca.PC1"));
+                cp.setPc2(rs.getDouble("ca.PC2"));
+                cp.setEp(rs.getDouble("ca.EP"));
+                cp.setEf(rs.getDouble("ca.EF"));
+                
+                alumnosEnCurso.add(cp);
+            }
+        }catch(SQLException ex){
+            throw new RuntimeException(ex.getMessage());
+        }catch(Exception e){
+            throw new RuntimeException("No se tiene acceso al servidor");
+        }finally{
+            try{
+                if(cn != null)
+                    cn.close();
+            }catch(Exception ex){}
+        }        
+        return alumnosEnCurso;
     }
 }

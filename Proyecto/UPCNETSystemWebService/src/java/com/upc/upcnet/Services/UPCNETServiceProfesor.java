@@ -6,6 +6,9 @@
 package com.upc.upcnet.Services;
 
 import com.upc.upcnet.dao.ProfesorDAO;
+import com.upc.upcnet.entidades.AlumnosEnCurso;
+import com.upc.upcnet.entidades.CursoProfesor;
+import com.upc.upcnet.entidades.HorarioProfesor;
 import com.upc.upcnet.entidades.Profesor;
 import java.util.List;
 import javax.jws.WebService;
@@ -45,5 +48,20 @@ public class UPCNETServiceProfesor {
         ProfesorDAO profesorDAO = new ProfesorDAO();
         List<Profesor> profesores = profesorDAO.getProfesorById(_idProfesor);
         return profesores.get(0);
+    }
+    @WebMethod(operationName = "getHorarioProfesor")
+    public List<HorarioProfesor> getHorarioProfesor(String _idProfesor) {
+        ProfesorDAO profesorDAO = new ProfesorDAO();
+        return profesorDAO.getHorarioProfesor(_idProfesor);
+    }
+    @WebMethod(operationName = "getCursoProfesor")
+    public List<CursoProfesor> getCursoProfesor(String _idProfesor) {
+        ProfesorDAO profesorDAO = new ProfesorDAO();
+        return profesorDAO.getCursoProfesor(_idProfesor);
+    }
+    @WebMethod(operationName = "getAlumnosEnCurso")
+    public List<AlumnosEnCurso> getAlumnosEnCurso(String _idCurso) {
+        ProfesorDAO profesorDAO = new ProfesorDAO();
+        return profesorDAO.getAlumnosEnCurso(_idCurso);
     }
 }

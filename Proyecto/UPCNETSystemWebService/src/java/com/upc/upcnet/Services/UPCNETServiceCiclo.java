@@ -28,17 +28,17 @@ public class UPCNETServiceCiclo {
     }
     
     @WebMethod(operationName = "setCiclo")
-    public void setCiclo(String _idCiclo, String _idAlumno, String _boleta1, String _boleta2, String _boleta3){
+    public void setCiclo(Ciclo objCiclo){
         
         CicloDAO objCicloDAO=new CicloDAO();
-        objCicloDAO.setCiclo(_idCiclo, _idAlumno, _boleta1, _boleta2, _boleta3);
+        objCicloDAO.setCiclo(objCiclo);
     }
     
     @WebMethod(operationName = "editCiclo")
-    public void editCiclo(String _idCiclo, String _idAlumno, String _boleta1, String _boleta2, String _boleta3){
+    public void editCiclo(Ciclo objCiclo){
         
         CicloDAO objCicloDAO=new CicloDAO();
-        objCicloDAO.editCiclo(_idCiclo, _idAlumno, _boleta1, _boleta2, _boleta3);
+        objCicloDAO.editCiclo(objCiclo);
     }
     
 }

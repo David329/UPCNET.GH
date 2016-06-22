@@ -52,15 +52,14 @@ public class CicloDAO {
         }
         return ciclos;
     }
-    public void setCiclo(String _idCiclo, String _idAlumno, String _boleta1, String _boleta2, String _boleta3){
+    public void setCiclo(Ciclo objCiclo){
         Connection cn = null;        
         try{
             cn = AccesoDB.getConnection();
-            cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
             query.append("SELECT * FROM Ciclo WHERE IDCiclo = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idCiclo);
+            ps.setString(1, objCiclo.getIDCiclo());
             ResultSet rs = ps.executeQuery();
             if(rs.next())
                 throw new SQLException("El codigo del Ciclo ya existe");
@@ -68,11 +67,11 @@ public class CicloDAO {
             query = new StringBuilder();
             query.append("INSERT INTO Ciclo(IDCiclo, IDAlumno, Boleta1, Boleta2, Boleta3) VALUES(?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idCiclo);
-            ps.setString(2, _idAlumno);
-            ps.setBoolean(3, Boolean.parseBoolean(_boleta1));
-            ps.setBoolean(4, Boolean.parseBoolean(_boleta2));
-            ps.setBoolean(5, Boolean.parseBoolean(_boleta3));
+            ps.setString(1, objCiclo.getIDCiclo());
+            ps.setString(2, objCiclo.getIDAlumno());
+            ps.setBoolean(3, objCiclo.isBoleta1());
+            ps.setBoolean(4, objCiclo.isBoleta2());
+            ps.setBoolean(5, objCiclo.isBoleta3());
             
             ps.executeUpdate();
             cn.commit();
@@ -88,20 +87,19 @@ public class CicloDAO {
             }catch(Exception ex){}
         }
     }
-    public void editCiclo(String _idCiclo, String _idAlumno, String _boleta1, String _boleta2, String _boleta3){
+    public void editCiclo(Ciclo objCiclo){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
-            cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("UPDATE Ciclo SET _idAlumno = ?, Boleta1 = ?, Boleta2 = ?, Boleta3 = ? WHERE IDCiclo= ?");
+            query.append("UPDATE Ciclo SET IDAlumno = ?, Boleta1 = ?, Boleta2 = ?, Boleta3 = ? WHERE IDCiclo= ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             
-            ps.setString(1, _idAlumno);
-            ps.setBoolean(2, Boolean.parseBoolean(_boleta1));
-            ps.setBoolean(3, Boolean.parseBoolean(_boleta2));
-            ps.setBoolean(4, Boolean.parseBoolean(_boleta3));
-            ps.setString(5, _idCiclo);
+            ps.setString(1, objCiclo.getIDAlumno());
+            ps.setBoolean(2,objCiclo.isBoleta1());
+            ps.setBoolean(3, objCiclo.isBoleta2());
+            ps.setBoolean(4, objCiclo.isBoleta3());
+            ps.setString(5, objCiclo.getIDCiclo());
             
             int realizado = ps.executeUpdate();
             if(realizado == 0)

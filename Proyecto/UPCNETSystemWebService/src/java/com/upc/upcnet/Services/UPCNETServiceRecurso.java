@@ -18,28 +18,27 @@ import javax.jws.WebService;
  */
 @WebService(serviceName = "UPCNETServiceRecurso")
 public class UPCNETServiceRecurso {
-    
+
     @WebMethod(operationName = "getRecurso")
-    public List<Recurso> getRecurso(){
-        
-        RecursoDAO objRecursoDAO=new RecursoDAO();
-        List<Recurso>ListaRecurso=objRecursoDAO.getRecurso();
-        
-        return ListaRecurso;  
+    public List<Recurso> getRecurso() {
+
+        RecursoDAO objRecursoDAO = new RecursoDAO();
+        List<Recurso> ListaRecurso = objRecursoDAO.getRecurso();
+
+        return ListaRecurso;
     }
-    
+
     @WebMethod(operationName = "setRecurso")
-    public void setRecurso(String _idRecurso, String _nombreRecurso, String _FechaPedido, String _CantidadHoras, String _Reservado,String _idAlumno,String _idProfesor){
-        
-        RecursoDAO objRecursoDAO=new RecursoDAO();
-        objRecursoDAO.setRecurso(_idRecurso, _nombreRecurso, _FechaPedido, _CantidadHoras, _Reservado, _idAlumno, _idProfesor);
+    public void setRecurso(Recurso objRecurso) {
+
+        RecursoDAO objRecursoDAO = new RecursoDAO();
+        objRecursoDAO.setRecurso(objRecurso);
     }
-    
+
     @WebMethod(operationName = "editRecurso")
-    public void editRecurso(String _idRecurso, String _nombreRecurso, String _FechaPedido, String _CantidadHoras, String _Reservado,String _idAlumno,String _idProfesor){
-        
-        RecursoDAO objRecursoDAO=new RecursoDAO();
-        objRecursoDAO.editRecurso(_idRecurso, _nombreRecurso, _FechaPedido, _CantidadHoras, _Reservado, _idAlumno, _idProfesor);
+    public void editRecurso(Recurso objRecurso) {
+
+        RecursoDAO objRecursoDAO = new RecursoDAO();
+        objRecursoDAO.editRecurso(objRecurso);
     }
-    
 }

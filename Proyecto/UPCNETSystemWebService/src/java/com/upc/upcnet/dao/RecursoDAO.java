@@ -58,7 +58,7 @@ public class RecursoDAO {
         }
         return recursos;
     }
-    public void setRecurso(String _idRecurso, String _nombreRecurso, String _FechaPedido, String _CantidadHoras, String _Reservado,String _idAlumno,String _idProfesor){
+    public void setRecurso(Recurso objRecurso){
         Connection cn = null;        
         try{
             cn = AccesoDB.getConnection();
@@ -66,7 +66,7 @@ public class RecursoDAO {
             StringBuilder query = new StringBuilder();
             query.append("SELECT * FROM Recurso WHERE IDRecurso = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idRecurso);
+            ps.setString(1, objRecurso.getIDRecurso());
             ResultSet rs = ps.executeQuery();
             if(rs.next())
                 throw new SQLException("El codigo del Recurso ya existe");
@@ -76,13 +76,13 @@ public class RecursoDAO {
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");            
             
             ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _idRecurso);
-            ps.setString(2, _nombreRecurso);
-            ps.setDate(3, (java.sql.Date) df.parse(_FechaPedido));
-            ps.setInt(4, Integer.parseInt(_CantidadHoras));
-            ps.setBoolean(5, Boolean.parseBoolean(_Reservado));
-            ps.setString(6, _idAlumno);
-            ps.setString(7, _idProfesor);
+            ps.setString(1, objRecurso.getIDRecurso());
+            ps.setString(2, objRecurso.getNombreRecurso());
+            ps.setDate(3, (java.sql.Date)objRecurso.getFechaPedido());
+            ps.setInt(4, objRecurso.getCantidadHoras());
+            ps.setBoolean(5,objRecurso.isReservado());
+            ps.setString(6, objRecurso.getIDAlumno());
+            ps.setString(7, objRecurso.getIDProfesor());
             ps.executeUpdate();
             cn.commit();
             
@@ -97,23 +97,22 @@ public class RecursoDAO {
             }catch(Exception ex){}
         }
     }
-    public void editRecurso(String _idRecurso, String _nombreRecurso, String _FechaPedido, String _CantidadHoras, String _Reservado,String _idAlumno,String _idProfesor){
+    public void editRecurso(Recurso objRecurso){
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
-            cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
             query.append("UPDATE Recurso SET NombreRecurso = ?, FechaPedido = ?, CantidadHoras = ?, Reservado = ?, IDAlumno = ?, IDProfesor = ? WHERE IDRecurso= ?");
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
             
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setString(1, _nombreRecurso);
-            ps.setDate(2, (java.sql.Date) df.parse(_FechaPedido));
-            ps.setInt(3, Integer.parseInt(_CantidadHoras));
-            ps.setBoolean(4, Boolean.parseBoolean(_Reservado));
-            ps.setString(5, _idAlumno);
-            ps.setString(6, _idProfesor);
-            ps.setString(7, _idRecurso);
+            ps.setString(1, objRecurso.getNombreRecurso());
+            ps.setDate(2, (java.sql.Date) objRecurso.getFechaPedido());
+            ps.setInt(3, objRecurso.getCantidadHoras());
+            ps.setBoolean(4, objRecurso.isReservado());
+            ps.setString(5, objRecurso.getIDAlumno());
+            ps.setString(6, objRecurso.getIDProfesor());
+            ps.setString(7, objRecurso.getIDRecurso());
             
             int realizado = ps.executeUpdate();
             if(realizado == 0)
