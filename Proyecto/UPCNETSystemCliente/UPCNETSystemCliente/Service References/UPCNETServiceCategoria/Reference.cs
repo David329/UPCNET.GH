@@ -15,13 +15,14 @@ namespace UPCNETSystemCliente.UPCNETServiceCategoria {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Services.upcnet.upc.com/", ConfigurationName="UPCNETServiceCategoria.UPCNETServiceCategoria")]
     public interface UPCNETServiceCategoria {
         
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaResponse")]
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse editCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse getCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse> editCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse> getCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request);
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/setCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/setCategoriaResponse")]
@@ -31,80 +32,13 @@ namespace UPCNETSystemCliente.UPCNETServiceCategoria {
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/setCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/setCategoriaResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.setCategoriaResponse> setCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.setCategoriaRequest request);
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaResponse")]
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse getCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request);
+        UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse editCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/getCategoriaResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse> getCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editCategoria", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        public editCategoriaRequest() {
-        }
-        
-        public editCategoriaRequest(string arg0, string arg1) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editCategoriaResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editCategoriaResponse {
-        
-        public editCategoriaResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setCategoria", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        public setCategoriaRequest() {
-        }
-        
-        public setCategoriaRequest(string arg0, string arg1) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setCategoriaResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setCategoriaResponse {
-        
-        public setCategoriaResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCategoria/editCategoriaResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse> editCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request);
     }
     
     /// <remarks/>
@@ -181,6 +115,72 @@ namespace UPCNETSystemCliente.UPCNETServiceCategoria {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setCategoria", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public setCategoriaRequest() {
+        }
+        
+        public setCategoriaRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setCategoriaResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setCategoriaResponse {
+        
+        public setCategoriaResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editCategoria", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public editCategoriaRequest() {
+        }
+        
+        public editCategoriaRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editCategoriaResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editCategoriaResponse {
+        
+        public editCategoriaResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface UPCNETServiceCategoriaChannel : UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria, System.ServiceModel.IClientChannel {
     }
@@ -209,27 +209,24 @@ namespace UPCNETSystemCliente.UPCNETServiceCategoria {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.editCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request) {
-            return base.Channel.editCategoria(request);
+        UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.getCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request) {
+            return base.Channel.getCategoria(request);
         }
         
-        public void editCategoria(string arg0, string arg1) {
-            UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).editCategoria(inValue);
+        public UPCNETSystemCliente.UPCNETServiceCategoria.categoria[] getCategoria() {
+            UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest();
+            UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).getCategoria(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse> UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.editCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request) {
-            return base.Channel.editCategoriaAsync(request);
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse> UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.getCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request) {
+            return base.Channel.getCategoriaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse> editCategoriaAsync(string arg0, string arg1) {
-            UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            return ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).editCategoriaAsync(inValue);
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse> getCategoriaAsync() {
+            UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest();
+            return ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).getCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -257,24 +254,27 @@ namespace UPCNETSystemCliente.UPCNETServiceCategoria {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.getCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request) {
-            return base.Channel.getCategoria(request);
+        UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.editCategoria(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request) {
+            return base.Channel.editCategoria(request);
         }
         
-        public UPCNETSystemCliente.UPCNETServiceCategoria.categoria[] getCategoria() {
-            UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest();
-            UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).getCategoria(inValue);
-            return retVal.@return;
+        public void editCategoria(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).editCategoria(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse> UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.getCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest request) {
-            return base.Channel.getCategoriaAsync(request);
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse> UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria.editCategoriaAsync(UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest request) {
+            return base.Channel.editCategoriaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaResponse> getCategoriaAsync() {
-            UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.getCategoriaRequest();
-            return ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).getCategoriaAsync(inValue);
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaResponse> editCategoriaAsync(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest inValue = new UPCNETSystemCliente.UPCNETServiceCategoria.editCategoriaRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            return ((UPCNETSystemCliente.UPCNETServiceCategoria.UPCNETServiceCategoria)(this)).editCategoriaAsync(inValue);
         }
     }
 }

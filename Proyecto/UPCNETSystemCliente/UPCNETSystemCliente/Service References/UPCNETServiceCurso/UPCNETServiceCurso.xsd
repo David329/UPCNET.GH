@@ -8,22 +8,6 @@
   <xs:element name="getCursosResponse" type="tns:getCursosResponse" />
   <xs:element name="setCurso" type="tns:setCurso" />
   <xs:element name="setCursoResponse" type="tns:setCursoResponse" />
-  <xs:complexType name="setCurso">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:curso" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="curso">
-    <xs:sequence>
-      <xs:element name="cicloDeCurso" type="xs:int" />
-      <xs:element minOccurs="0" name="idCurso" type="xs:string" />
-      <xs:element minOccurs="0" name="idProfesor" type="xs:string" />
-      <xs:element name="maxInasistencia" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="setCursoResponse">
-    <xs:sequence />
-  </xs:complexType>
   <xs:complexType name="getCursoById">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
@@ -34,13 +18,14 @@
       <xs:element minOccurs="0" name="return" type="tns:curso" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="editCurso">
+  <xs:complexType name="curso">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:curso" />
+      <xs:element name="cicloDeCurso" type="xs:int" />
+      <xs:element minOccurs="0" name="idCurso" type="xs:string" />
+      <xs:element minOccurs="0" name="idProfesor" type="xs:string" />
+      <xs:element name="maxInasistencia" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="editCursoResponse">
-    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="getCursos">
     <xs:sequence />
@@ -49,5 +34,21 @@
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editCurso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editCursoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="setCurso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCursoResponse">
+    <xs:sequence />
   </xs:complexType>
 </xs:schema>

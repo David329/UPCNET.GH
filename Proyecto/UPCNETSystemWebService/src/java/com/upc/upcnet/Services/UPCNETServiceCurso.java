@@ -22,9 +22,7 @@ public class UPCNETServiceCurso {
     @WebMethod(operationName = "getCursos")
     public List<Curso> getCursos() {
        CursoDAO objCursoDAO=new CursoDAO();
-        List<Curso>ListaCursos=objCursoDAO.getCursos();
-        
-        return ListaCursos; 
+        return objCursoDAO.getCursos();
     }
 
     @WebMethod(operationName = "setCurso")

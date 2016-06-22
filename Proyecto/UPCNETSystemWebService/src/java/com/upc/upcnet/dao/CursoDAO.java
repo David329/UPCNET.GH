@@ -25,12 +25,13 @@ public class CursoDAO {
         try{
             cn = AccesoDB.getConnection();
             StringBuilder query = new StringBuilder();
-            query.append("SELECT IDCurso, CicloDeCurso, MaxInasistencia, IDProfesor FROM Curso");
+            query.append("SELECT IDCurso, Nombre, CicloDeCurso, MaxInasistencia, IDProfesor FROM Curso");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Curso a = new Curso();
                 a.setIdCurso(rs.getString("IDCurso"));
+                a.setNombre(rs.getString("Nombre"));
                 a.setCicloDeCurso(rs.getInt("CicloDeCurso"));
                 a.setMaxInasistencia(rs.getInt("MaxInasistencia"));
                 a.setIdProfesor(rs.getString("IDProfesor"));
@@ -56,16 +57,17 @@ public class CursoDAO {
         try{
             cn = AccesoDB.getConnection();
             StringBuilder query = new StringBuilder();
-            query.append("SELECT IDCurso, CicloDeCurso, MaxInasistencia, IDProfesor FROM Curso WHERE IDCurso = ?");
+            query.append("SELECT IDCurso, Nombre, CicloDeCurso, MaxInasistencia, IDProfesor FROM Curso WHERE IDCurso = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
             ps.setString(1, _idCurso);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Curso a = new Curso();
                 a.setIdCurso(rs.getString("IDCurso"));
+                a.setNombre(rs.getString("Nombre"));
                 a.setCicloDeCurso(rs.getInt("CicloDeCurso"));
                 a.setMaxInasistencia(rs.getInt("MaxInasistencia"));
-                a.setIdCurso(rs.getString("IDProfesor"));
+                a.setIdProfesor(rs.getString("IDProfesor"));
                 
                 cursos.add(a);
             }
@@ -96,12 +98,13 @@ public class CursoDAO {
                 throw new SQLException("El codigo del curso ya existe");
             
             query = new StringBuilder();
-            query.append("INSERT INTO Curso(IDCurso, CicloDeCurso, MaxInasistencia, IDProfesor) VALUES(?, ?, ?, ?)");
+            query.append("INSERT INTO Curso(IDCurso, Nombre, CicloDeCurso, MaxInasistencia, IDProfesor) VALUES(?, ?, ?, ?, ?)");
             ps = cn.prepareStatement(query.toString());
             ps.setString(1, objCurso.getIdCurso());
-            ps.setInt(2, objCurso.getCicloDeCurso());
-            ps.setInt(3, objCurso.getMaxInasistencia());
-            ps.setString(4, objCurso.getIdProfesor());
+            ps.setString(2,objCurso.getNombre());
+            ps.setInt(3, objCurso.getCicloDeCurso());
+            ps.setInt(4, objCurso.getMaxInasistencia());
+            ps.setString(5, objCurso.getIdProfesor());
             ps.executeUpdate();
             cn.commit();
             
@@ -121,14 +124,14 @@ public class CursoDAO {
         Connection cn = null;
         try{
             cn = AccesoDB.getConnection();
-            cn.setAutoCommit(false);
             StringBuilder query = new StringBuilder();
-            query.append("UPDATE Curso SET CicloDeCurso = ?, MaxInasistencia = ?, IDProfesor = ? WHERE IDCurso = ?");
+            query.append("UPDATE Curso SET Nombre = ?,CicloDeCurso = ?, MaxInasistencia = ?, IDProfesor = ? WHERE IDCurso = ?");
             PreparedStatement ps = cn.prepareStatement(query.toString());
-            ps.setInt(1, objCurso.getCicloDeCurso());
-            ps.setInt(2, objCurso.getMaxInasistencia());
-            ps.setString(3, objCurso.getIdProfesor());
-            ps.setString(4, objCurso.getIdCurso());
+            ps.setString(1,objCurso.getNombre());
+            ps.setInt(2, objCurso.getCicloDeCurso());
+            ps.setInt(3, objCurso.getMaxInasistencia());
+            ps.setString(4, objCurso.getIdProfesor());
+            ps.setString(5, objCurso.getIdCurso());
             int realizado = ps.executeUpdate();
             cn.commit();
             if(realizado == 0)

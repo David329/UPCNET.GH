@@ -196,11 +196,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\UPCNETServiceSeccion\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\UPCNETSystemWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1032,22 +1027,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\UPCNETServiceSeccion\UPCNETSystemCliente.UPCNETServiceSeccion.editSeccionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UPCNETServiceSeccion\UPCNETSystemCliente.UPCNETServiceSeccion.getSeccionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UPCNETServiceSeccion\UPCNETSystemCliente.UPCNETServiceSeccion.seccion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\UPCNETServiceSeccion\UPCNETSystemCliente.UPCNETServiceSeccion.setSeccionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Service References\UPCNETServiceSeccion\UPCNETServiceSeccion1.wsdl" />
-    <None Include="Service References\UPCNETServiceSeccion\UPCNETServiceSeccion1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\UPCNETSystemWebService\configuration91.svcinfo" />
     <None Include="Service References\UPCNETSystemWebService\configuration.svcinfo" />
     <None Include="Service References\UPCNETSystemWebService\Reference.svcmap">
@@ -1063,12 +1042,6 @@
     <None Include="Service References\UPCNETServiceProfesor\configuration91.svcinfo" />
     <None Include="Service References\UPCNETServiceProfesor\configuration.svcinfo" />
     <None Include="Service References\UPCNETServiceProfesor\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\UPCNETServiceSeccion\configuration91.svcinfo" />
-    <None Include="Service References\UPCNETServiceSeccion\configuration.svcinfo" />
-    <None Include="Service References\UPCNETServiceSeccion\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -1130,7 +1103,6 @@
     <WCFMetadataStorage Include="Service References\UPCNETServiceCurso\" />
     <WCFMetadataStorage Include="Service References\UPCNETServiceProfesor\" />
     <WCFMetadataStorage Include="Service References\UPCNETServiceRecurso\" />
-    <WCFMetadataStorage Include="Service References\UPCNETServiceSeccion\" />
     <WCFMetadataStorage Include="Service References\UPCNETSystemWebService\" />
   </ItemGroup>
   <ItemGroup>

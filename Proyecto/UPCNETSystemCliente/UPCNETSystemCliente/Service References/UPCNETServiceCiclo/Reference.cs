@@ -15,15 +15,6 @@ namespace UPCNETSystemCliente.UPCNETServiceCiclo {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Services.upcnet.upc.com/", ConfigurationName="UPCNETServiceCiclo.UPCNETServiceCiclo")]
     public interface UPCNETServiceCiclo {
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceCiclo.getCicloResponse getCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.getCicloRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.getCicloResponse> getCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.getCicloRequest request);
-        
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCiclo/editCicloRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCiclo/editCicloResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -39,6 +30,15 @@ namespace UPCNETSystemCliente.UPCNETServiceCiclo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCiclo/setCicloRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCiclo/setCicloResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse> setCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceCiclo.getCicloResponse getCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.getCicloRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCiclo/getCicloResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.getCicloResponse> getCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.getCicloRequest request);
     }
     
     /// <remarks/>
@@ -132,6 +132,62 @@ namespace UPCNETSystemCliente.UPCNETServiceCiclo {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editCiclo", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editCicloRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0;
+        
+        public editCicloRequest() {
+        }
+        
+        public editCicloRequest(UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editCicloResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editCicloResponse {
+        
+        public editCicloResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setCiclo", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setCicloRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0;
+        
+        public setCicloRequest() {
+        }
+        
+        public setCicloRequest(UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setCicloResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setCicloResponse {
+        
+        public setCicloResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getCiclo", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
     public partial class getCicloRequest {
         
@@ -154,102 +210,6 @@ namespace UPCNETSystemCliente.UPCNETServiceCiclo {
         
         public getCicloResponse(UPCNETSystemCliente.UPCNETServiceCiclo.ciclo[] @return) {
             this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editCiclo", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editCicloRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        public editCicloRequest() {
-        }
-        
-        public editCicloRequest(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editCicloResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editCicloResponse {
-        
-        public editCicloResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setCiclo", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setCicloRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        public setCicloRequest() {
-        }
-        
-        public setCicloRequest(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setCicloResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setCicloResponse {
-        
-        public setCicloResponse() {
         }
     }
     
@@ -281,6 +241,50 @@ namespace UPCNETSystemCliente.UPCNETServiceCiclo {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.editCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest request) {
+            return base.Channel.editCiclo(request);
+        }
+        
+        public void editCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0) {
+            UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).editCiclo(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse> UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.editCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest request) {
+            return base.Channel.editCicloAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse> editCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0) {
+            UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).editCicloAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.setCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest request) {
+            return base.Channel.setCiclo(request);
+        }
+        
+        public void setCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0) {
+            UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).setCiclo(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse> UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.setCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest request) {
+            return base.Channel.setCicloAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse> setCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.ciclo arg0) {
+            UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).setCicloAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceCiclo.getCicloResponse UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.getCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.getCicloRequest request) {
             return base.Channel.getCiclo(request);
         }
@@ -299,66 +303,6 @@ namespace UPCNETSystemCliente.UPCNETServiceCiclo {
         public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.getCicloResponse> getCicloAsync() {
             UPCNETSystemCliente.UPCNETServiceCiclo.getCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.getCicloRequest();
             return ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).getCicloAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.editCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest request) {
-            return base.Channel.editCiclo(request);
-        }
-        
-        public void editCiclo(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).editCiclo(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse> UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.editCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest request) {
-            return base.Channel.editCicloAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.editCicloResponse> editCicloAsync(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.editCicloRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            return ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).editCicloAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.setCiclo(UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest request) {
-            return base.Channel.setCiclo(request);
-        }
-        
-        public void setCiclo(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).setCiclo(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse> UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo.setCicloAsync(UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest request) {
-            return base.Channel.setCicloAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCiclo.setCicloResponse> setCicloAsync(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest inValue = new UPCNETSystemCliente.UPCNETServiceCiclo.setCicloRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            return ((UPCNETSystemCliente.UPCNETServiceCiclo.UPCNETServiceCiclo)(this)).setCicloAsync(inValue);
         }
     }
 }

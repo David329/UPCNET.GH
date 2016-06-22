@@ -15,6 +15,18 @@ namespace UPCNETSystemCliente.UPCNETServiceAdministrador {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Services.upcnet.upc.com/", ConfigurationName="UPCNETServiceAdministrador.UPCNETServiceAdministrador")]
     public interface UPCNETServiceAdministrador {
         
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorReques" +
+            "t", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorRespon" +
+            "se")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorResponse editAdministrador(UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorReques" +
+            "t", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorRespon" +
+            "se")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorResponse> editAdministradorAsync(UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorRequest request);
+        
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/validarLoginAdministrad" +
             "orRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/validarLoginAdministrad" +
@@ -27,18 +39,6 @@ namespace UPCNETSystemCliente.UPCNETServiceAdministrador {
             "orRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/validarLoginAdministrad" +
             "orResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse> validarLoginAdministradorAsync(UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest request);
-        
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorReques" +
-            "t", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorRespon" +
-            "se")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorResponse editAdministrador(UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorReques" +
-            "t", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/editAdministradorRespon" +
-            "se")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorResponse> editAdministradorAsync(UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/getAdministradorByIdReq" +
@@ -77,47 +77,6 @@ namespace UPCNETSystemCliente.UPCNETServiceAdministrador {
             "", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceAdministrador/setAdministradorRespons" +
             "e")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.setAdministradorResponse> setAdministradorAsync(UPCNETSystemCliente.UPCNETServiceAdministrador.setAdministradorRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAdministrador", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class validarLoginAdministradorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        public validarLoginAdministradorRequest() {
-        }
-        
-        public validarLoginAdministradorRequest(string arg0, string arg1) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAdministradorResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class validarLoginAdministradorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public validarLoginAdministradorResponse() {
-        }
-        
-        public validarLoginAdministradorResponse(bool @return) {
-            this.@return = @return;
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -165,6 +124,47 @@ namespace UPCNETSystemCliente.UPCNETServiceAdministrador {
     public partial class editAdministradorResponse {
         
         public editAdministradorResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAdministrador", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class validarLoginAdministradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public validarLoginAdministradorRequest() {
+        }
+        
+        public validarLoginAdministradorRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarLoginAdministradorResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class validarLoginAdministradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public validarLoginAdministradorResponse() {
+        }
+        
+        public validarLoginAdministradorResponse(bool @return) {
+            this.@return = @return;
         }
     }
     
@@ -396,31 +396,6 @@ namespace UPCNETSystemCliente.UPCNETServiceAdministrador {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador.validarLoginAdministrador(UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest request) {
-            return base.Channel.validarLoginAdministrador(request);
-        }
-        
-        public bool validarLoginAdministrador(string arg0, string arg1) {
-            UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest inValue = new UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse retVal = ((UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador)(this)).validarLoginAdministrador(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse> UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador.validarLoginAdministradorAsync(UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest request) {
-            return base.Channel.validarLoginAdministradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse> validarLoginAdministradorAsync(string arg0, string arg1) {
-            UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest inValue = new UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            return ((UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador)(this)).validarLoginAdministradorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorResponse UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador.editAdministrador(UPCNETSystemCliente.UPCNETServiceAdministrador.editAdministradorRequest request) {
             return base.Channel.editAdministrador(request);
         }
@@ -448,6 +423,31 @@ namespace UPCNETSystemCliente.UPCNETServiceAdministrador {
             inValue.arg3 = arg3;
             inValue.arg4 = arg4;
             return ((UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador)(this)).editAdministradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador.validarLoginAdministrador(UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest request) {
+            return base.Channel.validarLoginAdministrador(request);
+        }
+        
+        public bool validarLoginAdministrador(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest inValue = new UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse retVal = ((UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador)(this)).validarLoginAdministrador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse> UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador.validarLoginAdministradorAsync(UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest request) {
+            return base.Channel.validarLoginAdministradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorResponse> validarLoginAdministradorAsync(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest inValue = new UPCNETSystemCliente.UPCNETServiceAdministrador.validarLoginAdministradorRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            return ((UPCNETSystemCliente.UPCNETServiceAdministrador.UPCNETServiceAdministrador)(this)).validarLoginAdministradorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

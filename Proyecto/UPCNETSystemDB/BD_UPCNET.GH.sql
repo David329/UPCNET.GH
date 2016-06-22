@@ -16,7 +16,7 @@ create table Ciclo(IDCiclo varchar(30) not null,IDAlumno varchar(30) not null,Bo
 create table Incidencia(IDIncidencia varchar(30) not null,Asunto varchar(100),IDAlumno varchar(30),IDProfesor varchar(30))--allow nulls
 create table Recurso(IDRecurso varchar(30)not null,NombreRecurso varchar(30),FechaPedido date,CantidadHoras int,Reservado bit,IDAlumno varchar(30),IDProfesor varchar(30))--allow nulls
 create table Profesor(IDProfesor varchar(30)not null,Pass varchar(30),Nombre varchar(30),Apellido varchar(30),DNI int,Edad int,Correo varchar(30),Direccion varchar(30),Sueldo decimal(18,2))
-create table Curso(IDCurso varchar(30) not null,CicloDeCurso int,MaxInasistencia int,IDProfesor varchar(30))
+create table Curso(IDCurso varchar(30) not null,Nombre varchar(30), CicloDeCurso int,MaxInasistencia int,IDProfesor varchar(30))
 create table Curso_Alumno(IDAlumno varchar(30) not null,IDCurso varchar(30) not null,PC1 decimal(10,2),PC2 decimal(10,2),EP decimal(10,2),EF decimal(10,2),Retirado bit,Inasistencias int,Delegado bit)
 create table Curso_Clase(IDClase varchar(30)not null,IDCurso varchar(30)not null,Dia varchar(30),HoraIni time(0),HoraFin time(0))
 create table Documento(IDDocumento varchar(30) not null,IDCurso varchar(30)not null,NomDocumento varchar(30),Documento varbinary(MAX))
@@ -64,6 +64,7 @@ END
 
 -------------DATOS DE PRUEBA--------------
 insert into Administrador values('AD101','ad101ad','David','Silva','davidsilva3290@gmail.com')
+insert into Administrador values('a','a','Ian','Maquinia','ian_forever@gmail.com')
 
 insert into Categoria values('Q',2300.70)
 insert into Categoria values('R',1800.60)

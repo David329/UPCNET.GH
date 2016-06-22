@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/UPCNETSystemWebService/UPCNETServiceCurso?xsd=1" namespace="http://Services.upcnet.upc.com/" />
     </xsd:schema>
   </types>
+  <message name="editCurso">
+    <part name="parameters" element="tns:editCurso" />
+  </message>
+  <message name="editCursoResponse">
+    <part name="parameters" element="tns:editCursoResponse" />
+  </message>
   <message name="getCursoById">
     <part name="parameters" element="tns:getCursoById" />
   </message>
@@ -23,13 +29,11 @@
   <message name="getCursosResponse">
     <part name="parameters" element="tns:getCursosResponse" />
   </message>
-  <message name="editCurso">
-    <part name="parameters" element="tns:editCurso" />
-  </message>
-  <message name="editCursoResponse">
-    <part name="parameters" element="tns:editCursoResponse" />
-  </message>
   <portType name="UPCNETServiceCurso">
+    <operation name="editCurso">
+      <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/editCursoRequest" message="tns:editCurso" />
+      <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/editCursoResponse" message="tns:editCursoResponse" />
+    </operation>
     <operation name="getCursoById">
       <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/getCursoByIdRequest" message="tns:getCursoById" />
       <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/getCursoByIdResponse" message="tns:getCursoByIdResponse" />
@@ -42,13 +46,18 @@
       <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/getCursosRequest" message="tns:getCursos" />
       <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/getCursosResponse" message="tns:getCursosResponse" />
     </operation>
-    <operation name="editCurso">
-      <input wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/editCursoRequest" message="tns:editCurso" />
-      <output wsam:Action="http://Services.upcnet.upc.com/UPCNETServiceCurso/editCursoResponse" message="tns:editCursoResponse" />
-    </operation>
   </portType>
   <binding name="UPCNETServiceCursoPortBinding" type="tns:UPCNETServiceCurso">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="editCurso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="getCursoById">
       <soap:operation soapAction="" />
       <input>
@@ -68,15 +77,6 @@
       </output>
     </operation>
     <operation name="getCursos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="editCurso">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

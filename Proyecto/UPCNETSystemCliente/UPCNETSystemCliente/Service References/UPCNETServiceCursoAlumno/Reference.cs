@@ -15,30 +15,18 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Services.upcnet.upc.com/", ConfigurationName="UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno")]
     public interface UPCNETServiceCursoAlumno {
         
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse editCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse> editCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request);
-        
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse setCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse> setCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request);
-        
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRequest" +
+            "", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRespons" +
+            "e")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse getCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request);
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse getCursoAlumnoByID(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse> getCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRequest" +
+            "", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRespons" +
+            "e")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse> getCursoAlumnoByIDAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIdCursoRe" +
@@ -67,19 +55,6 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoByIdAlumnoResponse> getCursoByIdAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoByIdAlumnoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRequest" +
-            "", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRespons" +
-            "e")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse getCursoAlumnoByID(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRequest" +
-            "", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoByIDRespons" +
-            "e")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse> getCursoAlumnoByIDAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoReporteRequ" +
             "est", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoReporteResp" +
             "onse")]
@@ -91,6 +66,31 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
             "est", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoReporteResp" +
             "onse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoReporteResponse> getCursoAlumnoReporteAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoReporteRequest request);
+        
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse editCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/editCursoAlumnoResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse> editCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse getCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/getCursoAlumnoResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse> getCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request);
+        
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse setCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceCursoAlumno/setCursoAlumnoResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse> setCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request);
     }
     
     /// <remarks/>
@@ -369,6 +369,8 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
         
         private int maxInasistenciaField;
         
+        private string nombreField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public int cicloDeCurso {
@@ -417,6 +419,18 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+                this.RaisePropertyChanged("nombre");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -430,83 +444,40 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editCursoAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editCursoAlumnoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumnoByID", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getCursoAlumnoByIDRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0;
+        public string arg0;
         
-        public editCursoAlumnoRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public getCursoAlumnoByIDRequest() {
         }
         
-        public editCursoAlumnoRequest(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
+        public getCursoAlumnoByIDRequest(string arg0, string arg1) {
             this.arg0 = arg0;
+            this.arg1 = arg1;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editCursoAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editCursoAlumnoResponse {
-        
-        public editCursoAlumnoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setCursoAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setCursoAlumnoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumnoByIDResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getCursoAlumnoByIDResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0;
+        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno @return;
         
-        public setCursoAlumnoRequest() {
+        public getCursoAlumnoByIDResponse() {
         }
         
-        public setCursoAlumnoRequest(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setCursoAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setCursoAlumnoResponse {
-        
-        public setCursoAlumnoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class getCursoAlumnoRequest {
-        
-        public getCursoAlumnoRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class getCursoAlumnoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno[] @return;
-        
-        public getCursoAlumnoResponse() {
-        }
-        
-        public getCursoAlumnoResponse(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno[] @return) {
+        public getCursoAlumnoByIDResponse(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno @return) {
             this.@return = @return;
         }
     }
@@ -586,47 +557,6 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumnoByID", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class getCursoAlumnoByIDRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        public getCursoAlumnoByIDRequest() {
-        }
-        
-        public getCursoAlumnoByIDRequest(string arg0, string arg1) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumnoByIDResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class getCursoAlumnoByIDResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno @return;
-        
-        public getCursoAlumnoByIDResponse() {
-        }
-        
-        public getCursoAlumnoByIDResponse(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumnoReporte", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
     public partial class getCursoAlumnoReporteRequest {
         
@@ -660,6 +590,90 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editCursoAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editCursoAlumnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0;
+        
+        public editCursoAlumnoRequest() {
+        }
+        
+        public editCursoAlumnoRequest(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editCursoAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editCursoAlumnoResponse {
+        
+        public editCursoAlumnoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getCursoAlumnoRequest {
+        
+        public getCursoAlumnoRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCursoAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class getCursoAlumnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno[] @return;
+        
+        public getCursoAlumnoResponse() {
+        }
+        
+        public getCursoAlumnoResponse(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setCursoAlumno", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setCursoAlumnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0;
+        
+        public setCursoAlumnoRequest() {
+        }
+        
+        public setCursoAlumnoRequest(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setCursoAlumnoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setCursoAlumnoResponse {
+        
+        public setCursoAlumnoResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface UPCNETServiceCursoAlumnoChannel : UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno, System.ServiceModel.IClientChannel {
     }
@@ -688,68 +702,28 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.editCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request) {
-            return base.Channel.editCursoAlumno(request);
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumnoByID(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request) {
+            return base.Channel.getCursoAlumnoByID(request);
         }
         
-        public void editCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest();
+        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno getCursoAlumnoByID(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest();
             inValue.arg0 = arg0;
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).editCursoAlumno(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.editCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request) {
-            return base.Channel.editCursoAlumnoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse> editCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest();
-            inValue.arg0 = arg0;
-            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).editCursoAlumnoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.setCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request) {
-            return base.Channel.setCursoAlumno(request);
-        }
-        
-        public void setCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest();
-            inValue.arg0 = arg0;
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).setCursoAlumno(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.setCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request) {
-            return base.Channel.setCursoAlumnoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse> setCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest();
-            inValue.arg0 = arg0;
-            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).setCursoAlumnoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request) {
-            return base.Channel.getCursoAlumno(request);
-        }
-        
-        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno[] getCursoAlumno() {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest();
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumno(inValue);
+            inValue.arg1 = arg1;
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumnoByID(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request) {
-            return base.Channel.getCursoAlumnoAsync(request);
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumnoByIDAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request) {
+            return base.Channel.getCursoAlumnoByIDAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse> getCursoAlumnoAsync() {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest();
-            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumnoAsync(inValue);
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse> getCursoAlumnoByIDAsync(string arg0, string arg1) {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumnoByIDAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -799,31 +773,6 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumnoByID(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request) {
-            return base.Channel.getCursoAlumnoByID(request);
-        }
-        
-        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno getCursoAlumnoByID(string arg0, string arg1) {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumnoByID(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumnoByIDAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest request) {
-            return base.Channel.getCursoAlumnoByIDAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDResponse> getCursoAlumnoByIDAsync(string arg0, string arg1) {
-            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoByIDRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumnoByIDAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoReporteResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumnoReporte(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoReporteRequest request) {
             return base.Channel.getCursoAlumnoReporte(request);
         }
@@ -844,6 +793,71 @@ namespace UPCNETSystemCliente.UPCNETServiceCursoAlumno {
             UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoReporteRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoReporteRequest();
             inValue.idAlumno = idAlumno;
             return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumnoReporteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.editCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request) {
+            return base.Channel.editCursoAlumno(request);
+        }
+        
+        public void editCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).editCursoAlumno(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.editCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest request) {
+            return base.Channel.editCursoAlumnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoResponse> editCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.editCursoAlumnoRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).editCursoAlumnoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request) {
+            return base.Channel.getCursoAlumno(request);
+        }
+        
+        public UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno[] getCursoAlumno() {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest();
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumno(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.getCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest request) {
+            return base.Channel.getCursoAlumnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoResponse> getCursoAlumnoAsync() {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.getCursoAlumnoRequest();
+            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).getCursoAlumnoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.setCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request) {
+            return base.Channel.setCursoAlumno(request);
+        }
+        
+        public void setCursoAlumno(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).setCursoAlumno(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse> UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno.setCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest request) {
+            return base.Channel.setCursoAlumnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoResponse> setCursoAlumnoAsync(UPCNETSystemCliente.UPCNETServiceCursoAlumno.cursoAlumno arg0) {
+            UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest inValue = new UPCNETSystemCliente.UPCNETServiceCursoAlumno.setCursoAlumnoRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceCursoAlumno.UPCNETServiceCursoAlumno)(this)).setCursoAlumnoAsync(inValue);
         }
     }
 }

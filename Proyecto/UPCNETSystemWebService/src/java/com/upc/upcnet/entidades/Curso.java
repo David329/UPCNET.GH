@@ -11,6 +11,7 @@ package com.upc.upcnet.entidades;
  */
 public class Curso {
     private String idCurso;
+    private String nombre;
     private int cicloDeCurso;
     private int maxInasistencia;
     private String idProfesor;
@@ -21,6 +22,14 @@ public class Curso {
 
     public void setIdCurso(String idCurso) {
         this.idCurso = idCurso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getCicloDeCurso() {

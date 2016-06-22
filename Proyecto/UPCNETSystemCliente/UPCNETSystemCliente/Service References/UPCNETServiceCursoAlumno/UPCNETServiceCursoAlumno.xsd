@@ -14,14 +14,15 @@
   <xs:element name="getCursoByIdAlumnoResponse" type="tns:getCursoByIdAlumnoResponse" />
   <xs:element name="setCursoAlumno" type="tns:setCursoAlumno" />
   <xs:element name="setCursoAlumnoResponse" type="tns:setCursoAlumnoResponse" />
-  <xs:complexType name="getCursoAlumnoByIdCurso">
+  <xs:complexType name="getCursoAlumnoByID">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="getCursoAlumnoByIdCursoResponse">
+  <xs:complexType name="getCursoAlumnoByIDResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cursoAlumno" />
+      <xs:element minOccurs="0" name="return" type="tns:cursoAlumno" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cursoAlumno">
@@ -37,24 +38,15 @@
       <xs:element name="retirado" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="getCursoAlumnoByID">
+  <xs:complexType name="getCursoAlumnoByIdCurso">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
-      <xs:element minOccurs="0" name="arg1" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="getCursoAlumnoByIDResponse">
+  <xs:complexType name="getCursoAlumnoByIdCursoResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:cursoAlumno" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cursoAlumno" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="editCursoAlumno">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:cursoAlumno" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="editCursoAlumnoResponse">
-    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="getCursoByIdAlumno">
     <xs:sequence>
@@ -72,7 +64,16 @@
       <xs:element minOccurs="0" name="idCurso" type="xs:string" />
       <xs:element minOccurs="0" name="idProfesor" type="xs:string" />
       <xs:element name="maxInasistencia" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editCursoAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cursoAlumno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editCursoAlumnoResponse">
+    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="getCursoAlumno">
     <xs:sequence />

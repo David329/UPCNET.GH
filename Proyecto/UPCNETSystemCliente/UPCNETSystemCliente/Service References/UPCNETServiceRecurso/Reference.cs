@@ -15,6 +15,15 @@ namespace UPCNETSystemCliente.UPCNETServiceRecurso {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Services.upcnet.upc.com/", ConfigurationName="UPCNETServiceRecurso.UPCNETServiceRecurso")]
     public interface UPCNETServiceRecurso {
         
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoResponse getRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoResponse")]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoResponse> getRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoRequest request);
+        
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceRecurso/editRecursoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceRecurso/editRecursoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -30,131 +39,6 @@ namespace UPCNETSystemCliente.UPCNETServiceRecurso {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceRecurso/setRecursoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceRecurso/setRecursoResponse")]
         System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse> setRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoResponse getRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoRequest", ReplyAction="http://Services.upcnet.upc.com/UPCNETServiceRecurso/getRecursoResponse")]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoResponse> getRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editRecurso", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editRecursoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        public editRecursoRequest() {
-        }
-        
-        public editRecursoRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="editRecursoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class editRecursoResponse {
-        
-        public editRecursoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setRecurso", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setRecursoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg6;
-        
-        public setRecursoRequest() {
-        }
-        
-        public setRecursoRequest(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="setRecursoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
-    public partial class setRecursoResponse {
-        
-        public setRecursoResponse() {
-        }
     }
     
     /// <remarks/>
@@ -319,6 +203,62 @@ namespace UPCNETSystemCliente.UPCNETServiceRecurso {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editRecurso", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editRecursoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0;
+        
+        public editRecursoRequest() {
+        }
+        
+        public editRecursoRequest(UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="editRecursoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class editRecursoResponse {
+        
+        public editRecursoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setRecurso", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setRecursoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Services.upcnet.upc.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0;
+        
+        public setRecursoRequest() {
+        }
+        
+        public setRecursoRequest(UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="setRecursoResponse", WrapperNamespace="http://Services.upcnet.upc.com/", IsWrapped=true)]
+    public partial class setRecursoResponse {
+        
+        public setRecursoResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface UPCNETServiceRecursoChannel : UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso, System.ServiceModel.IClientChannel {
     }
@@ -347,74 +287,6 @@ namespace UPCNETSystemCliente.UPCNETServiceRecurso {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.editRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest request) {
-            return base.Channel.editRecurso(request);
-        }
-        
-        public void editRecurso(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6) {
-            UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).editRecurso(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse> UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.editRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest request) {
-            return base.Channel.editRecursoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse> editRecursoAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6) {
-            UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            return ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).editRecursoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.setRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest request) {
-            return base.Channel.setRecurso(request);
-        }
-        
-        public void setRecurso(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6) {
-            UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).setRecurso(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse> UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.setRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest request) {
-            return base.Channel.setRecursoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse> setRecursoAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6) {
-            UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            return ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).setRecursoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoResponse UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.getRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoRequest request) {
             return base.Channel.getRecurso(request);
         }
@@ -433,6 +305,50 @@ namespace UPCNETSystemCliente.UPCNETServiceRecurso {
         public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoResponse> getRecursoAsync() {
             UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.getRecursoRequest();
             return ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).getRecursoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.editRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest request) {
+            return base.Channel.editRecurso(request);
+        }
+        
+        public void editRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0) {
+            UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).editRecurso(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse> UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.editRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest request) {
+            return base.Channel.editRecursoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoResponse> editRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0) {
+            UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.editRecursoRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).editRecursoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.setRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest request) {
+            return base.Channel.setRecurso(request);
+        }
+        
+        public void setRecurso(UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0) {
+            UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest();
+            inValue.arg0 = arg0;
+            UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse retVal = ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).setRecurso(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse> UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso.setRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest request) {
+            return base.Channel.setRecursoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoResponse> setRecursoAsync(UPCNETSystemCliente.UPCNETServiceRecurso.recurso arg0) {
+            UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest inValue = new UPCNETSystemCliente.UPCNETServiceRecurso.setRecursoRequest();
+            inValue.arg0 = arg0;
+            return ((UPCNETSystemCliente.UPCNETServiceRecurso.UPCNETServiceRecurso)(this)).setRecursoAsync(inValue);
         }
     }
 }

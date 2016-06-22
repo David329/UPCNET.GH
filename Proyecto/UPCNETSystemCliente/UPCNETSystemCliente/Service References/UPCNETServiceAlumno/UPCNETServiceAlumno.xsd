@@ -8,21 +8,8 @@
   <xs:element name="getAlumnosResponse" type="tns:getAlumnosResponse" />
   <xs:element name="setAlumno" type="tns:setAlumno" />
   <xs:element name="setAlumnoResponse" type="tns:setAlumnoResponse" />
-  <xs:element name="validarLogin" type="tns:validarLogin" />
-  <xs:element name="validarLoginAlumno" nillable="true" type="tns:validarLogin" />
-  <xs:element name="validarLoginAlumnoResponse" nillable="true" type="tns:validarLoginResponse" />
-  <xs:element name="validarLoginResponse" type="tns:validarLoginResponse" />
-  <xs:complexType name="validarLogin">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:string" />
-      <xs:element minOccurs="0" name="arg1" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="validarLoginResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
+  <xs:element name="validarLoginAlumno" type="tns:validarLoginAlumno" />
+  <xs:element name="validarLoginAlumnoResponse" type="tns:validarLoginAlumnoResponse" />
   <xs:complexType name="editAlumno">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="tns:alumno" />
@@ -44,6 +31,17 @@
   </xs:complexType>
   <xs:complexType name="editAlumnoResponse">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="validarLoginAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validarLoginAlumnoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getAlumnoById">
     <xs:sequence>

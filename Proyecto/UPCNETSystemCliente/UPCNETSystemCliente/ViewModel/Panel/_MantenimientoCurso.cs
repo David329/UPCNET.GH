@@ -20,6 +20,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                     Business_Entities.Curso objCurso = new Business_Entities.Curso();
                     objCurso.CicloDeCurso = item.cicloDeCurso;
                     objCurso.IDCurso = item.idCurso;
+                    objCurso.Nombre = item.nombre;
                     objCurso.MaxInasistencia = item.maxInasistencia;
                     objCurso.IDProfesor = item.idProfesor;
 

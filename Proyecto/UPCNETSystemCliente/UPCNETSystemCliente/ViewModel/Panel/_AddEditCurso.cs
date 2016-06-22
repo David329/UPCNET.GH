@@ -12,6 +12,7 @@ namespace UPCNETSystemCliente.ViewModel.Panel
     {
         public Business_Entities.Curso objCurso { get; set; }
         public string IDCurso { get; set; }
+        public string Nombre { get; set; }
         public string IDProfesor { get; set; }
         public string Modo { get; set; }
 
@@ -33,10 +34,11 @@ namespace UPCNETSystemCliente.ViewModel.Panel
                 curso obj = proxyCU.getCursoById(IDCurso);
 
                 objCurso.IDProfesor = obj.idProfesor;
+                objCurso.Nombre = obj.nombre;
                 objCurso.CicloDeCurso = obj.cicloDeCurso;
                 objCurso.MaxInasistencia = obj.maxInasistencia;
             }
-            //Profesores --no es necesario todos los datos pero podemos sakar de ellos estos atributos, si lo colocamos en otra cosa q no sea CBox
+            //Profesores --no es necesario todos los datos pero podemos sacar de ellos estos atributos, si lo colocamos en otra cosa q no sea CBox
 
             lstProfesores= new List<Business_Entities.Profesor>();
             foreach (var item in proxyPR.getProfesor())
